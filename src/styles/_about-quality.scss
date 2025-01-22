@@ -1,0 +1,16 @@
+#about-quality {
+    display: grid;
+    grid-template-columns: repeat(4, 134px);
+    gap: 27px;
+    justify-content: center;
+    align-items: center;
+    background: #375B68;
+    img {
+
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+}

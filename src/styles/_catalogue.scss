@@ -1,0 +1,258 @@
+#catalogue {
+
+
+    .catalogue__paragraphs {
+        margin-left: 100px;
+        display: flex;
+        margin-bottom: 104px;
+        display: flex;
+
+        p:first-child {
+            font-family: 'Cabinet-Grotesk';
+            font-weight: 800;
+            font-size: 36px;
+            line-height: 200%;
+            color: #5e97ab;
+        }
+
+        .line {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 600px;
+                margin-left: 12px;
+                height: 1.5px;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
+            }
+        }
+    }
+
+
+    .catalogue__top {
+        display: flex;
+        justify-content: center;
+
+        transform: scale(0.90);
+
+        .catalogue__slider {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            height: fit-content;
+
+            .catalogue__slider-sidebar {
+
+                .sidebar-item {
+
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    padding: 1rem;
+                    border-radius: 50px 0 0 50px;
+                    width: 150px;
+                    height: 134px;
+                    transition: background 0.3s ease;
+
+                    &:hover {
+                        background: linear-gradient(90deg, #436e7e 18.57%, #12212e 100%);
+                    }
+                }
+
+                .sidebar-item:last-child {
+                    background: transparent;
+                }
+            }
+
+
+            .catalogue__slider-content {
+                width: 1200px;
+                margin: 0 auto;
+                padding: 67px 62px 19px 42px;
+                border-radius: 0 36px 36px 36px;
+                height: fit-content;
+                background: linear-gradient(180deg, #12212e 50.11%, #375b68 93.7%);
+
+                h2 {
+                    font-family: 'Cabinet-Grotesk';
+                    font-weight: 700;
+                    font-size: 24px;
+                    color: #f5f7fa;
+                }
+
+                p {
+
+                    font-family: 'Cabinet-Grotesk';
+                    font-weight: 400;
+                    font-size: 16px;
+                    max-width: 1065px;
+                    line-height: 32px;
+                    text-transform: capitalize;
+                    text-align: justify;
+                    color: #f5f7fa;
+                }
+
+                .slider {
+                    display: flex;
+                    overflow: hidden;
+                    position: relative;
+                    height: 400px;
+                    width: fit-content;
+                    margin: 0 auto;
+
+                    .slides-wrapper {
+                        display: flex;
+                        transition: transform 1s ease;
+                    }
+
+                    .slide {
+                        margin-left: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 2rem;
+                        transition: transform 0.3s ease;
+                        position: relative;
+
+                        img {
+                            filter: blur(2px);
+                            width: 226.45px;
+                            cursor: pointer;
+                        }
+
+                        // Псевдоэлемент для рамки
+                        &::before {
+                            content: '';
+                            display: none; // По умолчанию рамка скрыта
+                            position: absolute;
+                            top: -10px;
+                            left: -10px;
+                            width: calc(100% + 20px);
+                            height: calc(100% + 20px);
+                            background: url(../assets/catalogue/pillow-border.svg) center center / contain no-repeat;
+                            z-index: 1;
+                            pointer-events: none;
+                        }
+
+                        .product {
+                            display: none;
+                            padding: 9px;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                            transition: opacity 0.3s ease;
+
+                            p {
+                                font-family: 'Cabinet-Grotesk';
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 200%;
+                                text-transform: capitalize;
+                                text-align: justify;
+                                color: #f5f7fa;
+                            }
+
+                            span {
+                                display: flex;
+                                align-items: center;
+
+                                gap: 4px;
+                                font-family: 'Cabinet-Grotesk';
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 200%;
+                                text-transform: capitalize;
+                                text-align: justify;
+                                color: #f5f7fa;
+
+                                .product_icon {
+                                    height: 20px;
+                                    width: 20px;
+                                }
+                            }
+                        }
+                    }
+
+                    input {
+                        display: none;
+                    }
+
+                    // Активируем рамку только при выбранном слайде
+                    #slide1:checked~.slides-wrapper .slide:first-child::before,
+                    #slide2:checked~.slides-wrapper .slide:nth-child(2)::before,
+                    #slide3:checked~.slides-wrapper .slide:nth-child(3)::before,
+                    #slide4:checked~.slides-wrapper .slide:nth-child(4)::before {
+                        display: block;
+                    }
+
+                    // Показываем текст только для активного слайда
+                    #slide1:checked~.slides-wrapper .slide:first-child .product,
+                    #slide2:checked~.slides-wrapper .slide:nth-child(2) .product,
+                    #slide3:checked~.slides-wrapper .slide:nth-child(3) .product,
+                    #slide4:checked~.slides-wrapper .slide:nth-child(4) .product {
+                        display: flex;
+                    }
+
+                    #slide1:checked~.slides-wrapper {
+                        transform: translateX(0);
+
+                    }
+
+                    #slide2:checked~.slides-wrapper {
+                        transform: translateX(-15%);
+                    }
+
+                    #slide3:checked~.slides-wrapper {
+                        transform: translateX(-30%);
+                    }
+
+                    #slide4:checked~.slides-wrapper {
+                        transform: translateX(-45%);
+                    }
+
+                    //STYLE FOR ACTIVE PILLOW
+                    #slide1:checked~.slides-wrapper .slide:first-child img {
+                        transition: transform 0.3s ease, filter 0.3s ease;
+                        transform: scale(1.5);
+                        filter: blur(0)
+                    }
+
+                    #slide2:checked~.slides-wrapper .slide:nth-child(2) img {
+
+                        transition: transform 0.3s ease;
+                        transform: scale(1.3);
+                        filter: blur(0)
+                    }
+
+                    #slide3:checked~.slides-wrapper .slide:nth-child(3) img {
+
+                        transition: transform 0.3s ease;
+                        transform: scale(1.3);
+                        filter: blur(0)
+                    }
+
+                    #slide4:checked~.slides-wrapper .slide:nth-child(4) img {
+                        transition: transform 0.3s ease;
+                        transform: scale(1.3);
+                        filter: blur(0)
+                    }
+
+                    //DEFAULT
+                    #slide1:checked~.slides-wrapper .slide:first-child img {
+
+                        transition: transform 0.3s ease;
+                        transform: scale(1.3);
+                        filter: blur(0)
+                    }
+                }
+
+            }
+
+        }
+    }
+}

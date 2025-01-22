@@ -1,0 +1,84 @@
+#hero {
+    .hero__top-first-title {
+        background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgba(171, 171, 171, 1) 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Sahitya-Bold";
+        color: #8EC5CA;
+        margin: 0;
+        font-weight: 700;
+        font-size: 64px;
+
+    }
+}
+
+.hero__top-desc {
+    font-family: "Sahitya";
+    color: white;
+    display: flex;
+    justify-content: center;
+    line-height: 31.06px;
+    font-size: 20px;
+
+}
+
+.hero__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .hero__bottom-button {
+        top: 22px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+
+        img:first-child {
+            margin-top: 22px;
+            position: absolute;
+            width: 58.14px;
+            height: 58.14px;
+        }
+
+        .hero__bottom-button-desc {
+            color: white;
+            line-height: 14.78px;
+            bottom: 0.072px;
+            right: -62.96px;
+            position: absolute;
+            font-size: 14.78px;
+        }
+
+        .hero__bottom-button-desc:hover {
+            transition: transform 0.3s ease;
+            transform: translateX(10px);
+        }
+
+        img:last-child {
+            top: 10.58px;
+            left: 32.58px;
+            position: relative;
+            width: 66px;
+        }
+
+    }
+
+    .hero__bottom-img {
+        margin-top: 37px;
+    }
+
+    .hero__bottom-background {
+        position: absolute;
+        z-index: 0;
+        bottom: -40px;
+    }
+}
