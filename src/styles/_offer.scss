@@ -1,8 +1,78 @@
 #offer {
-    p {
-        font-weight: 300;
-        font-size: 24px;
-        text-transform: capitalize;
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px;
+    justify-content: flex-end;
+    min-height: 100vh;
+    background: url('../assets/offer/offer.svg') no-repeat; // Картинка как фон
+
+    .offer__content {
+        margin-top: 95px;
+        grid-column: 2;
+        text-align: left;
         color: #f5f7fa;
+        max-width: 600px;
+
+        h2 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 2;
+            text-transform: uppercase;
+            color: #f5f7fa;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .offer__button-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .offer__button {
+            position: relative;
+            /* Относительное позиционирование кнопки */
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            /* Размещаем элементы вертикально */
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            /* Разрыв между элементами */
+            width: 80px;
+            /* Задаем ширину кнопки */
+            height: 80px;
+
+            img:first-child {
+                position: relative;
+                width: 58px;
+                height: 58px;
+            }
+
+            img:last-child {
+                position: relative;
+                width: 66px;
+                margin-top: -10px;
+                /* Регулируем расположение стрелки */
+            }
+
+            .offer__bottom-button-desc {
+                position: relative;
+                color: white;
+                font-size: 14px;
+                line-height: 1.1;
+                margin-top: 5px;
+            }
+
+            &:hover .offer__bottom-button-desc {
+                transition: transform 0.3s ease;
+                transform: translateX(10px);
+            }
+        }
     }
 }
