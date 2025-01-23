@@ -1,7 +1,9 @@
 header {
   background: #375B68;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 header ul {
   margin: 35px 0px 0px 90px;
@@ -19,10 +21,11 @@ header ul li a img {
   width: 41.01px;
   height: 41.32px;
 }
-header .login-field {
-  margin: 35px 66px 0px 0px;
+header .header__icons {
+  display: flex;
+  margin: 16px 66px 0px 0px;
 }
-header .login-fieldimg {
+header .header__iconsimg {
   width: 25px;
   height: 25px;
 }
@@ -42,12 +45,12 @@ main {
   background: #375B68;
 }
 
-#hero .hero__top-first-title {
+.hero .hero__title {
   background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgb(171, 171, 171) 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
   text-transform: uppercase;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Sahitya-Bold";
@@ -55,9 +58,9 @@ main {
   margin: 0;
   font-weight: 700;
   font-size: 64px;
+  mix-blend-mode: color-dodge;
 }
-
-.hero__top-desc {
+.hero .hero__desc {
   font-family: "Sahitya";
   color: white;
   display: flex;
@@ -65,30 +68,30 @@ main {
   line-height: 31.06px;
   font-size: 20px;
 }
-
-.hero__bottom {
+.hero .hero__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-.hero__bottom .hero__bottom-button {
-  top: 22px;
+.hero .hero__content .hero__button {
+  margin-top: 22px;
   cursor: pointer;
   background: transparent;
   border: none;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: absolute;
 }
-.hero__bottom .hero__bottom-button img:first-child {
+.hero .hero__content .hero__button img:first-child {
   margin-top: 22px;
   position: absolute;
   width: 58.14px;
   height: 58.14px;
 }
-.hero__bottom .hero__bottom-button .hero__bottom-button-desc {
+.hero .hero__content .hero__button .hero__button-text {
+  font-family: "Cabinet-Grotesk";
+  z-index: 1;
   color: white;
   line-height: 14.78px;
   bottom: 0.072px;
@@ -96,26 +99,25 @@ main {
   position: absolute;
   font-size: 14.78px;
 }
-.hero__bottom .hero__bottom-button img:last-child {
+.hero .hero__content .hero__button img:last-child {
   top: 10.58px;
   left: 32.58px;
   position: relative;
   width: 66px;
 }
-.hero__bottom .hero__bottom-button .hero__bottom-button-desc:hover {
+.hero .hero__content .hero__button .hero__button-text:hover {
   transition: transform 0.3s ease;
   transform: translateX(10px);
 }
-.hero__bottom .hero__bottom-img {
+.hero .hero__content .hero__img {
   margin-top: 37px;
 }
-.hero__bottom .hero__bottom-background {
+.hero .hero__content .hero__background {
   position: absolute;
-  z-index: 0;
   bottom: -40px;
 }
 
-#about-quality {
+.about-quality {
   display: grid;
   grid-template-columns: repeat(4, 134px);
   gap: 27px;
@@ -123,22 +125,22 @@ main {
   align-items: center;
   background: #375B68;
 }
-#about-quality img {
+.about-quality img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-#about-quality img:hover {
+.about-quality img:hover {
   transform: scale(1.1);
 }
 
-#sleepy-shop {
+.sleepy-shop {
   margin-top: 120px;
   display: flex;
   justify-content: center;
 }
-#sleepy-shop .sleepy-shop_content {
+.sleepy-shop .sleepy-shop_content {
   display: flex;
 }
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs p:first-of-type {
+.sleepy-shop .sleepy-shop_content .sleepy-shop__text h2 {
   font-family: "Cabinet-Grotesk";
   font-weight: 700;
   font-size: 24px;
@@ -146,7 +148,7 @@ main {
   text-transform: capitalize;
   color: #f5f7fa;
 }
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs p:last-of-type {
+.sleepy-shop .sleepy-shop_content .sleepy-shop__text p {
   font-family: "Cabinet-Grotesk";
   font-size: 20px;
   line-height: 200%;
@@ -155,7 +157,7 @@ main {
   color: #f5f7fa;
   max-width: 600px;
 }
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link {
+.sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link {
   display: flex;
   justify-content: flex-end;
   font-family: "Cabinet-Grotesk";
@@ -168,10 +170,10 @@ main {
   position: relative;
   clip-path: polygon(100% 0, 100% 100%, 0% 100%);
 }
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:hover {
+.sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link:hover {
   text-decoration: underline;
 }
-#sleepy-shop .sleepy-shop_content img {
+.sleepy-shop .sleepy-shop_content img {
   max-width: 100%;
 }
 
@@ -187,23 +189,23 @@ main {
   font-family: "Cabinet-Grotesk";
   src: url("../assets/fonts/CabinetGrotesk-Variable.ttf");
 }
-#catalogue .catalogue__paragraphs {
+.catalogue .catalogue__header {
   margin-left: 100px;
   display: flex;
   margin-bottom: 104px;
   display: flex;
 }
-#catalogue .catalogue__paragraphs p:first-child {
+.catalogue .catalogue__header p:first-child {
   font-family: "Cabinet-Grotesk";
   font-weight: 800;
   font-size: 36px;
   line-height: 200%;
   color: #5e97ab;
 }
-#catalogue .catalogue__paragraphs .line {
+.catalogue .catalogue__header .catalogue__line {
   position: relative;
 }
-#catalogue .catalogue__paragraphs .line::after {
+.catalogue .catalogue__header .catalogue__line::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -213,17 +215,17 @@ main {
   height: 1.5px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
 }
-#catalogue .catalogue__top {
+.catalogue .catalogue__slider {
   display: flex;
   justify-content: center;
   transform: scale(0.9);
 }
-#catalogue .catalogue__top .catalogue__slider {
+.catalogue .catalogue__slider .catalogue__slider-sidebar {
   display: grid;
   grid-template-columns: 150px 1fr;
   height: fit-content;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-sidebar .sidebar-item {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-sidebar-item .sidebar-item {
   background: none;
   border: none;
   color: white;
@@ -235,13 +237,13 @@ main {
   height: 134px;
   transition: background 0.3s ease;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-sidebar .sidebar-item:hover {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-sidebar-item .sidebar-item:hover {
   background: linear-gradient(90deg, #436e7e 18.57%, #12212e 100%);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-sidebar .sidebar-item:last-child {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-sidebar-item .sidebar-item:last-child {
   background: transparent;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content {
   width: 1200px;
   margin: 0 auto;
   padding: 67px 62px 19px 42px;
@@ -249,13 +251,13 @@ main {
   height: fit-content;
   background: linear-gradient(180deg, #12212e 50.11%, #375b68 93.7%);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content h2 {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content h2 {
   font-family: "Cabinet-Grotesk";
   font-weight: 700;
   font-size: 24px;
   color: #f5f7fa;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content p {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content p {
   font-family: "Cabinet-Grotesk";
   font-weight: 400;
   font-size: 16px;
@@ -265,7 +267,7 @@ main {
   text-align: justify;
   color: #f5f7fa;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider {
   display: flex;
   overflow: hidden;
   position: relative;
@@ -273,11 +275,11 @@ main {
   width: fit-content;
   margin: 0 auto;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slides-wrapper {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slides-wrapper {
   display: flex;
   transition: transform 1s ease;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
@@ -287,12 +289,12 @@ main {
   transition: transform 0.3s ease;
   position: relative;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide img {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide img {
   filter: blur(2px);
   width: 226.45px;
   cursor: pointer;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide::before {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide::before {
   content: "";
   display: none;
   position: absolute;
@@ -304,7 +306,7 @@ main {
   z-index: 1;
   pointer-events: none;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide .product {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide .product {
   display: none;
   padding: 9px;
   justify-content: space-between;
@@ -312,7 +314,7 @@ main {
   width: 100%;
   transition: opacity 0.3s ease;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide .product p {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide .product p {
   font-family: "Cabinet-Grotesk";
   font-weight: 500;
   font-size: 16px;
@@ -321,7 +323,7 @@ main {
   text-align: justify;
   color: #f5f7fa;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide .product span {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide .product span {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -333,78 +335,78 @@ main {
   text-align: justify;
   color: #f5f7fa;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider .slide .product span .product_icon {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider .slide .product span .product_icon {
   height: 20px;
   width: 20px;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider input {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider input {
   display: none;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child::before,
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper .slide:nth-child(2)::before,
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper .slide:nth-child(3)::before,
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper .slide:nth-child(4)::before {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child::before,
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper .slide:nth-child(2)::before,
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper .slide:nth-child(3)::before,
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper .slide:nth-child(4)::before {
   display: block;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child .product,
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper .slide:nth-child(2) .product,
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper .slide:nth-child(3) .product,
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper .slide:nth-child(4) .product {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child .product,
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper .slide:nth-child(2) .product,
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper .slide:nth-child(3) .product,
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper .slide:nth-child(4) .product {
   display: flex;
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper {
   transform: translateX(0);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper {
   transform: translateX(-15%);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper {
   transform: translateX(-30%);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper {
   transform: translateX(-45%);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child img {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child img {
   transition: transform 0.3s ease, filter 0.3s ease;
   transform: scale(1.5);
   filter: blur(0);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper .slide:nth-child(2) img {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide2:checked ~ .slides-wrapper .slide:nth-child(2) img {
   transition: transform 0.3s ease;
   transform: scale(1.3);
   filter: blur(0);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper .slide:nth-child(3) img {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide3:checked ~ .slides-wrapper .slide:nth-child(3) img {
   transition: transform 0.3s ease;
   transform: scale(1.3);
   filter: blur(0);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper .slide:nth-child(4) img {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide4:checked ~ .slides-wrapper .slide:nth-child(4) img {
   transition: transform 0.3s ease;
   transform: scale(1.3);
   filter: blur(0);
 }
-#catalogue .catalogue__top .catalogue__slider .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child img {
+.catalogue .catalogue__slider .catalogue__slider-sidebar .catalogue__slider-content .slider #slide1:checked ~ .slides-wrapper .slide:first-child img {
   transition: transform 0.3s ease;
   transform: scale(1.3);
   filter: blur(0);
 }
 
-#offer {
+.offer {
   display: grid;
   grid-template-columns: 1fr 1fr 120px;
   justify-content: flex-end;
   height: 52vh;
   background: url("../assets/offer/offer.svg") no-repeat;
 }
-#offer .offer__content {
+.offer .offer__content {
   margin-top: 95px;
   grid-column: 2;
   text-align: left;
   color: #f5f7fa;
   max-width: 600px;
 }
-#offer .offer__content h2 {
+.offer .offer__content h2 {
   font-family: "Cabinet-Grotesk";
   font-weight: 700;
   font-size: 48px;
@@ -412,7 +414,7 @@ main {
   text-transform: uppercase;
   color: #f5f7fa;
 }
-#offer .offer__content p {
+.offer .offer__content p {
   max-width: 441px;
   font-family: "Cabinet-Grotesk";
   font-weight: 300;
@@ -420,14 +422,14 @@ main {
   text-transform: capitalize;
   color: #f5f7fa;
 }
-#offer .offer__button-content {
+.offer .offer__button-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
   max-height: 400px;
 }
-#offer .offer__button-content .offer__button {
+.offer .offer__button-wrapper .offer__button {
   margin-left: -200px;
   cursor: pointer;
   background: transparent;
@@ -439,20 +441,21 @@ main {
   height: 50px;
   gap: 10px;
 }
-#offer .offer__button-content .offer__button img {
+.offer .offer__button-wrapper .offer__button img {
   position: absolute;
   width: 94px;
   height: 58px;
   margin-top: -10px;
 }
-#offer .offer__button-content .offer__button .offer__bottom-button-desc {
+.offer .offer__button-wrapper .offer__button .offer__button-desc {
+  font-family: "Cabinet-Grotesk";
   color: white;
   font-size: 14px;
   line-height: 1.1;
   margin-top: -2px;
   margin-right: -80px;
 }
-#offer .offer__button-content .offer__button:hover .offer__bottom-button-desc {
+.offer .offer__button-wrapper .offer__button:hover .offer__button-desc {
   transition: transform 0.3s ease;
   transform: translateX(10px);
 }

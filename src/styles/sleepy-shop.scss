@@ -1,12 +1,12 @@
-#sleepy-shop {
+.sleepy-shop {
     margin-top: 120px;
     display: flex;
     justify-content: center;
 
     .sleepy-shop_content {
         display: flex;
-        .sleepy-shop__paragraphs {
-            p:first-of-type {
+        .sleepy-shop__text {
+            h2{
                 font-family: "Cabinet-Grotesk";
                 font-weight: 700;
                 font-size: 24px;
@@ -15,7 +15,7 @@
                 color: #f5f7fa;
             }
 
-            p:last-of-type {
+            p {
                 font-family: "Cabinet-Grotesk";
                 font-size: 20px;
                 line-height: 200%;

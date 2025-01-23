@@ -1,7 +1,7 @@
-#catalogue {
+.catalogue {
 
 
-    .catalogue__paragraphs {
+    .catalogue__header {
         margin-left: 100px;
         display: flex;
         margin-bottom: 104px;
@@ -15,7 +15,7 @@
             color: #5e97ab;
         }
 
-        .line {
+        .catalogue__line {
             position: relative;
 
             &::after {
@@ -32,18 +32,18 @@
     }
 
 
-    .catalogue__top {
+    .catalogue__slider {
         display: flex;
         justify-content: center;
 
         transform: scale(0.90);
 
-        .catalogue__slider {
+        .catalogue__slider-sidebar {
             display: grid;
             grid-template-columns: 150px 1fr;
             height: fit-content;
 
-            .catalogue__slider-sidebar {
+            .catalogue__slider-sidebar-item {
 
                 .sidebar-item {
 

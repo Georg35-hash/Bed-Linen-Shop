@@ -1,4 +1,4 @@
-#offer {
+.offer {
     display: grid;
     grid-template-columns: 1fr 1fr 120px;
     justify-content: flex-end;
@@ -13,7 +13,7 @@
         max-width: 600px;
 
         h2 {
-            font-family:"Cabinet-Grotesk";
+            font-family: "Cabinet-Grotesk";
             font-weight: 700;
             font-size: 48px;
             line-height: 2;
@@ -23,7 +23,7 @@
 
         p {
             max-width: 441px;
-            font-family:"Cabinet-Grotesk";
+            font-family: "Cabinet-Grotesk";
             font-weight: 300;
             font-size: 24px;
             text-transform: capitalize;
@@ -31,7 +31,7 @@
         }
     }
 
-    .offer__button-content {
+    .offer__button-wrapper {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -45,13 +45,13 @@
             border: none;
             display: flex;
             flex-direction: column;
-            
+
             align-items: center;
             width: 80px;
-            
+
             height: 50px;
             gap: 10px;
-            
+
             img {
                 position: absolute;
                 width: 94px;
@@ -59,15 +59,16 @@
                 margin-top: -10px;
             }
 
-            .offer__bottom-button-desc {
+            .offer__button-desc {
+                font-family: 'Cabinet-Grotesk';
                 color: white;
                 font-size: 14px;
                 line-height: 1.1;
                 margin-top: -2px;
-               margin-right: -80px;
+                margin-right: -80px;
             }
 
-            &:hover .offer__bottom-button-desc {
+            &:hover .offer__button-desc {
                 transition: transform 0.3s ease;
                 transform: translateX(10px);
             }
