@@ -1,8 +1,8 @@
 #offer {
     display: grid;
-    grid-template-columns: 1fr 1fr 100px;
+    grid-template-columns: 1fr 1fr 120px;
     justify-content: flex-end;
-    min-height: 100vh;
+    height: 52vh;
     background: url('../assets/offer/offer.svg') no-repeat; // Картинка как фон
 
     .offer__content {
@@ -13,6 +13,7 @@
         max-width: 600px;
 
         h2 {
+            font-family:"Cabinet-Grotesk";
             font-weight: 700;
             font-size: 48px;
             line-height: 2;
@@ -21,52 +22,49 @@
         }
 
         p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-bottom: 2rem;
+            max-width: 441px;
+            font-family:"Cabinet-Grotesk";
+            font-weight: 300;
+            font-size: 24px;
+            text-transform: capitalize;
+            color: #f5f7fa;
         }
     }
 
     .offer__button-content {
         display: flex;
+        align-items: center;
         flex-direction: column;
         justify-content: flex-end;
+        max-height: 400px;
+
         .offer__button {
-            position: relative;
-            /* Относительное позиционирование кнопки */
+            margin-left: -200px;
             cursor: pointer;
             background: transparent;
             border: none;
             display: flex;
             flex-direction: column;
-            /* Размещаем элементы вертикально */
+            
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            /* Разрыв между элементами */
             width: 80px;
-            /* Задаем ширину кнопки */
-            height: 80px;
-
-            img:first-child {
-                position: relative;
-                width: 58px;
+            
+            height: 50px;
+            gap: 10px;
+            
+            img {
+                position: absolute;
+                width: 94px;
                 height: 58px;
-            }
-
-            img:last-child {
-                position: relative;
-                width: 66px;
                 margin-top: -10px;
-                /* Регулируем расположение стрелки */
             }
 
             .offer__bottom-button-desc {
-                position: relative;
                 color: white;
                 font-size: 14px;
                 line-height: 1.1;
-                margin-top: 5px;
+                margin-top: -2px;
+               margin-right: -80px;
             }
 
             &:hover .offer__bottom-button-desc {

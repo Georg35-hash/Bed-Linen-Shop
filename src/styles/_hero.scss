@@ -58,24 +58,24 @@
             font-size: 14.78px;
         }
 
-        .hero__bottom-button-desc:hover {
-            transition: transform 0.3s ease;
-            transform: translateX(10px);
-        }
-
+        
         img:last-child {
             top: 10.58px;
             left: 32.58px;
             position: relative;
             width: 66px;
         }
-
+        
+        .hero__bottom-button-desc:hover {
+            transition: transform 0.3s ease;
+            transform: translateX(10px);
+        }
     }
-
+    
     .hero__bottom-img {
         margin-top: 37px;
     }
-
+    
     .hero__bottom-background {
         position: absolute;
         z-index: 0;

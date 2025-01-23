@@ -5,7 +5,6 @@
 
     .sleepy-shop_content {
         display: flex;
-
         .sleepy-shop__paragraphs {
             p:first-of-type {
                 font-family: "Cabinet-Grotesk";
@@ -38,46 +37,14 @@
                 margin-left: -.5em;
                 position: relative;
                 clip-path: polygon( 100% 0, 100% 100%, 0% 100%);
-
-                &:before,
-                &:after {
-                    position: absolute;
-                    content: '';
-                    border-bottom: 3px solid rgb(0, 99, 228);
-                    border-radius: 1em;
-                    bottom: .3em;
-                    transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-                }
-
-                &:before {
-                    width: 1em;
-                    transform-origin: left;
-                }
-
-                &:after {
-                    width: 82%;
-                    left: 1em;
-                    transform: translateX(110%);
-                }
-
-                &:hover:before {
-                    transform: scaleX(0.3);
-                }
-
-                &:hover:after {
-                    transform: translateX(0);
+                &:hover{
+                    text-decoration: underline;
                 }
             }
-
-
         }
-
-
-
 
         img {
             max-width: 100%;
         }
-
     }
 }

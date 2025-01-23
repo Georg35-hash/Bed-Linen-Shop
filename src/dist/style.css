@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   background: #375B68;
   display: flex;
@@ -19,10 +18,6 @@ header ul li a img {
   margin-top: -18px;
   width: 41.01px;
   height: 41.32px;
-}
-header ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Легкий підсвіт при наведенні */
-  border-radius: 5px;
 }
 header .login-field {
   margin: 35px 66px 0px 0px;
@@ -101,15 +96,15 @@ main {
   position: absolute;
   font-size: 14.78px;
 }
-.hero__bottom .hero__bottom-button .hero__bottom-button-desc:hover {
-  transition: transform 0.3s ease;
-  transform: translateX(10px);
-}
 .hero__bottom .hero__bottom-button img:last-child {
   top: 10.58px;
   left: 32.58px;
   position: relative;
   width: 66px;
+}
+.hero__bottom .hero__bottom-button .hero__bottom-button-desc:hover {
+  transition: transform 0.3s ease;
+  transform: translateX(10px);
 }
 .hero__bottom .hero__bottom-img {
   margin-top: 37px;
@@ -173,28 +168,8 @@ main {
   position: relative;
   clip-path: polygon(100% 0, 100% 100%, 0% 100%);
 }
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:before, #sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:after {
-  position: absolute;
-  content: "";
-  border-bottom: 3px solid rgb(0, 99, 228);
-  border-radius: 1em;
-  bottom: 0.3em;
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:before {
-  width: 1em;
-  transform-origin: left;
-}
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:after {
-  width: 82%;
-  left: 1em;
-  transform: translateX(110%);
-}
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:hover:before {
-  transform: scaleX(0.3);
-}
-#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:hover:after {
-  transform: translateX(0);
+#sleepy-shop .sleepy-shop_content .sleepy-shop__paragraphs .sleepy-shop__link:hover {
+  text-decoration: underline;
 }
 #sleepy-shop .sleepy-shop_content img {
   max-width: 100%;
@@ -417,9 +392,9 @@ main {
 
 #offer {
   display: grid;
-  grid-template-columns: 1fr 1fr 100px;
+  grid-template-columns: 1fr 1fr 120px;
   justify-content: flex-end;
-  min-height: 100vh;
+  height: 52vh;
   background: url("../assets/offer/offer.svg") no-repeat;
 }
 #offer .offer__content {
@@ -430,6 +405,7 @@ main {
   max-width: 600px;
 }
 #offer .offer__content h2 {
+  font-family: "Cabinet-Grotesk";
   font-weight: 700;
   font-size: 48px;
   line-height: 2;
@@ -437,49 +413,44 @@ main {
   color: #f5f7fa;
 }
 #offer .offer__content p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin-bottom: 2rem;
+  max-width: 441px;
+  font-family: "Cabinet-Grotesk";
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: capitalize;
+  color: #f5f7fa;
 }
 #offer .offer__button-content {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: flex-end;
+  max-height: 400px;
 }
 #offer .offer__button-content .offer__button {
-  position: relative;
-  /* Относительное позиционирование кнопки */
+  margin-left: -200px;
   cursor: pointer;
   background: transparent;
   border: none;
   display: flex;
   flex-direction: column;
-  /* Размещаем элементы вертикально */
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  /* Разрыв между элементами */
   width: 80px;
-  /* Задаем ширину кнопки */
-  height: 80px;
+  height: 50px;
+  gap: 10px;
 }
-#offer .offer__button-content .offer__button img:first-child {
-  position: relative;
-  width: 58px;
+#offer .offer__button-content .offer__button img {
+  position: absolute;
+  width: 94px;
   height: 58px;
-}
-#offer .offer__button-content .offer__button img:last-child {
-  position: relative;
-  width: 66px;
   margin-top: -10px;
-  /* Регулируем расположение стрелки */
 }
 #offer .offer__button-content .offer__button .offer__bottom-button-desc {
-  position: relative;
   color: white;
   font-size: 14px;
   line-height: 1.1;
-  margin-top: 5px;
+  margin-top: -2px;
+  margin-right: -80px;
 }
 #offer .offer__button-content .offer__button:hover .offer__bottom-button-desc {
   transition: transform 0.3s ease;
