@@ -1,44 +1,4 @@
 
-
-const sideBarItems = document.querySelectorAll('.sidebar-item');
-
-
-let currentButtonIndex = 0;
-
-// Функция для обновления активной боковой кнопки
-function updateSideBar(index) {
-    if (index >= 0 && index < sideBarItems.length) {
-
-        currentButtonIndex = index;
-    }
-}
-
-
-sideBarItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        updateSideBar(index);
-    });
-});
-
-
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowDown') {
-        // Transition to next icon-button
-        const nextIndex = (currentButtonIndex + 1) % sideBarItems.length;
-        updateSideBar(nextIndex);
-    } else if (event.key === 'ArrowUp') {
-        // Transition to prev icon-button
-        const prevIndex = (currentButtonIndex - 1 + sideBarItems.length) % sideBarItems.length;
-        updateSideBar(prevIndex);
-    }
-});
-
-
-updateSideBar(currentButtonIndex);
-
-
-
-
 function sliderKeyNavi() {
     const inputs = document.getElementsByTagName('input');
     const slides = Array.from(inputs).filter(input => input.type === 'radio' && input.name === 'slider');
