@@ -1,37 +1,45 @@
 header {
-    background: #375B68;
     display: flex;
     align-items: center;
     justify-content: space-between;
     align-items: center;
-    
+
     ul {
         margin: 35px 0px 0px 90px;
         display: flex;
         list-style: none;
         gap: 35.5px;
+
         li {
             a {
                 display: grid;
                 text-decoration: none;
                 color: #F5F7FA;
+
                 img {
                     margin-top: -18px;
                     width: 41.01px;
                     height: 41.32px;
                 }
             }
-
         }
     }
 
     .header__icons {
         display: flex;
-        margin: 16px 66px 0px 0px;
+        margin: 0px 66px 0px 0px;
 
-        &img {
-            width: 25px;
-            height: 25px;
+        ul {
+            gap: 7.5px;
+
+            li {
+                a {
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
         }
     }
 }

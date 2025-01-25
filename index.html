@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
         rel="stylesheet">
     <title>Bed Linen Online</title>
 </head>
+
 <body>
     <header>
         <ul>
-            <li><a href="#">Home <img src="./src/assets/game-icons_feather.svg" alt="feather"></a></li>
+            <li><a href="#">Home<img src="./src/assets/game-icons_feather.svg" alt="feather"></a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Payment</a></li>
             <li><a href="#">Catalog</a></li>
@@ -20,9 +22,11 @@
             <li><a href="#">Blog</a></li>
         </ul>
         <div class="header__icons">
-            <img src="./src/assets/Shopping.svg" alt="shopping">
-            <img src="./src/assets/profile.svg" alt="profile">
-            <img src="./src/assets/Vector.svg" alt="internet">
+            <ul>
+                <li><a href="#"><img src="./src/assets/Shopping.svg" alt="shopping"></a></li>
+                <li><a href="#"><img src="./src/assets/profile.svg" alt="profile"></a></li>
+                <li><a href="#"><img src="./src/assets/Vector.svg" alt="internet"></a></li>
+            </ul>
         </div>
     </header>
     <main>
@@ -35,22 +39,18 @@
                     <span class="hero__button-text">Shop now</span>
                     <img src="./src/assets/hero/Vector 1.svg" alt="arrow">
                 </button>
-
                 <img class="hero__img" src="./src/assets/hero/Hero-pic.svg" alt="sofa">
                 <img class="hero__background" src="./src/assets/hero/Feather-bg.svg" alt="feather">
             </div>
         </section>
-
         <section class="about-quality">
             <img src="./src/assets/about-quality/icon- healtysleep.svg" alt="healtysleep">
             <img src="./src/assets/about-quality/icon-cotton.svg" alt="icon-cotton">
             <img src="./src/assets/about-quality/icon-soft.svg" alt="icon-soft">
             <img src="./src/assets/about-quality/icon-tailoring.svg" alt="icon-tailoring">
         </section>
-
         <section class="sleepy-shop">
             <div class="sleepy-shop_content">
-
                 <div class="sleepy-shop__text">
                     <h2>About Sleepy Shop</h2>
                     <p>
@@ -66,15 +66,14 @@
                 <img src="./src/assets/sleepy-shop/picture-about.svg" alt="pillow">
             </div>
         </section>
-
         <section class="catalogue">
-            <div class="catalogue__header" bis_skin_checked="1">
-                <p> Our Catalogue </p>
+            <div class="catalogue__header">
+                <h2> Our Catalogue </h2>
                 <span class="catalogue__line"></span>
             </div>
-            <div class="catalogue__slider" bis_skin_checked="1">
-                <div class="catalogue__slider-sidebar" bis_skin_checked="1">
-                    <div class="catalogue__slider-sidebar-item" bis_skin_checked="1">
+            <div class="catalogue__slider">
+                <div class="catalogue__slider-sidebar">
+                    <div class="catalogue__slider-sidebar-item">
                         <button class="sidebar-item" data-window="window1"><img src="./src/assets/catalogue/pillow.svg"
                                 alt="pillow"></button>
                         <button class="sidebar-item" data-window="window2"><img
@@ -86,7 +85,7 @@
                         <button class="sidebar-item arrow-down"><img src="./src/assets/catalogue/arrow.svg"
                                 alt="arrow"></button>
                     </div>
-                    <div class="catalogue__slider-content" id="window1" bis_skin_checked="1">
+                    <div class="catalogue__slider-content" id="window1">
                         <h2>Our Pillows</h2>
                         <p>
                             Our Pillows Have Made A Name For Themselves With Regard To Comfort And Quality. Crafted From
@@ -146,7 +145,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="catalogue__slider-content" id="window2" bis_skin_checked="1">
+                    <div class="catalogue__slider-content" id="window2">
                         <h2>Impact of Sleep on Our Pillows</h2>
                         <p>
                             Sleeping on our pillows not only provides unmatched comfort, but it also significantly
@@ -169,7 +168,7 @@
                         </p>
 
                     </div>
-                    <div class="catalogue__slider-content" id="window3" bis_skin_checked="1">
+                    <div class="catalogue__slider-content" id="window3">
                         <h2>Our Mattresses</h2>
                         <p>
                             Our mattresses are designed to transform your sleep experience, ensuring you wake up feeling
@@ -194,7 +193,7 @@
                         </p>
 
                     </div>
-                    <div class="catalogue__slider-content" id="window4" bis_skin_checked="1">
+                    <div class="catalogue__slider-content" id="window4">
                         <h2>Our Duvets</h2>
                         <p>
                             Our duvets are engineered for ultimate comfort and warmth, ensuring you sleep soundly
@@ -217,7 +216,6 @@
                 </div>
             </div>
         </section>
-
         <section class="offer">
             <div class="offer__content">
                 <h2>Save Up To 70% Off</h2>
@@ -235,8 +233,82 @@
                 </button>
             </div>
         </section>
-        
-        <section id="our-blog"></section>
+        <section class="blog-slider">
+            <div class="blog-slider__header">
+                <h2>Our Blog</h2>
+                <span class="blog-slider__line"></span>
+            </div>
+            <!-- SLIDES -->
+            <div class="blog-slider__content">
+                <div class="blog-slider__item">
+                    <h3 class="blog-slider__subtitle">Benefits Of Good Pillow</h3>
+                    <p class="blog-slider__description">
+                        There has long been speculation about the impact that sleeping on a quality pillow and seeing
+                        your dreams have on each other. Some people believe that when you sleep on good pillows, it
+                        allows dream energy to flow freely, allowing for clearer and more vivid dreams. Others maintain
+                        that a good night's sleep is simply not possible without a comfortable and supportive pillow.
+                    </p>
+                    <a href="#" class="blog-slider__link">Read More</a>
+                </div>
+                <div class="blog-slider__image">
+                    <img src="./src/assets/blog/blog-pillow.svg" alt="Good Pillow">
+                </div>
+            </div>
+            <div class="blog-slider__content">
+                <div class="blog-slider__item">
+                    <h3 class="blog-slider__subtitle">Healthy Sleep Habits</h3>
+                    <p class="blog-slider__description">
+                        Quality sleep is essential for overall health. Good sleep habits, such as maintaining a regular
+                        sleep schedule and creating a peaceful sleep environment, can have a significant impact on your
+                        well-being.
+                    </p>
+                    <a href="#" class="blog-slider__link">Read More</a>
+                </div>
+                <div class="blog-slider__image">
+                    <img src="./src/assets/blog/blog-sleep.svg" alt="Healthy Sleep">
+                </div>
+            </div>
+            <div class="blog-slider__content">
+                <div class="blog-slider__item">
+                    <h3 class="blog-slider__subtitle">Sleep Disorders and Solutions</h3>
+                    <p class="blog-slider__description">
+                        Sleep disorders, like insomnia or sleep apnea, can disrupt your life. We explore common
+                        disorders
+                        and their potential solutions to help you get better sleep.
+                    </p>
+                    <a href="#" class="blog-slider__link">Read More</a>
+                </div>
+                <div class="blog-slider__image">
+                    <img src="./src/assets/blog/blog-sleep-disorder.svg" alt="Sleep Disorders">
+                </div>
+            </div>
+            <div class="blog-slider__content">
+                <div class="blog-slider__item">
+                    <h3 class="blog-slider__subtitle">Sleeps Disorders and Solutions</h3>
+                    <p class="blog-slider__description">
+                        Sleep disorders, like insomnia or sleep apnea, can disrupt your life. We explore common
+                        disorders
+                        and their potential solutions to help you get better sleep.
+                    </p>
+                    <a href="#" class="blog-slider__link">Read More</a>
+                </div>
+                <div class="blog-slider__image">
+                    <img src="./src/assets/blog/blog-sleep-disorder.svg" alt="Sleep Disorders">
+                </div>
+            </div>
+            <div class="blog-slider__navigation">
+                <button id="prev-slide" class="blog-slider__nav"><img src="./src/assets/blog/more.svg"
+                        alt="arrow-more"></button>
+                <div class="blog-slider__points">
+                    <img class="blog-slider__item" src="./src/assets/blog/point with fill.svg" alt="point">
+                    <img class="blog-slider__item" src="./src/assets/blog/point with fill.svg" alt="point">
+                    <img class="blog-slider__item" src="./src/assets/blog/point with fill.svg" alt="point">
+                    <img class="blog-slider__item" src="./src/assets/blog/point with fill.svg" alt="point">
+                </div>
+                <button id="next-slide" class="blog-slider__nav"><img src="./src/assets/blog/less.svg"
+                        alt="arrow-less"></button>
+            </div>
+        </section>
     </main>
     <script src="slider-navi.js"></script>
 </body>

@@ -1,0 +1,112 @@
+.blog-slider {
+    color: #F5F7FA;
+    font-family: "Cabinet-Grotesk", sans-serif;
+    margin-left: 100px;
+
+    .blog-slider__header {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            font-weight: 800;
+            font-size: 36px;
+            line-height: 200%;
+            color: #5e97ab;
+        }
+
+        .blog-slider__line {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 600px;
+                margin-left: 12px;
+                height: 1.5px;
+                background: linear-gradient(to right, #5e97ab, transparent);
+            }
+        }
+    }
+
+    align-items: center;
+
+    &__title {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    &__content {
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+    }
+
+    &__item {
+        &>h3 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 2;
+            text-transform: capitalize;
+            color: #f5f7fa;
+        }
+
+        &>p {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 2;
+            text-transform: capitalize;
+            color: #f5f7fa;
+        }
+
+        &>.blog-slider__link {
+            display: flex;
+            justify-content: flex-end;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 22px;
+            color: #f5f7fa;
+            padding: 0.5em;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__image {
+        flex-shrink: 0;
+
+        img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+
+        .blog-slider__nav {
+            align-items: center;
+            display: flex;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 0px 22.53px 0px 22.53px;
+        }
+        .blog-slider__points{
+            .blog-slider__item{
+               margin-left: 9px;
+            }
+        }
+    }
+}

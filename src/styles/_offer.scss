@@ -2,16 +2,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 120px;
     justify-content: flex-end;
-    height: 52vh;
+    height: 698px;
     background: url('../assets/offer/offer.svg') no-repeat; // Картинка как фон
-
     .offer__content {
         margin-top: 95px;
         grid-column: 2;
         text-align: left;
         color: #f5f7fa;
         max-width: 600px;
-
         h2 {
             font-family: "Cabinet-Grotesk";
             font-weight: 700;
@@ -20,7 +18,6 @@
             text-transform: uppercase;
             color: #f5f7fa;
         }
-
         p {
             max-width: 441px;
             font-family: "Cabinet-Grotesk";
@@ -30,14 +27,12 @@
             color: #f5f7fa;
         }
     }
-
     .offer__button-wrapper {
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: flex-end;
         max-height: 400px;
-
         .offer__button {
             margin-left: -200px;
             cursor: pointer;
@@ -45,20 +40,16 @@
             border: none;
             display: flex;
             flex-direction: column;
-
             align-items: center;
             width: 80px;
-
             height: 50px;
             gap: 10px;
-
             img {
                 position: absolute;
                 width: 94px;
                 height: 58px;
                 margin-top: -10px;
             }
-
             .offer__button-desc {
                 font-family: 'Cabinet-Grotesk';
                 color: white;
@@ -67,7 +58,6 @@
                 margin-top: -2px;
                 margin-right: -80px;
             }
-
             &:hover .offer__button-desc {
                 transition: transform 0.3s ease;
                 transform: translateX(10px);
