@@ -1,0 +1,129 @@
+.subscribe {
+    margin-top: 187px;
+
+    .subscribe-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; // Центрування тексту в контейнері
+
+        .subscribe-title {
+            h2 {
+                font-family: "Cabinet-Grotesk";
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 1.84615;
+                text-transform: capitalize;
+                color: #f5f7fa;
+                margin-bottom: 15px;
+                text-align: center; // Центрування тексту заголовка
+            }
+
+            p {
+                font-family: "Cabinet-Grotesk";
+                max-width: 438px; // Ширина для центрування
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 1.5; // Рівномірний міжрядковий інтервал
+                text-transform: capitalize;
+                text-align: center; // Центрування тексту опису
+                color: #f5f7fa;
+                margin-bottom: 30px;
+            }
+        }
+
+        .subscribe-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+
+            .input-container {
+
+                display: flex;
+                align-items: center;
+                background: rgba(79, 126, 142, 0.35);
+                border-radius: 37px;
+                padding: 8px 38px;
+                width: 768px;
+                height: 81px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding: 2px;
+                    border-radius: 37px;
+                    background: linear-gradient(133deg,
+                            #a3a3a3 27.08%,
+                            #ccc 41.21%,
+                            #fff 55.17%,
+                            #ccc 67.71%,
+                            #a3a3a3 83.33%);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: destination-out;
+                    mask-composite: exclude;
+
+                }
+
+                .input-icon {
+                    margin-right: 20px;
+                }
+
+                .subscribe-input {
+                    border: none;
+                    background: transparent;
+                    font-size: 16px;
+                    color: #ffffff;
+                    z-index: 0;
+
+                    &::placeholder {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        color: rgba(230, 230, 230, 0.56);
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+
+            .subscribe-button {
+                margin-top: 49px;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    position: absolute;
+                    width: 94px;
+                    height: 58px;
+                    margin-top: -10px;
+                }
+
+                p {
+                    font-family: 'Cabinet-Grotesk';
+                    color: white;
+                    font-size: 14px;
+                    line-height: 1.1;
+                    margin-top: -2px;
+                    margin-right: -120px;
+                }
+            }
+        }
+    }
+}
