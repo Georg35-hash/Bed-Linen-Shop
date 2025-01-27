@@ -1,5 +1,7 @@
 .hero {
-    .hero__title{
+    padding-top: 39px;
+
+    .hero__title {
         background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgba(171, 171, 171, 1) 100%);
         display: flex;
         justify-content: center;
@@ -8,8 +10,6 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-family: "Sahitya-Bold";
-        color: #8EC5CA;
-        margin: 0;
         font-weight: 700;
         font-size: 64px;
         mix-blend-mode: color-dodge;
@@ -24,44 +24,43 @@
         font-size: 20px;
     }
 
-    .hero__content{
+    .hero__content {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
 
         .hero__button {
-            margin-top: 22px;
-            cursor: pointer;
+            padding-top:50.93px;
+            justify-content: center;
             background: transparent;
             border: none;
             display: flex;
             align-items: center;
-            position: absolute;
+            
 
-            img:first-child {
-                margin-top: 22px;
+            img{
                 position: absolute;
-                width: 58.14px;
-                height: 58.14px;
+                width: 94px;
+                height: 58px;
+               
+                margin-right: 20px;
+                &:focus {
+                    outline: none;
+                }
             }
+
+
 
             .hero__button-text {
-                font-family: 'Cabinet-Grotesk';
+                cursor: pointer;
                 z-index: 1;
+                font-family: 'Cabinet-Grotesk';
                 color: white;
-                line-height: 14.78px;
-                bottom: 0.072px;
-                right: -62.96px;
-                position: absolute;
-                font-size: 14.78px;
-            }
-
-            img:last-child {
-                top: 10.58px;
-                left: 32.58px;
-                position: relative;
-                width: 66px;
+                font-size: 14px;
+                line-height: 1.1;
+                margin-top: -20px;
+                margin-right: -64px;
             }
 
             .hero__button-text:hover {
@@ -71,13 +70,12 @@
         }
 
         .hero__img {
-        
             margin-top: 37px;
         }
 
         .hero__background {
             position: absolute;
-            
+
             bottom: -40px;
         }
     }

@@ -1,0 +1,118 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #f5f7fa;
+    font-family: "Cabinet-Grotesk", sans-serif;
+    position: relative;
+
+    // BG-IMAGES
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+    }
+
+    &::before {
+        background: url("../assets/footer/girl.png") no-repeat;
+        background-size: contain;
+        background-position: left bottom;
+        width: 500px;
+        height: 500px;
+        bottom: 0;
+    }
+
+    &::after {
+        background: url("../assets/footer/footer-pic.png") no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    // Общий контейнер для всех колонок
+    .container {
+
+        margin-top: 238px;
+        display: grid;
+        grid-template-columns: 146px 243px 208px 310px;
+        /* Колонки с фиксированными размерами */
+        margin-left: 485px;
+        /* Раздвигаем колонки равномерно */
+        gap: 20px;
+        /* Отступы между колонками */
+
+        .column {
+            height: fit-content;
+
+            h3 {
+                font-weight: 700;
+                font-size: 18px;
+                margin-bottom: 28px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 28px;
+
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: #a3d2ca;
+                        }
+                    }
+
+                    img {
+                        margin-right: 10px;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            .social {
+                display: flex;
+                gap: 10px;
+                /* Расстояние между иконками */
+                margin-top: 20px;
+
+                a {
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        transition: transform 0.3s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Нижний блок футера
+    .bottom {
+        text-align: center;
+        font-size: 14px;
+        margin-top: auto;
+        /* Сдвигаем вниз */
+        padding: 20px 0;
+
+        p {
+            font: 400 16px "Leiko";
+            text-transform: capitalize;
+            color: rgba(245, 247, 250, 0.55);
+            margin: 5px 0;
+        }
+    }
+}
