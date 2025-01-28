@@ -12,6 +12,8 @@ header ul {
   gap: 35.5px;
 }
 header ul li a {
+  position: relative;
+  z-index: 1;
   display: grid;
   text-decoration: none;
   color: #F5F7FA;
@@ -63,9 +65,13 @@ footer {
 }
 
 .hero {
+  position: relative;
   padding-top: 39px;
 }
 .hero .hero__title {
+  position: relative;
+  mix-blend-mode: color-dodge;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgb(171, 171, 171) 100%);
   display: flex;
   justify-content: center;
@@ -76,13 +82,15 @@ footer {
   font-family: "Sahitya-Bold";
   font-weight: 700;
   font-size: 64px;
-  mix-blend-mode: color-dodge;
 }
 .hero .hero__desc {
   font-family: "Sahitya";
   color: white;
   display: flex;
+  z-index: 1;
+  position: relative;
   justify-content: center;
+  text-align: center;
   line-height: 31.06px;
   font-size: 20px;
 }
@@ -99,6 +107,7 @@ footer {
   border: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .hero .hero__content .hero__button img {
   position: absolute;
@@ -124,11 +133,32 @@ footer {
   transform: translateX(10px);
 }
 .hero .hero__content .hero__img {
+  z-index: 1;
   margin-top: 37px;
+  position: relative;
 }
 .hero .hero__content .hero__background {
   position: absolute;
   bottom: -40px;
+  z-index: 0;
+}
+.hero .hero__content .hero__light {
+  border-radius: 100%;
+  fill: linear-gradient(90deg, rgba(240, 250, 255, 0.62) 0%, #daf2ff 100%);
+  filter: blur(316.9530639648px);
+  position: absolute;
+  bottom: -50px;
+  z-index: 0;
+}
+.hero .hero__content .hero__shadow {
+  position: absolute;
+  margin-top: -300px;
+  z-index: 0;
+}
+.hero .hero__content .hero__bed-shadow {
+  position: absolute;
+  margin-top: 350px;
+  z-index: 0;
 }
 
 .about-quality {
@@ -156,7 +186,7 @@ footer {
   align-items: center;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text {
-  margin-left: -20px;
+  margin-left: 64px;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text h2 {
   font-family: "Cabinet-Grotesk";
@@ -169,11 +199,12 @@ footer {
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text p {
   font-family: "Cabinet-Grotesk";
   font-size: 20px;
-  line-height: 200%;
+  line-height: 220%;
   text-transform: capitalize;
   text-align: justify;
   color: #f5f7fa;
   max-width: 774px;
+  max-height: 215px;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link {
   display: flex;
@@ -183,15 +214,30 @@ footer {
   font-weight: 700;
   font-size: 22px;
   color: #f5f7fa;
-  padding: 0.5em;
-  margin-left: -0.5em;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link:hover {
   text-decoration: underline;
 }
 .sleepy-shop .sleepy-shop_content img {
+  margin-left: 115px;
+  z-index: 1;
   margin-right: 20px;
   max-width: 100%;
+}
+.sleepy-shop .sleepy-shop_content::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+.sleepy-shop .sleepy-shop_content::before {
+  z-index: 0;
+  background: url("../assets/sleepy-shop/C5.svg") no-repeat;
+  margin-left: 708px;
+  margin-bottom: 16px;
+  background-size: 342px, 122px;
+  background-position: center;
+  width: 500px;
+  height: 500px;
 }
 
 @font-face {
@@ -211,7 +257,7 @@ footer {
   src: url("../assets/fonts/Leiko-Regular 400.otf");
 }
 .catalogue .catalogue__header {
-  margin-left: 100px;
+  margin-left: 64px;
   display: flex;
   margin-bottom: 104px;
 }

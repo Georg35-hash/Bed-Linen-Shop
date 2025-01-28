@@ -11,6 +11,8 @@ header {
 
         li {
             a {
+                position: relative;
+    z-index: 1;
                 display: grid;
                 text-decoration: none;
                 color: #F5F7FA;

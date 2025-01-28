@@ -1,5 +1,4 @@
 .sleepy-shop {
-
     margin-top: 120px;
     display: flex;
     justify-content: center;
@@ -9,7 +8,9 @@
         align-items: center;
 
         .sleepy-shop__text {
-            margin-left: -20px;
+
+            margin-left: 64px;
+
             h2 {
 
                 font-family: "Cabinet-Grotesk";
@@ -21,15 +22,16 @@
             }
 
             p {
-
                 font-family: "Cabinet-Grotesk";
                 font-size: 20px;
-                line-height: 200%;
+                line-height: 220%;
                 text-transform: capitalize;
                 text-align: justify;
                 color: #f5f7fa;
                 max-width: 774px;
+                max-height: 215px;
             }
+
 
             .sleepy-shop__link {
                 display: flex;
@@ -39,8 +41,7 @@
                 font-weight: 700;
                 font-size: 22px;
                 color: #f5f7fa;
-                padding: .5em;
-                margin-left: -.5em;
+
 
                 &:hover {
                     text-decoration: underline;
@@ -49,8 +50,28 @@
         }
 
         img {
+            margin-left: 115px ;
+            z-index: 1;
             margin-right: 20px;
             max-width: 100%;
         }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+        }
+
+        &::before {
+            z-index: 0;
+            background: url("../assets/sleepy-shop/C5.svg") no-repeat;
+            margin-left: 708px;
+            margin-bottom: 16px;
+            background-size: 342px, 122px;
+            background-position: center;
+            width: 500px;
+            height: 500px;
+        }
+
     }
 }

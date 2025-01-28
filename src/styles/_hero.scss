@@ -1,7 +1,12 @@
 .hero {
+    position: relative;
+
     padding-top: 39px;
 
     .hero__title {
+        position: relative;
+        mix-blend-mode: color-dodge;
+        z-index: 1;
         background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgba(171, 171, 171, 1) 100%);
         display: flex;
         justify-content: center;
@@ -12,14 +17,16 @@
         font-family: "Sahitya-Bold";
         font-weight: 700;
         font-size: 64px;
-        mix-blend-mode: color-dodge;
     }
 
     .hero__desc {
         font-family: "Sahitya";
         color: white;
         display: flex;
+        z-index: 1;
+        position: relative;
         justify-content: center;
+        text-align: center; // Добавлено для центрирования
         line-height: 31.06px;
         font-size: 20px;
     }
@@ -31,26 +38,24 @@
         position: relative;
 
         .hero__button {
-            padding-top:50.93px;
+            padding-top: 50.93px;
             justify-content: center;
             background: transparent;
             border: none;
             display: flex;
             align-items: center;
-            
+            cursor: pointer; // Добавлено
 
-            img{
+            img {
                 position: absolute;
                 width: 94px;
                 height: 58px;
-               
                 margin-right: 20px;
+
                 &:focus {
                     outline: none;
                 }
             }
-
-
 
             .hero__button-text {
                 cursor: pointer;
@@ -70,13 +75,38 @@
         }
 
         .hero__img {
+            z-index: 1;
             margin-top: 37px;
+            position: relative; // Добавлено
         }
 
         .hero__background {
             position: absolute;
-
             bottom: -40px;
+            z-index: 0; // Фоновое изображение
+        }
+
+        .hero__light {
+            border-radius: 100%;
+            fill: linear-gradient(90deg, rgba(240, 250, 255, 0.62) 0%, #daf2ff 100%);
+            filter: blur(316.95306396484375px);
+            position: absolute;
+            bottom: -50px;
+            z-index: 0; // ✅ Подсветка должна быть за тенью, но перед фоном
+        }
+
+        .hero__shadow {
+           
+            position: absolute;
+            margin-top: -300px;
+            z-index: 0; // ✅ Чтобы тень не была поверх контента
+        }
+
+        .hero__bed-shadow {
+
+            position: absolute;
+            margin-top: 350px;
+            z-index: 0; // ✅ Чтобы тень не была поверх контента
         }
     }
 }
