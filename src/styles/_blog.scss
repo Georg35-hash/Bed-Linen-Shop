@@ -1,7 +1,7 @@
 .blog-slider {
     color: #F5F7FA;
     font-family: "Cabinet-Grotesk", sans-serif;
-    margin-left: 100px;
+    margin: 98px 0px 0px 64px;
 
     .blog-slider__header {
         display: flex;
@@ -55,6 +55,7 @@
         }
 
         &>p {
+            width: 777px;
             font-weight: 500;
             font-size: 18px;
             line-height: 2;
@@ -78,13 +79,12 @@
     }
 
     &__image {
-        flex-shrink: 0;
+
 
         img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
+            margin-left: 80px;
+            width: 509px;
+            height: 492px;
         }
     }
 
@@ -103,9 +103,10 @@
             font-size: 1.5rem;
             padding: 0px 22.53px 0px 22.53px;
         }
-        .blog-slider__points{
-            .blog-slider__item{
-               margin-left: 9px;
+
+        .blog-slider__points {
+            .blog-slider__item {
+                margin-left: 9px;
             }
         }
     }

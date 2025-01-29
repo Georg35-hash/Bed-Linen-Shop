@@ -1,11 +1,12 @@
 .offer {
+    margin-top: 144px ;
     display: grid;
     grid-template-columns: 1fr 1fr 120px;
     justify-content: flex-end;
-    height: 698px;
+    height: 624px;
     background: url('../assets/offer/offer.svg') no-repeat; // Картинка как фон
     .offer__content {
-        margin-top: 95px;
+        margin: 95px 0px 0px 20px;
         grid-column: 2;
         text-align: left;
         color: #f5f7fa;

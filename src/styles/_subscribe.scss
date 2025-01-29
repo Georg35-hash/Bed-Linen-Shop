@@ -9,6 +9,7 @@
 
         .subscribe-title {
             h2 {
+                max-width: 498px;
                 font-family: "Cabinet-Grotesk";
                 font-weight: 700;
                 font-size: 26px;
@@ -21,7 +22,7 @@
 
             p {
                 font-family: "Cabinet-Grotesk";
-                max-width: 438px; // Ширина для центрування
+                max-width: 498px; // Ширина для центрування
                 font-weight: 400;
                 font-size: 20px;
                 line-height: 1.5; // Рівномірний міжрядковий інтервал
@@ -100,7 +101,8 @@
             flex-direction: column;
 
             .subscribe-button {
-                margin-top: 49px;
+                position: relative;
+                margin: 49px 0px 43.5px 0px;
                 cursor: pointer;
                 background: transparent;
                 border: none;
@@ -116,6 +118,7 @@
                 }
 
                 p {
+                    z-index: 1;
                     font-family: 'Cabinet-Grotesk';
                     color: white;
                     font-size: 14px;
@@ -123,6 +126,11 @@
                     margin-top: -2px;
                     margin-right: -120px;
                 }
+            }
+            p:hover{
+                
+                transition: transform 0.3s ease;
+                transform: translateX(10px);
             }
         }
     }

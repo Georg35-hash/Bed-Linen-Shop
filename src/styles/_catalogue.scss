@@ -25,9 +25,9 @@
         }
     }
     .catalogue__slider {
+        margin: 0px 64px 0px 64px ;
         display: flex;
         justify-content: center;
-        transform: scale(0.90);
         .catalogue__slider-sidebar {
             display: grid;
             grid-template-columns: 150px 1fr;
@@ -53,9 +53,8 @@
                 }
             }
             .catalogue__slider-content {
-                width: 1200px;
-                margin: 0 auto;
-                padding: 67px 62px 19px 42px;
+                width: 1169px;
+                padding: 67px 0px 19px 42px;
                 border-radius: 0 36px 36px 36px;
                 height: fit-content;
                 background: linear-gradient(180deg, #12212e 50.11%, #375b68 93.7%);
@@ -81,7 +80,7 @@
                     position: relative;
                     height: 400px;
                     width: fit-content;
-                    margin: 0 auto;
+                  
                     .slides-wrapper {
                         display: flex;
                         transition: transform 1s ease;
@@ -147,6 +146,7 @@
                             }
                         }
                     }
+                    
                     input {
                         display: none;
                     }

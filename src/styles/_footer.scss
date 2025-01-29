@@ -18,10 +18,11 @@ footer {
         background: url("../assets/footer/girl.png") no-repeat;
         background-size: contain;
         background-position: left bottom;
-        width: 500px;
-        height: 500px;
+        width: 1440px;
+        height: 510px;
         bottom: 0;
     }
+
     &::after {
         background: url("../assets/footer/footer-pic.png") no-repeat;
         background-size: cover;
@@ -29,15 +30,13 @@ footer {
         height: 100%;
         opacity: 0.4;
     }
-
-    // Общий контейнер для всех колонок
     .container {
 
-        margin-top: 238px;
+        margin-top: 258px;
         display: grid;
         grid-template-columns: 146px 243px 208px 310px;
         /* Колонки с фиксированными размерами */
-        margin-left: 485px;
+        margin-left: 455px;
         /* Раздвигаем колонки равномерно */
         gap: 20px;
         /* Отступы между колонками */
@@ -61,6 +60,8 @@ footer {
                     margin-bottom: 28px;
 
                     a {
+                        z-index: 1;
+                        cursor: pointer;
                         text-decoration: none;
                         color: inherit;
                         transition: color 0.3s;
@@ -79,12 +80,15 @@ footer {
             }
 
             .social {
+
                 display: flex;
                 gap: 10px;
                 /* Расстояние между иконками */
                 margin-top: 20px;
 
                 a {
+                    z-index: 1;
+                    cursor: pointer;
                     img {
                         width: 24px;
                         height: 24px;
