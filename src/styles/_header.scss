@@ -3,6 +3,28 @@ header {
     align-items: center;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    .burger-menu {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .burger-menu span {
+        width: 30px;
+        height: 3px;
+        background: white;
+        transition: 0.3s;
+    }
+
     ul {
         margin: 35px 0px 0px 90px;
         display: flex;
@@ -12,7 +34,7 @@ header {
         li {
             a {
                 position: relative;
-    z-index: 1;
+                z-index: 1;
                 display: grid;
                 text-decoration: none;
                 color: #F5F7FA;
@@ -41,6 +63,82 @@ header {
                     }
                 }
             }
+        }
+    }
+
+
+
+    .nav-menu {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        ul {
+            display: none;
+        }
+
+        .burger-menu {
+            display: flex;
+        }
+
+        .nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: fit-content;
+            background: #375B68;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            ul {
+                margin: 35px 0px 0px 90px;
+                display: flex;
+                list-style: none;
+                gap: 35.5px;
+
+                li {
+                    a {
+                        position: relative;
+                        z-index: 1;
+                        display: grid;
+                        text-decoration: none;
+                        color: #F5F7FA;
+                    }
+                }
+            }
+        }
+
+        .nav-menu.nav-menu--open {
+            animation: notificationOpen 0.3s ease;
+            display: block;
+        }
+    }
+
+    @media (max-width: 576px) {
+        header {
+            padding: 10px;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    @keyframes notificationOpen {
+        0% {
+            transform: translateX(100%);
+            scale: 70%;
+        }
+
+        100% {
+            transform: translateX(0);
+            scale: 100%;
         }
     }
 }

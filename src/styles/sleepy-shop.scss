@@ -34,6 +34,7 @@
 
 
             .sleepy-shop__link {
+                position: relative;
                 display: flex;
                 justify-content: flex-end;
                 font-family: "Cabinet-Grotesk";
@@ -73,5 +74,31 @@
             height: 500px;
         }
 
+    }
+    @media (max-width: 576px) {
+        
+        img{
+            max-width: 100px;
+        }
+    }
+    @media (max-width: 768px) {
+        img{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1024px) {
+        img{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1440px) {
+        img{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1920px) {
+        img{
+            max-width: 100%;
+        }
     }
 }

@@ -32,8 +32,8 @@ function sidebarNaviCatalogue() {
         // {
         window2.style.display = 'none';
         window3.style.display = 'none';
-        window4.style.display = 'none';   
-    // }
+        window4.style.display = 'none';
+        // }
         item.addEventListener('click', () => {
             const targetWindow = document.getElementById(item.getAttribute('data-window'));
             // Hide all windows
@@ -58,7 +58,7 @@ function sidebarNaviCatalogue() {
 }
 sidebarNaviCatalogue();
 
-function sidebarNaviBlog(){
+function sidebarNaviBlog() {
 
     document.addEventListener('DOMContentLoaded', () => {
         const prevButton = document.getElementById('prev-slide');
@@ -66,14 +66,14 @@ function sidebarNaviBlog(){
         const slides = document.querySelectorAll('.blog-slider__content');
         const points = document.querySelectorAll('.blog-slider__points .blog-slider__item'); // Select points inside the container
         let currentSlide = 0;
-    
+
         function showSlide(index) {
-    
+
             slides.forEach(slide => {
                 slide.style.display = 'none';  // Hide all slides
             });
             slides[index].style.display = 'flex';  // Show the selected slide
-    
+
             points.forEach((point, i) => {
                 if (i === index) {
                     point.setAttribute('src', '../src/assets/blog/point with fill.svg');  // Set filled circle for current slide
@@ -82,21 +82,21 @@ function sidebarNaviBlog(){
                 }
             });
         }
-    
+
         showSlide(currentSlide);
-    
+
         nextButton.addEventListener('click', () => {
             console.log("Next Button Clicked");
             currentSlide = (currentSlide + 1) % slides.length;  // Increment slide index
             showSlide(currentSlide);  // Show updated slide
         });
-    
+
         prevButton.addEventListener('click', () => {
             console.log("Prev Button Clicked");
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;  // Decrement slide index
             showSlide(currentSlide);  // Show updated slide
         });
-    
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') {
                 console.log("ArrowRight Pressed");
@@ -111,3 +111,16 @@ function sidebarNaviBlog(){
     });
 }
 sidebarNaviBlog();
+
+const navMenu = document.querySelector('#navMenu');
+const burgerMenu = document.querySelector('#burger-menu');
+
+const toggleMenu = () => {
+    navMenu.classList.toggle('nav-menu--open');
+};
+
+// Sicherstellen, dass das Skript nach dem Laden des DOMs ausgeführt wird
+document.addEventListener("DOMContentLoaded", () => {
+    burgerMenu.addEventListener("click", toggleMenu);
+});
+

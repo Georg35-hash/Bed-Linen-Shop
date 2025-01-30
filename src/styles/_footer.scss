@@ -30,16 +30,16 @@ footer {
         height: 100%;
         opacity: 0.4;
     }
+
     .container {
 
         margin-top: 258px;
         display: grid;
         grid-template-columns: 146px 243px 208px 310px;
-        /* Колонки с фиксированными размерами */
+        // Column with fixed size
         margin-left: 455px;
-        /* Раздвигаем колонки равномерно */
         gap: 20px;
-        /* Отступы между колонками */
+
 
         .column {
             height: fit-content;
@@ -83,12 +83,12 @@ footer {
 
                 display: flex;
                 gap: 10px;
-                /* Расстояние между иконками */
                 margin-top: 20px;
 
                 a {
                     z-index: 1;
                     cursor: pointer;
+
                     img {
                         width: 24px;
                         height: 24px;
@@ -99,16 +99,21 @@ footer {
                         }
                     }
                 }
+
+                p {
+                    font: 400 16px "Cabinet-Grotesk", sans-serif;
+                    text-transform: capitalize;
+                    color: #f5f7fa;
+                }
             }
         }
     }
 
-    // Нижний блок футера
+    //Block-bottom
     .bottom {
         text-align: center;
         font-size: 14px;
         margin-top: auto;
-        /* Сдвигаем вниз */
         padding: 20px 0;
 
         p {

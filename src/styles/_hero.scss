@@ -26,7 +26,7 @@
         z-index: 1;
         position: relative;
         justify-content: center;
-        text-align: center; // Добавлено для центрирования
+        text-align: center;
         line-height: 31.06px;
         font-size: 20px;
     }
@@ -44,7 +44,7 @@
             border: none;
             display: flex;
             align-items: center;
-            cursor: pointer; // Добавлено
+            cursor: pointer; 
 
             img {
                 position: absolute;
@@ -77,13 +77,13 @@
         .hero__img {
             z-index: 1;
             margin-top: 37px;
-            position: relative; // Добавлено
+            position: relative; 
         }
 
         .hero__background {
             position: absolute;
             bottom: -40px;
-            z-index: 0; // Фоновое изображение
+            z-index: 0; 
         }
 
         .hero__light {
@@ -92,21 +92,46 @@
             filter: blur(316.95306396484375px);
             position: absolute;
             bottom: -50px;
-            z-index: 0; // ✅ Подсветка должна быть за тенью, но перед фоном
+            z-index: 0;
         }
 
         .hero__shadow {
-           
             position: absolute;
             margin-top: -300px;
-            z-index: 0; // ✅ Чтобы тень не была поверх контента
+            z-index: 0; // shadow under content
         }
 
         .hero__bed-shadow {
 
             position: absolute;
             margin-top: 350px;
-            z-index: 0; // ✅ Чтобы тень не была поверх контента
+            z-index: 0; // shadow under content
+        }
+    }
+    @media (max-width: 576px) {
+        
+        img{
+            max-width: 100px;
+        }
+    }
+    @media (max-width: 768px) {
+        img{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1024px) {
+        img{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1440px) {
+        img{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1920px) {
+        img{
+            max-width: 100%;
         }
     }
 }

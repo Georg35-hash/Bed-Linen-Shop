@@ -1,9 +1,27 @@
-@charset "UTF-8";
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+header .burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+header .burger-menu span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
 }
 header ul {
   margin: 35px 0px 0px 90px;
@@ -33,6 +51,67 @@ header .header__icons ul {
 header .header__icons ul li a img {
   width: 25px;
   height: 25px;
+}
+header .nav-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+  header .burger-menu {
+    display: flex;
+  }
+  header .nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: fit-content;
+    background: #375B68;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  header .nav-menu ul {
+    margin: 35px 0px 0px 90px;
+    display: flex;
+    list-style: none;
+    gap: 35.5px;
+  }
+  header .nav-menu ul li a {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    text-decoration: none;
+    color: #F5F7FA;
+  }
+  header .nav-menu.nav-menu--open {
+    animation: notificationOpen 0.3s ease;
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  header header {
+    padding: 10px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  header img {
+    max-width: 100%;
+  }
+}
+@keyframes notificationOpen {
+  0% {
+    transform: translateX(100%);
+    scale: 70%;
+  }
+  100% {
+    transform: translateX(0);
+    scale: 100%;
+  }
 }
 
 * {
@@ -160,6 +239,31 @@ footer {
   margin-top: 350px;
   z-index: 0;
 }
+@media (max-width: 576px) {
+  .hero img {
+    max-width: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .hero img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .hero img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1440px) {
+  .hero img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1920px) {
+  .hero img {
+    max-width: 100%;
+  }
+}
 
 .about-quality {
   display: grid;
@@ -207,6 +311,7 @@ footer {
   max-height: 215px;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   font-family: "Cabinet-Grotesk";
@@ -238,6 +343,31 @@ footer {
   background-position: center;
   width: 500px;
   height: 500px;
+}
+@media (max-width: 576px) {
+  .sleepy-shop img {
+    max-width: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .sleepy-shop img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .sleepy-shop img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1440px) {
+  .sleepy-shop img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1920px) {
+  .sleepy-shop img {
+    max-width: 100%;
+  }
 }
 
 @font-face {
@@ -760,11 +890,8 @@ footer .container {
   margin-top: 258px;
   display: grid;
   grid-template-columns: 146px 243px 208px 310px;
-  /* Колонки с фиксированными размерами */
   margin-left: 455px;
-  /* Раздвигаем колонки равномерно */
   gap: 20px;
-  /* Отступы между колонками */
 }
 footer .container .column {
   height: fit-content;
@@ -801,7 +928,6 @@ footer .container .column ul li img {
 footer .container .column .social {
   display: flex;
   gap: 10px;
-  /* Расстояние между иконками */
   margin-top: 20px;
 }
 footer .container .column .social a {
@@ -816,11 +942,15 @@ footer .container .column .social a img {
 footer .container .column .social a img:hover {
   transform: scale(1.1);
 }
+footer .container .column .social p {
+  font: 400 16px "Cabinet-Grotesk", sans-serif;
+  text-transform: capitalize;
+  color: #f5f7fa;
+}
 footer .bottom {
   text-align: center;
   font-size: 14px;
   margin-top: auto;
-  /* Сдвигаем вниз */
   padding: 20px 0;
 }
 footer .bottom p {
