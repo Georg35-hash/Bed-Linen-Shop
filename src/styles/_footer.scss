@@ -124,3 +124,139 @@ footer {
         }
     }
 }
+
+@media (max-width: 768px) {
+    footer {
+        position: relative;
+        
+
+        // Фоновые изображения с анимацией
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            opacity: 0; // Начальное состояние – прозрачное
+        }
+
+        &::after {
+            background: url("../assets/footer/footer-pic.png") no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4; // Базовая прозрачность для затемнения
+            animation: fadeIn 1.5s ease-in-out forwards; // Немного дольше, чтобы появление было плавным
+        }
+
+        .container {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 200px 200px 200px;
+            z-index: 1;
+            position: relative;
+            margin: 0 auto;
+            padding: 0 50px 0px 50px;
+            margin-top: 250px;
+            animation: fadeInUp 1s ease-in-out; // Анимация появления контента футера
+        }
+        .column:last-child{
+            display: none;
+        }
+        .column {
+            
+            h3 {
+                font-weight: 700;
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    
+                    margin-bottom: 10px;
+                    font-size: 14px;
+
+                    a {
+                        text-decoration: none;
+                        color: #f5f7fa;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: #a3d2ca;
+                        }
+                    }
+
+                    img {
+                        margin-right: 8px;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+
+            
+            .column {
+                gap: 10px;
+                margin-top: 10px;
+
+                p {
+                    font-size: 14px;
+                }
+
+                a {
+                    cursor: pointer;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        transition: transform 0.3s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            text-align: center;
+            font-size: 14px;
+            padding: 10px 0;
+            margin-top: 20px;
+            z-index: 1;
+            position: relative;
+        }
+    }
+
+    // Анимация плавного появления контента футера
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // Общая анимация появления для фоновых изображений
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

@@ -111,3 +111,35 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .blog-slider {
+        margin: -98px 0px 0px -120px;
+      
+
+        &__navigation {
+            .blog-slider__points {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+            }
+        }
+        
+        &__header{
+            margin-left: 200px ;
+        }
+        &__content {
+            transform: scale(0.55);
+
+            .blog-slider__image {
+                img {
+                    width: 300px; // Делаем изображение адаптивным
+                    max-width: 350px; // Ограничиваем максимальную ширину
+                    height: auto;
+                }
+            }
+
+        }
+    }
+}

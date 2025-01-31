@@ -5,10 +5,42 @@
     justify-content: center;
     align-items: center;
     background: #375B68;
+
     img {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     img:hover {
         transform: scale(1.1);
+    }
+}
+
+/* Адаптивные медиа-запросы */
+@media (max-width: 480px) {
+    .about-quality {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+
+        img {
+            max-width: 200px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .about-quality {
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+
+        img {
+            
+            max-width: 280px;
+        }
     }
 }

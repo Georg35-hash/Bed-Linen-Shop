@@ -66,3 +66,32 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .offer {
+        margin-top: -144px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 120px;
+        justify-content: flex-end;
+        background: url('../assets/offer/offer.svg') no-repeat center center; // Картинка как фон
+        background-size: contain; // This will make the background image fit within the container
+        background-position: center; // Optional, but ensures the image is centered
+        .offer__content{
+            h2{
+                margin: 95px 0px 0px 30px;
+                font-size: 20px;
+            }
+            p{
+                max-width: 300px;
+                margin: 0px 20px 0px 30px;
+                font-size: 15px;
+            }
+        }
+        .offer__button-wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-end;
+            max-height: 400px;
+        }
+    }
+}

@@ -112,15 +112,19 @@ function sidebarNaviBlog() {
 }
 sidebarNaviBlog();
 
-const navMenu = document.querySelector('#navMenu');
-const burgerMenu = document.querySelector('#burger-menu');
-
-const toggleMenu = () => {
-    navMenu.classList.toggle('nav-menu--open');
-};
-
-// Sicherstellen, dass das Skript nach dem Laden des DOMs ausgeführt wird
-document.addEventListener("DOMContentLoaded", () => {
-    burgerMenu.addEventListener("click", toggleMenu);
+document.addEventListener("DOMContentLoaded", function () {
+    const openButton = document.getElementById("openButton");
+    const navMenu = document.getElementById("navMenu");
+    
+    openButton.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+        openButton.classList.toggle("active");
+    });
+    
+    document.addEventListener("click", function (event) {
+        if (!navMenu.contains(event.target) && !openButton.contains(event.target)) {
+            navMenu.classList.remove("active");
+            openButton.classList.remove("active");
+        }
+    });
 });
-

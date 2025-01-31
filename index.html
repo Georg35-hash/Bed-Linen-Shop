@@ -21,6 +21,7 @@
             <li><a href="#">Shop</a></li>
             <li><a href="#">Blog</a></li>
         </ul>
+
         <div class="header__icons">
             <ul>
                 <li><a href="#"><img src="./src/assets/Shopping.svg" alt="shopping"></a></li>
@@ -28,12 +29,13 @@
                 <li><a href="#"><img src="./src/assets/Vector.svg" alt="internet"></a></li>
             </ul>
         </div>
+
         <button id="openButton" class="burger-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <nav id="navMenu" class="nav-menu">
+        <div id="navMenu" class="nav-menu">
             <ul>
                 <li><a href="#">Home<img src="./src/assets/game-icons_feather.svg" alt="feather"></a></li>
             <li><a href="#">About</a></li>
@@ -42,7 +44,7 @@
             <li><a href="#">Shop</a></li>
             <li><a href="#">Blog</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
     <main>
         <section class="hero">
@@ -249,6 +251,7 @@
                 </button>
             </div>
         </section>
+        
         <section class="blog-slider">
             <div class="blog-slider__header">
                 <h2>Our Blog</h2>
@@ -337,7 +340,7 @@
                 </div>
                 <form class="subscribe-form">
                     <div class="input-container">
-                        <img src="./src/assets/subscribe/email.svg" class="input-icon" />
+                        <img src="./src/assets/subscribe/email.svg" class="input-icon" alt="input-icon"/>
                         <input type="email" placeholder="Enter your email" class="subscribe-input" required />
                     </div>
                     <button class="subscribe-button">
@@ -350,71 +353,62 @@
 
 
     </main>
-    <script src="slider-navi.js"></script>
-</body>
-
-<footer>
-    <div class="container">
-        <!-- Первая колонка -->
-        <div class="column">
-            <h3>About</h3>
-            <ul>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Our Impact</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-
-        <!-- Вторая колонка -->
-        <div class="column">
-            <h3>Customer Resources</h3>
-            <ul>
-                <li><a href="#">E-Catalog</a></li>
-                <li><a href="#">Request Catalog</a></li>
-                <li><a href="#">Support</a></li>
-            </ul>
-
-        </div>
-
-        <!-- Третья колонка -->
-        <div class="column">
-            <h3>Services</h3>
-            <ul>
-                <li><a href="#">Delivery & Shipping</a></li>
-                <li><a href="#">Returns</a></li>
-                <li><a href="#">Guarantee</a></li>
-            </ul>
-        </div>
-
-        <!-- Четвертая колонка -->
-        <div class="column">
-            <h3>Contact</h3>
-            <ul>
-                <li><img src="./src/assets/footer/geo-icon.svg" alt="Location icon" />12 Jhon Avenue #2, New York</li>
-                <li><img src="./src/assets/footer/email-icon.svg" alt="Email icon" /><a
-                        href="mailto:sleepy@shop.com">Sleepy@Shop.com</a></li>
-                <li><img src="./src/assets/footer/smartphone-icon.svg" alt="Phone icon" /><a
-                        href="tel:+122234SLEEP">+1-222-34-SLEEP</a>
-                </li>
-            </ul>
-
-            <div class="social">
-                <p>social media: </p>
-                <a href="#"><img src="./src/assets/footer/linkedin-icon.svg" alt="LinkedIn" /></a>
-                <a href="#"><img src="./src/assets/footer/pinterest-icon.svg" alt="Pinterest" /></a>
-                <a href="#"><img src="./src/assets/footer/instagram-icon.svg" alt="Instagram" /></a>
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Our Impact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div class="column">
+                <h3>Customer Resources</h3>
+                <ul>
+                    <li><a href="#">E-Catalog</a></li>
+                    <li><a href="#">Request Catalog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+    
+            </div>
+    
+            <div class="column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Delivery & Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Guarantee</a></li>
+                </ul>
+            </div>
+    
+            <div class="column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><img src="./src/assets/footer/geo-icon.svg" alt="Location icon" />12 Jhon Avenue #2, New York</li>
+                    <li><img src="./src/assets/footer/email-icon.svg" alt="Email icon" /><a
+                            href="mailto:sleepy@shop.com">Sleepy@Shop.com</a></li>
+                    <li><img src="./src/assets/footer/smartphone-icon.svg" alt="Phone icon" /><a
+                            href="tel:+122234SLEEP">+1-222-34-SLEEP</a>
+                    </li>
+                </ul>
+    
+                <div class="social">
+                    <p>social media: </p>
+                    <a href="#"><img src="./src/assets/footer/linkedin-icon.svg" alt="LinkedIn" /></a>
+                    <a href="#"><img src="./src/assets/footer/pinterest-icon.svg" alt="Pinterest" /></a>
+                    <a href="#"><img src="./src/assets/footer/instagram-icon.svg" alt="Instagram" /></a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Bottom section -->
-    <div class="bottom">
-        <p>Created by ElinaUI9</p>
-        <p>Copyright 2023 Sleepy Shop. All Rights Reserved.</p>
-    </div>
-</footer>
-
-
-
-
+    
+        <!-- Bottom section -->
+        <div class="bottom">
+            <p>Created by ElinaUI9</p>
+            <p>Copyright 2023 Sleepy Shop. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="slider-navi.js"></script>
+</body>
 </html>
