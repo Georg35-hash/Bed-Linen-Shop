@@ -17,7 +17,7 @@ header {
         z-index: 5;
 
         span {
-            width: 30px;
+            width: 20px;
             height: 3px;
             background: white;
             transition: transform 0.3s, opacity 0.3s;
@@ -25,7 +25,7 @@ header {
 
         &.active {
             span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
+                transform: rotate(45deg) translate(5px, 6px);
             }
 
             span:nth-child(2) {
@@ -33,7 +33,7 @@ header {
             }
 
             span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
+                transform: rotate(-45deg) translate(5px, -6px);
             }
         }
     }
@@ -98,11 +98,27 @@ header {
 
     /* Mobile (до 480px) */
     @media (max-width: 480px) {
-        
+        display: flex;
+        ul {
+            display: none;
+        }
+
+        .burger-menu {
+            display: flex;
+        }
+
+        .header__icons {
+            display: flex;
+        }
+
+        .nav-menu {
+            display: flex;
+        }
     }
 
     /* Tabletes (481px - 768px) */
     @media (max-width: 768px) {
+        display: flex;
         ul {
             display: none;
         }

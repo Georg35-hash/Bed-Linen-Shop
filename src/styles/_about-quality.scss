@@ -5,13 +5,15 @@
     justify-content: center;
     align-items: center;
     background: #375B68;
-    button{
+
+    button {
         border: none;
         background: transparent;
+
         img {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-    
+
         img:hover {
             transform: scale(1.1);
         }
@@ -19,16 +21,17 @@
     }
 }
 
-/* Адаптивные медиа-запросы */
-@media (max-width: 480px) {
+
+@media (max-width: 576px) {
     .about-quality {
+
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0;
 
-        img {
-            max-width: 200px;
+        button {
+            max-width: 150px;
         }
     }
 }
@@ -36,18 +39,14 @@
 @media (max-width: 768px) {
 
     .about-quality {
-
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         gap: 0;
-        button{
-            border: none;
-            background: transparent;
-            img {
-                width: 280px;
-            }
-    
+
+        button {
+
+            width: 280px;
+
         }
     }
 }

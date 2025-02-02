@@ -78,33 +78,6 @@
     }
 }
 
-@media (max-width: 480px) {
-    .sleepy-shop {
-        .sleepy-shop_content {
-            display: flex;
-            align-items: center;
-
-            .sleepy-shop__text {
-
-
-                h2 {
-                    font-size: 10px;
-                    max-width: 100px;
-                }
-
-                p {
-                    font-size: 10px;
-                    max-width: 200px;
-                }
-            }
-
-            img {
-                max-width: 200px;
-            }
-
-        }
-    }
-}
 
 @media (max-width: 768px) {
 
@@ -119,7 +92,7 @@
                 position: absolute;
                 z-index: 0;
             }
-    
+
             &::before {
                 z-index: 0;
                 background: url("../assets/sleepy-shop/C5.svg") no-repeat;
@@ -128,6 +101,7 @@
                 background-size: 180px, 100px;
                 background-position: center;
             }
+
             .sleepy-shop__text {
 
 
@@ -145,20 +119,57 @@
             img {
                 max-width: 250px;
             }
+
+        }
+    }
+}
+@media (max-width: 576px) {
+    .sleepy-shop {
+       
+        .sleepy-shop_content {
+            display: flex;
+            align-items: center;
             
-            .sleepy-shop__link{
 
-                font-family: "Cabinet-Grotesk";
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 10px;
-                color: #f5f7fa;
+            align-items: center;
+            
+            position: relative;
 
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     z-index: 0;
+            //     background: url("../assets/sleepy-shop/C5.svg") no-repeat;
+            //     left: 50%;
+            //     top: 50%;
+            //     margin-left: 24px;
+            //     transform: translate(-50%, -50%);
+            //     background-size: 180px 100px;
+            //     width: 120px;
+            //     height: 80px;
+            // }
 
-                &:hover {
-                    text-decoration: underline;
+            .sleepy-shop__text {
+                display: grid;
+                justify-items: center;
+
+                h2 {
+                    font-size: 10px;
+                    max-width: 300px;
                 }
+
+                p {
+                    grid:1;
+                    font-size: 5px;
+                    max-width: 900px;
+                }
+            }
+
+            img {
+               grid:2;
+                max-width: 90px;
             }
         }
     }
 }
+
