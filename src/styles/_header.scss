@@ -14,7 +14,7 @@ header {
         background: none;
         border: none;
         cursor: pointer;
-        z-index: 10;
+        z-index: 5;
 
         span {
             width: 30px;
@@ -96,12 +96,12 @@ header {
         }
     }
 
-    /* Мобильные (до 480px) */
+    /* Mobile (до 480px) */
     @media (max-width: 480px) {
         
     }
 
-    /* Планшеты (481px - 768px) */
+    /* Tabletes (481px - 768px) */
     @media (max-width: 768px) {
         ul {
             display: none;
@@ -120,10 +120,10 @@ header {
         }
     }
 
-    /* Ноутбуки и десктопы (769px - 1024px) */
+    /* Desktop (769px - 1024px) */
     @media (max-width: 1024px) {}
 
-    /* Широкие экраны (от 1280px) */
+    /* Large screens (от 1280px) */
     @media (min-width: 1280px) {}
 
 }

@@ -6,7 +6,9 @@
         position: relative;
         mix-blend-mode: color-dodge;
         z-index: 1;
-        background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgba(171, 171, 171, 1) 100%);
+        background: linear-gradient(180deg,
+                rgba(121, 121, 121, 0.4) 40%,
+                rgba(171, 171, 171, 1) 100%);
         display: flex;
         justify-content: center;
         text-transform: uppercase;
@@ -16,6 +18,9 @@
         font-family: "Sahitya-Bold";
         font-weight: 700;
         font-size: 64px;
+        /* Animation for appearance of title */
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
     }
 
     .hero__desc {
@@ -28,6 +33,9 @@
         text-align: center;
         line-height: 31.06px;
         font-size: 20px;
+        /* Delay for a smooth appearance of title  */
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards 0.5s;
     }
 
     .hero__content {
@@ -35,6 +43,9 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+       
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards 0.8s;
 
         .hero__button {
             padding-top: 50.93px;
@@ -44,6 +55,8 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1s;
 
             img {
                 position: absolute;
@@ -65,10 +78,10 @@
                 line-height: 1.1;
                 margin-top: -20px;
                 margin-right: -64px;
+                transition: transform 0.3s ease;
             }
 
             .hero__button-text:hover {
-                transition: transform 0.3s ease;
                 transform: translateX(10px);
             }
         }
@@ -77,6 +90,8 @@
             z-index: 1;
             margin-top: 37px;
             position: relative;
+            opacity: 0;
+            animation: slideIn 1s ease-out forwards 1.2s;
         }
 
         .hero__background {
@@ -84,87 +99,133 @@
             bottom: -40px;
             z-index: 0;
             width: 100%;
-            /* Для адаптивности */
             max-width: 100%;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.4s;
         }
 
         .hero__light {
             border-radius: 100%;
-            fill: linear-gradient(90deg, rgba(240, 250, 255, 0.62) 0%, #daf2ff 100%);
+            fill: linear-gradient(90deg,
+                    rgba(240, 250, 255, 0.62) 0%,
+                    #daf2ff 100%);
             filter: blur(316.95306396484375px);
             position: absolute;
             bottom: -50px;
             z-index: 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.6s;
         }
 
         .hero__shadow {
             position: absolute;
             margin-top: -300px;
             z-index: 0;
-            /* shadow under content */
         }
 
         .hero__bed-shadow {
             position: absolute;
             margin-top: 350px;
             z-index: 0;
-            /* shadow under content */
+            
         }
     }
+}
 
-    }
-    /* Адаптивные медиа-запросы */
-    @media (max-width: 480px) {
-        .hero__title{
-        
-            display: flex;
-            justify-content: center;
-            max-width: 800px;
-        }
-        .hero__background {
-            max-width: 200px;
-        }
 
-        img {
-            width: 100%;
-            height: auto;
-            /* Чтобы изображения масштабировались пропорционально */
-        }
+@media (max-width: 480px) {
+    .hero__title {
+        display: flex;
+        justify-content: center;
+        max-width: 800px;
     }
 
-    @media (max-width: 768px) {
+    .hero__background {
+        max-width: 200px;
+    }
 
-        .hero__background {
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-        }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 
-        .hero__img {
-            position: absolute;
+@media (max-width: 768px) {
+    .hero__background {
+        position: absolute;
+            top: 0;
             z-index: 0;
-            width: 100%;
-            height: auto;
-        }
+            max-width: 200px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.4s;
     }
 
-    @media (max-width: 1024px) {
-        img {
-            width: 100%;
-            height: auto;
-        }
+    .hero__img {
+        position: absolute;
+        z-index: 1;
+        max-width: 650px;
+        height: auto;
+    }
+    
+    .hero__button-text:hover {
+        z-index: 1;
+        transform: translateX(10px);
+    }
+    
+}
+
+@media (max-width: 1024px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1440px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1920px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    @media (max-width: 1440px) {
-        img {
-            width: 100%;
-            height: auto;
-        }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    @media (max-width: 1920px) {
-        img {
-            width: 100%;
-            height: auto;
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

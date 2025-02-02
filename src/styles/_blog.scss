@@ -115,8 +115,23 @@
 @media (max-width: 768px) {
     .blog-slider {
         margin: -98px 0px 0px -120px;
-      
-
+        .blog-slider__header {
+    
+            .blog-slider__line {
+                position: relative;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 400px;
+                    margin-left: 12px;
+                    height: 1.5px;
+                    background: linear-gradient(to right, #5e97ab, transparent);
+                }
+            }
+        }
         &__navigation {
             .blog-slider__points {
                 display: flex;
@@ -125,17 +140,18 @@
 
             }
         }
-        
-        &__header{
-            margin-left: 200px ;
+
+        &__header {
+            margin-left: 200px;
         }
+
         &__content {
             transform: scale(0.55);
 
             .blog-slider__image {
                 img {
-                    width: 300px; // Делаем изображение адаптивным
-                    max-width: 350px; // Ограничиваем максимальную ширину
+                    width: 300px;
+                    max-width: 350px;
                     height: auto;
                 }
             }

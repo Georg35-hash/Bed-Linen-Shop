@@ -1,17 +1,21 @@
 .about-quality {
     display: grid;
-    grid-template-columns: repeat(4, 134px);
+    grid-template-columns: repeat(4, 130px);
     gap: 27px;
     justify-content: center;
     align-items: center;
     background: #375B68;
+    button{
+        border: none;
+        background: transparent;
+        img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        img:hover {
+            transform: scale(1.1);
+        }
 
-    img {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    img:hover {
-        transform: scale(1.1);
     }
 }
 
@@ -32,15 +36,18 @@
 @media (max-width: 768px) {
 
     .about-quality {
-        
+
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0;
-
-        img {
-            
-            max-width: 280px;
+        button{
+            border: none;
+            background: transparent;
+            img {
+                width: 280px;
+            }
+    
         }
     }
 }

@@ -4,7 +4,8 @@
     grid-template-columns: 1fr 1fr 120px;
     justify-content: flex-end;
     height: 624px;
-    background: url('../assets/offer/offer.svg') no-repeat; // Картинка как фон
+    
+    background: url('../assets/offer/offer.svg') no-repeat;
     .offer__content {
         margin: 95px 0px 0px 20px;
         grid-column: 2;
@@ -72,7 +73,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 120px;
         justify-content: flex-end;
-        background: url('../assets/offer/offer.svg') no-repeat center center; // Картинка как фон
+        background: url('../assets/offer/offer.svg') no-repeat center center;
         background-size: contain; // This will make the background image fit within the container
         background-position: center; // Optional, but ensures the image is centered
         .offer__content{

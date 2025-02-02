@@ -243,12 +243,35 @@
     .catalogue {
         .catalogue__header {
             margin-bottom: -104px;
+
+            .catalogue__line {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 350px;
+                    margin-left: 12px;
+                    height: 1.5px;
+                    background: linear-gradient(to right, #5e97ab, transparent);
+                }
+            }
         }
 
         .catalogue__slider {
-            transform: scale(1);
+
             transform: scale(0.5);
 
+        }
+
+        .catalogue__slider-sidebar-item {
+            .sidebar-item:last-child {
+               scale: 0.8;
+            }
+
+            
         }
     }
 }
