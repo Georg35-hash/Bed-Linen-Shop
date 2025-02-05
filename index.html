@@ -9,40 +9,97 @@
 </head>
 
 <body>
-    <header>
-        <ul>
-            <li><a href="#">Home<img src="./src/assets/game-icons_feather.svg" alt="feather"></a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Payment</a></li>
-            <li><a href="#">Catalog</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
+    <header class="header">
+        <!-- Основное меню (для десктопа) -->
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">
+                        Home
+                        <img class="header__menu-icon" src="./src/assets/game-icons_feather.svg" alt="feather">
+                    </a>
+                </li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">About</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Payment</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Catalog</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Shop</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Blog</a></li>
+            </ul>
+        </nav>
 
+        <!-- Иконки (для десктопа) -->
         <div class="header__icons">
-            <ul>
-                <li><a href="#"><img src="./src/assets/Shopping.svg" alt="shopping"></a></li>
-                <li><a href="#"><img src="./src/assets/profile.svg" alt="profile"></a></li>
-                <li><a href="#"><img src="./src/assets/Vector.svg" alt="internet"></a></li>
+            <ul class="header__icons-list">
+                <li class="header__icons-item">
+                    <a class="header__icons-link" href="#">
+                        <img class="header__icon" src="./src/assets/Shopping.svg" alt="shopping">
+                    </a>
+                </li>
+                <li class="header__icons-item">
+                    <a class="header__icons-link" href="#">
+                        <img class="header__icon" src="./src/assets/profile.svg" alt="profile">
+                    </a>
+                </li>
+                <li class="header__icons-item">
+                    <a class="header__icons-link" href="#">
+                        <img class="header__icon" src="./src/assets/Vector.svg" alt="internet">
+                    </a>
+                </li>
             </ul>
         </div>
 
-        <button id="openButton" class="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div id="navMenu" class="nav-menu">
-            <ul>
-                <li><a href="#">Home<img src="./src/assets/game-icons_feather.svg" alt="feather"></a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Payment</a></li>
-            <li><a href="#">Catalog</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Blog</a></li>
-            </ul>
+        <!-- Мобильная версия -->
+        <div class="header__mobile">
+            <!-- Кнопка-бургер -->
+            <div class="header__mobile-burger">
+                <button id="openButton" class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+
+            <!-- Иконки для мобильной версии (при необходимости) -->
+            <div class="header__icons-mobile">
+                <ul class="header__icons-list-mobile">
+                    <li class="header__icons-item-mobile">
+                        <a href="#">
+                            <img src="./src/assets/Shopping.svg" alt="shopping">
+                        </a>
+                    </li>
+                    <li class="header__icons-item-mobile">
+                        <a href="#">
+                            <img src="./src/assets/profile.svg" alt="profile">
+                        </a>
+                    </li>
+                    <li class="header__icons-item-mobile">
+                        <a href="#">
+                            <img src="./src/assets/Vector.svg" alt="internet">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Мобильное меню, которое открывается по нажатию на бургер -->
+            <nav id="navMenu" class="nav-menu">
+                <ul class="nav-menu__list">
+                    <li class="nav-menu__item">
+                        <a class="nav-menu__link" href="#">
+                            Home
+                            <!-- <img class="nav-menu__icon" src="./src/assets/game-icons_feather.svg" alt="feather"> -->
+                        </a>
+                    </li>
+                    <li class="nav-menu__item"><a class="nav-menu__link" href="#">About</a></li>
+                    <li class="nav-menu__item"><a class="nav-menu__link" href="#">Payment</a></li>
+                    <li class="nav-menu__item"><a class="nav-menu__link" href="#">Catalog</a></li>
+                    <li class="nav-menu__item"><a class="nav-menu__link" href="#">Shop</a></li>
+                    <li class="nav-menu__item"><a class="nav-menu__link" href="#">Blog</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
+
     <main>
         <section class="hero">
             <p class="hero__title"> Dream in comfort </p>
@@ -248,7 +305,7 @@
                 </button>
             </div>
         </section>
-        
+
         <section class="blog-slider">
             <div class="blog-slider__header">
                 <h2>Our Blog</h2>
@@ -337,7 +394,7 @@
                 </div>
                 <form class="subscribe-form">
                     <div class="input-container">
-                        <img src="./src/assets/subscribe/email.svg" class="input-icon" alt="input-icon"/>
+                        <img src="./src/assets/subscribe/email.svg" class="input-icon" alt="input-icon" />
                         <input type="email" placeholder="Enter your email" class="subscribe-input" required />
                     </div>
                     <button class="subscribe-button">
@@ -360,7 +417,7 @@
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
-    
+
             <div class="column">
                 <h3>Customer Resources</h3>
                 <ul>
@@ -368,9 +425,9 @@
                     <li><a href="#">Request Catalog</a></li>
                     <li><a href="#">Support</a></li>
                 </ul>
-    
+
             </div>
-    
+
             <div class="column">
                 <h3>Services</h3>
                 <ul>
@@ -379,18 +436,19 @@
                     <li><a href="#">Guarantee</a></li>
                 </ul>
             </div>
-    
+
             <div class="column">
                 <h3>Contact</h3>
                 <ul>
-                    <li><img src="./src/assets/footer/geo-icon.svg" alt="Location icon" />12 Jhon Avenue #2, New York</li>
+                    <li><img src="./src/assets/footer/geo-icon.svg" alt="Location icon" />12 Jhon Avenue #2, New York
+                    </li>
                     <li><img src="./src/assets/footer/email-icon.svg" alt="Email icon" /><a
                             href="mailto:sleepy@shop.com">Sleepy@Shop.com</a></li>
                     <li><img src="./src/assets/footer/smartphone-icon.svg" alt="Phone icon" /><a
                             href="tel:+122234SLEEP">+1-222-34-SLEEP</a>
                     </li>
                 </ul>
-    
+
                 <div class="social">
                     <p>social media: </p>
                     <a href="#"><img src="./src/assets/footer/linkedin-icon.svg" alt="LinkedIn" /></a>
@@ -399,7 +457,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- Bottom section -->
         <div class="bottom">
             <p>Created by ElinaUI9</p>
@@ -408,4 +466,5 @@
     </footer>
     <script src="slider-navi.js"></script>
 </body>
+
 </html>

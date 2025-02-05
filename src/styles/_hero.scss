@@ -55,7 +55,6 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            opacity: 0;
             animation: fadeIn 1s ease-out forwards 1s;
 
             img {
@@ -63,6 +62,7 @@
                 width: 94px;
                 height: 58px;
                 margin-right: 20px;
+                pointer-events: none;
 
                 &:focus {
                     outline: none;
@@ -70,8 +70,9 @@
             }
 
             .hero__button-text {
+                display: inline-block; // добавлено для корректной работы transform
                 cursor: pointer;
-                z-index: 1;
+                z-index: 6;
                 font-family: 'Cabinet-Grotesk';
                 color: white;
                 font-size: 14px;
@@ -85,6 +86,7 @@
                 transform: translateX(10px);
             }
         }
+
 
         .hero__img {
             z-index: 1;
@@ -132,10 +134,77 @@
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        .hero__button {
+            img {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                margin-right: 20px;
+                pointer-events: none;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .hero__button-text {
+                display: inline-block;
+                cursor: pointer;
+                z-index: 6;
+                font-family: 'Cabinet-Grotesk';
+                color: white;
+                font-size: 10px;
+                line-height: 1.1;
+                margin-top: -20px;
+                margin-right: -64px;
+                transition: transform 0.3s ease;
+            }
+
+            .hero__button-text:hover {
+                transform: translateX(10px);
+            }
+        }
+    }
+
+
+
+}
 
 @media (max-width: 576px) {
     .hero {
-        
+        .hero__button {
+            img {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                margin-right: 20px;
+                pointer-events: none; // добавлено, чтобы событие hover не блокировалось изображением
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .hero__button-text {
+                display: inline-block; // добавлено для корректной работы transform
+                cursor: pointer;
+                z-index: 6;
+                font-family: 'Cabinet-Grotesk';
+                color: white;
+                font-size: 10px;
+                line-height: 1.1;
+                margin-top: -20px;
+                margin-right: -64px;
+                transition: transform 0.3s ease;
+            }
+
+            .hero__button-text:hover {
+                transform: translateX(10px);
+            }
+        }
+
         .hero__title {
             font-size: 35px;
         }
@@ -147,55 +216,17 @@
         .hero__img {
             max-width: 100%;
         }
-        
+
+        .hero__background {
+            position: absolute;
+            bottom: -40px;
+            z-index: 0;
+            max-width: 100%;
+
+
+        }
     }
 }
-
-@media (max-width: 768px) {
-    .hero__background {
-        position: absolute;
-        top: 0;
-        z-index: 0;
-        max-width: 200px;
-        opacity: 0;
-        animation: fadeIn 1s ease-out forwards 1.4s;
-    }
-
-    .hero__img {
-        position: absolute;
-        z-index: 1;
-        max-width: 650px;
-        height: auto;
-    }
-
-    .hero__button-text:hover {
-        z-index: 1;
-        transform: translateX(10px);
-    }
-
-}
-
-@media (max-width: 1024px) {
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 1440px) {
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 1920px) {
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
 
 @keyframes fadeIn {
     from {
