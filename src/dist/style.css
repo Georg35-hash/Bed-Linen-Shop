@@ -319,17 +319,18 @@ footer {
   }
 }
 @media (max-width: 576px) {
-  .hero .hero__button img {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-    pointer-events: none;
+  .hero .hero__title {
+    font-size: 35px;
   }
-  .hero .hero__button img:focus {
-    outline: none;
+  .hero .hero__desc {
+    font-size: 10px;
   }
-  .hero .hero__button .hero__button-text {
+  .hero .hero__content .hero__button img {
+    margin-top: -4px;
+    margin-right: -3px;
+    width: 70px;
+  }
+  .hero .hero__content .hero__button .hero__button-text {
     display: inline-block;
     cursor: pointer;
     z-index: 6;
@@ -341,23 +342,18 @@ footer {
     margin-right: -64px;
     transition: transform 0.3s ease;
   }
-  .hero .hero__button .hero__button-text:hover {
+  .hero .hero__content .hero__button .hero__button-text:hover {
+    z-index: 2;
     transform: translateX(10px);
   }
-  .hero .hero__title {
-    font-size: 35px;
-  }
-  .hero .hero__desc {
-    font-size: 10px;
-  }
-  .hero .hero__img {
+  .hero .hero__content .hero__img {
     max-width: 100%;
   }
-  .hero .hero__background {
+  .hero .hero__content .hero__background {
     position: absolute;
-    bottom: -40px;
     z-index: 0;
-    max-width: 100%;
+    width: 400px;
+    height: 400px;
   }
 }
 @keyframes fadeIn {
@@ -397,6 +393,7 @@ footer {
   background: #375B68;
 }
 .about-quality button {
+  cursor: pointer;
   border: none;
   background: transparent;
 }
@@ -533,26 +530,20 @@ footer {
 }
 @media (max-width: 576px) {
   .sleepy-shop .sleepy-shop_content {
-    display: flex;
-    align-items: center;
-    align-items: center;
     position: relative;
-  }
-  .sleepy-shop .sleepy-shop_content .sleepy-shop__text {
-    justify-items: center;
+    display: flex;
+    justify-content: center;
   }
   .sleepy-shop .sleepy-shop_content .sleepy-shop__text h2 {
     font-size: 10px;
-    max-width: 300px;
+    max-width: 200px;
   }
   .sleepy-shop .sleepy-shop_content .sleepy-shop__text p {
-    grid: 1;
-    font-size: 5px;
-    max-width: 900px;
+    font-size: 9px;
+    width: 230px;
   }
   .sleepy-shop .sleepy-shop_content img {
-    grid: 2;
-    max-width: 90px;
+    width: 100px;
   }
 }
 @font-face {
@@ -795,16 +786,51 @@ footer {
     scale: 0.8;
   }
 }
+@media (max-width: 576px) {
+  .catalogue .catalogue__header {
+    margin: 0;
+    margin-bottom: -104px;
+  }
+  .catalogue .catalogue__header h2 {
+    margin-left: 12px;
+    font-family: "Cabinet-Grotesk";
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 200%;
+    color: #5e97ab;
+  }
+  .catalogue .catalogue__header .catalogue__line {
+    position: relative;
+  }
+  .catalogue .catalogue__header .catalogue__line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 180px;
+    margin-left: 12px;
+    height: 1.5px;
+    background: linear-gradient(to right, #5e97ab, transparent);
+  }
+  .catalogue .catalogue__slider {
+    margin-top: -200px;
+    transform: scale(0.26);
+  }
+  .catalogue .catalogue__slider-sidebar-item .sidebar-item:last-child {
+    scale: 1;
+  }
+}
 .offer {
   margin-top: 144px;
   display: grid;
   grid-template-columns: 1fr 1fr 120px;
   justify-content: flex-end;
   height: 624px;
-  background: url("../assets/offer/offer.svg") no-repeat;
+  background: url("../assets/offer/offer.svg") no-repeat center center;
+  background-size: contain;
 }
 .offer .offer__content {
-  margin: 95px 0px 0px 20px;
+  margin: 95px 0 0 20px;
   grid-column: 2;
   text-align: left;
   color: #f5f7fa;
@@ -844,12 +870,14 @@ footer {
   width: 80px;
   height: 50px;
   gap: 10px;
+  position: relative;
 }
 .offer .offer__button-wrapper .offer__button img {
   position: absolute;
   width: 94px;
   height: 58px;
   margin-top: -10px;
+  pointer-events: none;
 }
 .offer .offer__button-wrapper .offer__button .offer__button-desc {
   font-family: "Cabinet-Grotesk";
@@ -858,12 +886,13 @@ footer {
   line-height: 1.1;
   margin-top: -2px;
   margin-right: -80px;
+  transition: transform 0.3s ease;
 }
 .offer .offer__button-wrapper .offer__button:hover .offer__button-desc {
-  transition: transform 0.3s ease;
   transform: translateX(10px);
 }
 
+/* Media*/
 @media (max-width: 768px) {
   .offer {
     margin-top: -144px;
@@ -875,12 +904,12 @@ footer {
     background-position: center;
   }
   .offer .offer__content h2 {
-    margin: 95px 0px 0px 30px;
+    margin: 95px 0 0 30px;
     font-size: 20px;
   }
   .offer .offer__content p {
     max-width: 300px;
-    margin: 0px 20px 0px 30px;
+    margin: 0 20px 0 30px;
     font-size: 15px;
   }
   .offer .offer__button-wrapper {
@@ -889,6 +918,36 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     max-height: 400px;
+  }
+}
+@media (max-width: 568px) {
+  .offer {
+    margin-top: -420px;
+    display: grid;
+    grid-template-columns: 60px 270px 1fr;
+    justify-content: center;
+    background: url("../assets/offer/offer.svg") no-repeat center center;
+    background-size: contain;
+    background-position: center;
+  }
+  .offer .offer__content {
+    grid-column: 2;
+  }
+  .offer .offer__content h2 {
+    margin: 155px 0 0 100px;
+    font-size: 10px;
+  }
+  .offer .offer__content p {
+    width: 170px;
+    margin: 0 20px 0 100px;
+    font-size: 10px;
+  }
+  .offer .offer__button-wrapper .offer__button img {
+    width: 50px;
+  }
+  .offer .offer__button-wrapper .offer__button .offer__button-desc {
+    margin: 5px -55px 0 0;
+    font-size: 10px;
   }
 }
 .blog-slider {

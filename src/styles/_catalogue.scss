@@ -268,10 +268,58 @@
 
         .catalogue__slider-sidebar-item {
             .sidebar-item:last-child {
-               scale: 0.8;
+                scale: 0.8;
             }
 
-            
+
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .catalogue {
+        .catalogue__header {
+            margin: 0;
+
+            h2 {
+                margin-left: 12px;
+                font-family: 'Cabinet-Grotesk';
+                font-weight: 800;
+                font-size: 20px;
+                line-height: 200%;
+                color: #5e97ab;
+            }
+
+            margin-bottom: -104px;
+
+            .catalogue__line {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 180px;
+                    margin-left: 12px;
+                    height: 1.5px;
+                    background: linear-gradient(to right, #5e97ab, transparent);
+                }
+            }
+        }
+
+
+        .catalogue__slider {
+            margin-top: -200px;
+            transform: scale(0.26);
+
+        }
+
+        .catalogue__slider-sidebar-item {
+            .sidebar-item:last-child {
+                scale: 1;
+            }
+
         }
     }
 }
