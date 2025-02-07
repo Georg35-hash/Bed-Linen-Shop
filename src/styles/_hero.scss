@@ -136,39 +136,47 @@
 
 @media (max-width: 768px) {
     .hero {
-        .hero__button {
-            img {
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                margin-right: 20px;
-                pointer-events: none;
+        .hero__content {
+            .hero__button {
+                img {
+                    z-index: 0;
+                    position: absolute;
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 20px;
+                    pointer-events: none;
 
-                &:focus {
-                    outline: none;
+                    &:focus {
+                        outline: none;
+                    }
                 }
+
+                .hero__button-text {
+                    display: inline-block;
+                    cursor: pointer;
+                    z-index: 6;
+                    font-family: 'Cabinet-Grotesk';
+                    color: white;
+                    font-size: 10px;
+                    line-height: 1.1;
+                    margin-top: -20px;
+                    margin-right: -45px;
+                    z-index: 8;
+                    transition: transform 0.3s ease;
+                }
+
+                .hero__button-text:hover {
+                    transform: translateX(10px);
+                }
+
             }
 
-            .hero__button-text {
-                display: inline-block;
-                cursor: pointer;
-                z-index: 6;
-                font-family: 'Cabinet-Grotesk';
-                color: white;
-                font-size: 10px;
-                line-height: 1.1;
-                margin-top: -20px;
-                margin-right: -64px;
-                transition: transform 0.3s ease;
-            }
-
-            .hero__button-text:hover {
-                transform: translateX(10px);
+            .hero__img {
+                max-width: 100%;
             }
         }
+
     }
-
-
 
 }
 

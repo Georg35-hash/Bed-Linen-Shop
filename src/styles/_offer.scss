@@ -113,11 +113,11 @@
 }
 
 
-@media (max-width: 568px) {
+@media (max-width: 576px) {
     .offer {
         margin-top: -420px;
         display: grid;
-        grid-template-columns: 60px 270px 1fr;
+        grid-template-columns: 100px 270px 1fr;
         justify-content: center;
         background: url('../assets/offer/offer.svg') no-repeat center center;
         background-size: contain;

@@ -292,17 +292,18 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero .hero__button img {
+  .hero .hero__content .hero__button img {
+    z-index: 0;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
     margin-right: 20px;
     pointer-events: none;
   }
-  .hero .hero__button img:focus {
+  .hero .hero__content .hero__button img:focus {
     outline: none;
   }
-  .hero .hero__button .hero__button-text {
+  .hero .hero__content .hero__button .hero__button-text {
     display: inline-block;
     cursor: pointer;
     z-index: 6;
@@ -311,11 +312,15 @@ footer {
     font-size: 10px;
     line-height: 1.1;
     margin-top: -20px;
-    margin-right: -64px;
+    margin-right: -45px;
+    z-index: 8;
     transition: transform 0.3s ease;
   }
-  .hero .hero__button .hero__button-text:hover {
+  .hero .hero__content .hero__button .hero__button-text:hover {
     transform: translateX(10px);
+  }
+  .hero .hero__content .hero__img {
+    max-width: 100%;
   }
 }
 @media (max-width: 576px) {
@@ -407,7 +412,6 @@ footer {
 @media (max-width: 768px) {
   .about-quality {
     justify-content: center;
-    width: 100%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -425,7 +429,7 @@ footer {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0;
+    gap: -27px;
   }
   .about-quality button {
     display: flex;
@@ -529,21 +533,41 @@ footer {
   }
 }
 @media (max-width: 576px) {
-  .sleepy-shop .sleepy-shop_content {
-    position: relative;
+  .sleepy-shop {
     display: flex;
     justify-content: center;
   }
+  .sleepy-shop .sleepy-shop_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sleepy-shop .sleepy-shop_content .sleepy-shop__text {
+    margin-left: 20px;
+  }
   .sleepy-shop .sleepy-shop_content .sleepy-shop__text h2 {
-    font-size: 10px;
-    max-width: 200px;
+    font-size: 20px;
   }
   .sleepy-shop .sleepy-shop_content .sleepy-shop__text p {
-    font-size: 9px;
-    width: 230px;
+    font-size: 7px;
+    width: 232px;
   }
   .sleepy-shop .sleepy-shop_content img {
-    width: 100px;
+    margin: 0 10px;
+    max-width: 140px;
+  }
+  .sleepy-shop .sleepy-shop_content::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+  }
+  .sleepy-shop .sleepy-shop_content::before {
+    z-index: 0;
+    background: url("../assets/sleepy-shop/C5.svg") no-repeat;
+    margin-left: 120px;
+    margin-bottom: 1px;
+    background-size: 122px, 122px;
+    background-position: center;
   }
 }
 @font-face {
@@ -792,7 +816,7 @@ footer {
     margin-bottom: -104px;
   }
   .catalogue .catalogue__header h2 {
-    margin-left: 12px;
+    margin-left: 32px;
     font-family: "Cabinet-Grotesk";
     font-weight: 800;
     font-size: 20px;
@@ -920,11 +944,11 @@ footer {
     max-height: 400px;
   }
 }
-@media (max-width: 568px) {
+@media (max-width: 576px) {
   .offer {
     margin-top: -420px;
     display: grid;
-    grid-template-columns: 60px 270px 1fr;
+    grid-template-columns: 100px 270px 1fr;
     justify-content: center;
     background: url("../assets/offer/offer.svg") no-repeat center center;
     background-size: contain;
@@ -1071,8 +1095,51 @@ footer {
   }
   .blog-slider__content .blog-slider__image img {
     width: 300px;
-    max-width: 350px;
     height: auto;
+  }
+}
+@media (max-width: 576px) {
+  .blog-slider {
+    margin: -98px 120px 0px -120px;
+  }
+  .blog-slider .blog-slider__header h2 {
+    margin-left: 32px;
+    font-family: "Cabinet-Grotesk";
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 200%;
+    color: #5e97ab;
+  }
+  .blog-slider .blog-slider__header .blog-slider__line {
+    position: relative;
+  }
+  .blog-slider .blog-slider__header .blog-slider__line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 180px;
+    margin-left: 12px;
+    height: 1.5px;
+    background: linear-gradient(to right, #5e97ab, transparent);
+  }
+  .blog-slider__navigation .blog-slider__points {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .blog-slider__header {
+    margin-left: 120px;
+  }
+  .blog-slider__content {
+    transform: scale(0.4);
+  }
+  .blog-slider__content .blog-slider__image img {
+    width: 300px;
+    height: auto;
+  }
+  .blog-slider__item .blog-slider__description {
+    max-width: 650px;
   }
 }
 .subscribe {

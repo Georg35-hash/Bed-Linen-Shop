@@ -126,27 +126,43 @@
 
 @media (max-width: 576px) {
     .sleepy-shop {
-        
+        display: flex;
+        justify-content: center;
+
         .sleepy-shop_content {
-            position: relative;
             display: flex;
+            align-items: center;
             justify-content: center;
             .sleepy-shop__text {
+                margin-left: 20px;
+
                 h2 {
-                    
-                    font-size: 10px;
-                    max-width: 200px;
+                    font-size: 20px; 
                 }
 
                 p {
-                   
-                    font-size: 9px;
-                    width: 230px;
+                    font-size: 7px; 
+                    width: 232px;
                 }
             }
 
             img {
-                width: 100px;
+                margin: 0 10px;
+                max-width: 140px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 0;
+            }
+    
+            &::before {
+                z-index: 0;
+                background: url("../assets/sleepy-shop/C5.svg") no-repeat;
+                margin-left: 120px;
+                margin-bottom: 1px;
+                background-size: 122px, 122px;
+                background-position: center;
             }
         }
     }
