@@ -814,7 +814,7 @@ footer {
   }
   .catalogue .catalogue__slider {
     margin-top: -200px;
-    transform: scale(0.26);
+    transform: scale(0.3);
   }
   .catalogue .catalogue__slider-sidebar-item .sidebar-item:last-child {
     scale: 1;
