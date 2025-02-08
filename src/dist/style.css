@@ -69,22 +69,21 @@
   z-index: 4;
   display: none;
   position: fixed;
-  top: 0;
-  left: -100%;
-  width: 150px;
-  height: 100%;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: fit-content;
   background: #375B68;
   transition: left 0.3s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 60px;
+  padding-top: 10px;
 }
 .header .nav-menu__list {
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   gap: 15px;
+  padding-bottom: 20px;
   list-style: none;
-  padding: 0 20px;
 }
 .header .nav-menu__list__item {
   text-decoration: none;
@@ -94,9 +93,9 @@
   color: white;
 }
 .header .nav-menu.active {
-  left: 0;
+  top: 0;
+  position: fixed;
   display: flex;
-  flex-direction: column;
 }
 
 /* Media */
@@ -921,7 +920,7 @@ footer {
   .offer {
     margin-top: -144px;
     display: grid;
-    grid-template-columns: 1fr 1fr 120px;
+    grid-template-columns: 1fr 1fr 60px;
     justify-content: flex-end;
     background: url("../assets/offer/offer.svg") no-repeat center center;
     background-size: contain;
