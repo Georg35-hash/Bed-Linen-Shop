@@ -125,6 +125,30 @@ footer {
         }
     }
 }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (max-width: 768px) {
     footer {
@@ -214,7 +238,6 @@ footer {
                             justify-content: center;
                         }
                     }
-                   
                 }
                 
             }
@@ -232,28 +255,112 @@ footer {
         }
     }
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+    
+}
+@media (max-width: 576px) {
+    footer {
+        position: relative;
+
+
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            opacity: 0; // init state - transparante 
         }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        &::after {
+            background: url("../assets/footer/footer-pic.png") no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        .container {
+            display: grid;
+            align-items: center;
+            margin: 0 auto;
+
+            grid-template-columns: 75px 120px 120px ;
+            z-index: 1;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 250px;
+            animation: fadeInUp 1s ease-in-out;
+
+            .column:last-child {
+                margin-left: 4px;
+                width: 300px;
+            }
+
+            .column {
+                margin: 0 auto;
+                h3 {
+                    font-weight: 700;
+                    font-size: 12px;
+                    margin-bottom: 12px;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+
+                        margin-bottom: 10px;
+                        font-size: 14px;
+
+                        a {
+                            text-decoration: none;
+                            color: #f5f7fa;
+                            transition: color 0.3s;
+
+                            &:hover {
+                                color: #a3d2ca;
+                            }
+                        }
+
+                        img {
+                            margin-right: 8px;
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                }
+
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    a{
+                        display: flex;
+                        img{
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+                
+            }
+
+
+        }
+
+        .bottom {
+            text-align: center;
+            font-size: 9px;
+            padding: 10px 0;
+            margin-top: 20px;
+            z-index: 1;
+            position: relative;
         }
     }
 
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+    
 }
