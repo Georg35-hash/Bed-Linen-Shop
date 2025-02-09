@@ -150,12 +150,31 @@
             }
 
         }
+
+        &__navigation {
+            margin-left: 200px;
+
+            .blog-slider__nav {
+                
+                img {
+                    width: 10px;
+                }
+
+            }
+
+            .blog-slider__points {
+                img {
+                    width: 10px;
+                }
+            }
+        }
     }
 }
 
 @media (max-width: 576px) {
     .blog-slider {
-        margin: -200px 0px 0px -120px;
+        margin: -200px 40px 0px -120px;
+
         .blog-slider__header {
             h2 {
                 margin-left: 32px;
@@ -178,14 +197,14 @@
             }
         }
 
-   
+
 
         .blog-slider__header {
-            margin-left: 120px;
+            margin-left: 110px;
         }
 
         .blog-slider__content {
-            margin-top: -50px ;
+            margin-top: -50px;
             transform: scale(0.42);
 
             .blog-slider__image img {

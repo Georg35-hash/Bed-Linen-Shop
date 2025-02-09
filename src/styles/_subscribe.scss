@@ -17,17 +17,17 @@
                 text-transform: capitalize;
                 color: #f5f7fa;
                 margin-bottom: 15px;
-                text-align: center; // Центрування тексту заголовка
+                text-align: center;
             }
 
             p {
                 font-family: "Cabinet-Grotesk";
-                max-width: 498px; // Ширина для центрування
+                max-width: 498px;
                 font-weight: 400;
                 font-size: 20px;
-                line-height: 1.5; // Рівномірний міжрядковий інтервал
+                line-height: 1.5;
                 text-transform: capitalize;
-                text-align: center; // Центрування тексту опису
+                text-align: center;
                 color: #f5f7fa;
                 margin-bottom: 30px;
             }
@@ -126,36 +126,38 @@
                     margin-top: -2px;
                     margin-right: -120px;
                 }
+
+                p:hover {
+
+                    transition: transform 0.3s ease-out;
+                    transform: translateX(10px);
+                }
             }
 
-            p:hover {
 
-                transition: transform 0.3s ease;
-                transform: translateX(10px);
-            }
         }
     }
 }
 
 @media (max-width: 768px) {
     .subscribe {
-        margin-top: 100px; // Можно уменьшить отступ сверху для мобильной версии
+        margin-top: 100px;
     }
 
     .subscribe-container {
-        padding: 0 20px; // Добавим горизонтальные отступы, чтобы контент не прилипал к краям
+        padding: 0 20px;
     }
 
     .subscribe-form {
 
-        // Изменяем контейнер инпута, чтобы он адаптировался под мобильные устройства
+
         .input-container {
             outline: none;
-            width: 90%; // вместо фиксированной ширины 768px – 90% от ширины экрана
-            max-width: 320px; // ограничим максимальную ширину для корректного отображения на мобильных
-            padding: 8px 20px; // при необходимости можно уменьшить горизонтальные отступы
+            width: 90%;
+            max-width: 320px;
+            padding: 8px 20px;
 
-            // Псевдоэлемент оставляем без изменений (если он уже корректно масштабируется)
+
             &::before {
                 content: "";
                 position: absolute;
@@ -178,15 +180,65 @@
             }
 
             .input-icon {
-                width: 40px; // Можно оставить как есть или настроить по необходимости
+                width: 40px;
             }
         }
 
-        // При необходимости можно уменьшить отступ у кнопки
         .subscribe-button {
             margin: 30px 0px 30px 0px;
         }
 
-        // Если потребуется, можно также отрегулировать размер шрифта в кнопке или других элементах
+    }
+}
+
+@media (max-width: 576px) {
+    .subscribe {
+        margin-top: 100px;
+    }
+
+    .subscribe-container {
+        padding: 0 20px;
+    }
+
+    .subscribe-form {
+
+
+        .input-container {
+            outline: none;
+            width: 90%;
+            max-width: 240px;
+            padding: 8px 20px;
+
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 2px;
+                border-radius: 37px;
+                background: linear-gradient(133deg,
+                        #a3a3a3 27.08%,
+                        #ccc 41.21%,
+                        #fff 55.17%,
+                        #ccc 67.71%,
+                        #a3a3a3 83.33%);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: destination-out;
+                mask-composite: exclude;
+            }
+
+            .input-icon {
+                width: 40px;
+            }
+        }
+
+        .subscribe-button {
+            margin: 30px 0px 30px 0px;
+        }
+
     }
 }

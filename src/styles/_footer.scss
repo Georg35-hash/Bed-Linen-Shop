@@ -82,6 +82,7 @@ footer {
             .social {
 
                 display: flex;
+                align-items: center;
                 gap: 10px;
                 margin-top: 20px;
 
@@ -128,15 +129,15 @@ footer {
 @media (max-width: 768px) {
     footer {
         position: relative;
-        
 
-        // Фоновые изображения с анимацией
+
+
         &::before,
         &::after {
             content: "";
             position: absolute;
             z-index: 0;
-            opacity: 0; // Начальное состояние – прозрачное
+            opacity: 0; // init state - transparante 
         }
 
         &::after {
@@ -144,84 +145,81 @@ footer {
             background-size: cover;
             width: 100%;
             height: 100%;
-            opacity: 0.4; // Базовая прозрачность для затемнения
-            animation: fadeIn 1.5s ease-in-out forwards; // Немного дольше, чтобы появление было плавным
+            opacity: 0.4;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
 
         .container {
             display: grid;
             align-items: center;
-            grid-template-columns: 200px 200px 200px;
+            margin: 0 auto;
+
+            grid-template-columns: 150px 200px 200px ;
             z-index: 1;
             position: relative;
             margin: 0 auto;
-            padding: 0 50px 0px 50px;
             margin-top: 250px;
-            animation: fadeInUp 1s ease-in-out; // Анимация появления контента футера
-        }
-        .column:last-child{
-            display: none;
-        }
-        .column {
-            
-            h3 {
-                font-weight: 700;
-                font-size: 18px;
-                margin-bottom: 12px;
+            animation: fadeInUp 1s ease-in-out;
+
+            .column:last-child {
+                margin-left: 40px;
+                width: 300px;
             }
 
-            ul {
-                list-style: none;
-                padding: 0;
-
-                li {
-                    display: flex;
-                    align-items: center;
-                    
-                    margin-bottom: 10px;
-                    font-size: 14px;
-
-                    a {
-                        text-decoration: none;
-                        color: #f5f7fa;
-                        transition: color 0.3s;
-
-                        &:hover {
-                            color: #a3d2ca;
-                        }
-                    }
-
-                    img {
-                        margin-right: 8px;
-                        width: 16px;
-                        height: 16px;
-                    }
-                }
-            }
-
-            
             .column {
-                gap: 10px;
-                margin-top: 10px;
-
-                p {
-                    font-size: 14px;
+                margin: 0 auto;
+                h3 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    margin-bottom: 12px;
                 }
 
-                a {
-                    cursor: pointer;
+                ul {
+                    list-style: none;
+                    padding: 0;
 
-                    img {
-                        width: 20px;
-                        height: 20px;
-                        transition: transform 0.3s;
+                    li {
+                        display: flex;
+                        align-items: center;
 
-                        &:hover {
-                            transform: scale(1.1);
+                        margin-bottom: 10px;
+                        font-size: 14px;
+
+                        a {
+                            text-decoration: none;
+                            color: #f5f7fa;
+                            transition: color 0.3s;
+
+                            &:hover {
+                                color: #a3d2ca;
+                            }
+                        }
+
+                        img {
+                            margin-right: 8px;
+                            width: 16px;
+                            height: 16px;
                         }
                     }
                 }
+
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    a{
+                        display: flex;
+                        img{
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                   
+                }
+                
             }
+
+
         }
 
         .bottom {
@@ -234,7 +232,6 @@ footer {
         }
     }
 
-    // Анимация плавного появления контента футера
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -247,7 +244,7 @@ footer {
         }
     }
 
-    // Общая анимация появления для фоновых изображений
+
     @keyframes fadeIn {
         from {
             opacity: 0;

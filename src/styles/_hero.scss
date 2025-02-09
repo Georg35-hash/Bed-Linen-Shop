@@ -104,6 +104,7 @@
             max-width: 100%;
             opacity: 0;
             animation: fadeIn 1s ease-out forwards 1.4s;
+            
         }
 
         .hero__light {
@@ -133,7 +134,10 @@
         }
     }
 }
-
+.hero__img,
+.hero__background {
+    transition: transform 0.1s ease-out;
+}
 @media (max-width: 768px) {
     .hero {
         .hero__content {

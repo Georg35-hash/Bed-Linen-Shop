@@ -115,16 +115,38 @@ sidebarNaviBlog();
 document.addEventListener("DOMContentLoaded", function () {
     const openButton = document.getElementById("openButton");
     const navMenu = document.getElementById("navMenu");
-    
+
     openButton.addEventListener("click", function () {
         navMenu.classList.toggle("active");
         openButton.classList.toggle("active");
     });
-    
+
     document.addEventListener("click", function (event) {
         if (!navMenu.contains(event.target) && !openButton.contains(event.target)) {
             navMenu.classList.remove("active");
             openButton.classList.remove("active");
         }
+    });
+});
+
+//paralax
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero__content"); // container
+    const img = document.querySelector(".hero__img"); // my pillow
+    const bg = document.querySelector(".hero__background"); // bg
+
+    hero.addEventListener("mousemove", (e) => {
+        const { width, height, left, top } = hero.getBoundingClientRect();
+        const x = (e.clientX - left - width / 2) / 10; // transitionX
+        const y = (e.clientY - top - height / 2) / 10; // transitionY
+
+        img.style.transform = `translate(${-x}px, ${-y}px)`;
+        bg.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    hero.addEventListener("mouseleave", () => {
+        img.style.transform = "translate(0, 0)";
+        bg.style.transform = "translate(0, 0)";
     });
 });

@@ -19,6 +19,7 @@
                 line-height: 200%;
                 text-transform: capitalize;
                 color: #f5f7fa;
+                animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
 
             p {
@@ -30,6 +31,7 @@
                 color: #f5f7fa;
                 max-width: 774px;
                 max-height: 215px;
+                animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
 
 
@@ -42,7 +44,7 @@
                 font-weight: 700;
                 font-size: 22px;
                 color: #f5f7fa;
-
+                animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
                 &:hover {
                     text-decoration: underline;
@@ -78,6 +80,20 @@
     }
 }
 
+@keyframes focus-in-expand-fwd {
+    0% {
+        letter-spacing: -.5em;
+        transform: translateZ(-800px);
+        filter: blur(12px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateZ(0);
+        filter: blur(0);
+        opacity: 1
+    }
+}
 
 @media (max-width: 768px) {
 
@@ -114,6 +130,10 @@
                     font-size: 9px;
                     max-width: 900px;
                 }
+
+                .sleepy-shop__link {
+                    font-size: 10px;
+                }
             }
 
             img {
@@ -133,16 +153,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             .sleepy-shop__text {
                 margin-left: 20px;
 
                 h2 {
-                    font-size: 20px; 
+                    font-size: 10px;
                 }
 
                 p {
-                    font-size: 7px; 
+                    font-size: 7px;
                     width: 210px;
+                }
+
+                .sleepy-shop__link {
+                    font-size: 10px;
                 }
             }
 
@@ -150,12 +175,13 @@
                 margin: 0 20px;
                 max-width: 140px;
             }
+
             &::before {
                 content: "";
                 position: absolute;
                 z-index: 0;
             }
-    
+
             &::before {
                 z-index: 0;
                 background: url("../assets/sleepy-shop/C5.svg") no-repeat;
