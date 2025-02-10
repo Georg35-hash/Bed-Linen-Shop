@@ -81,16 +81,16 @@
 
 @media (max-width: 576px) {
     .about-quality {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: -27px;
-
         button {
             display: flex;
             justify-content: center;
-            max-width: 150px;
+            flex-wrap: wrap;
+            gap: 10px; // пробуем положительное значение gap (при необходимости можно его убрать или изменить)
+            max-width: 140px; 
+
+            img {
+                max-width: 110px;
+            }
         }
     }
 }

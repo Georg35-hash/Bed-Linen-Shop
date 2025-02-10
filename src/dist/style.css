@@ -444,17 +444,15 @@ footer {
   }
 }
 @media (max-width: 576px) {
-  .about-quality {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: -27px;
-  }
   .about-quality button {
     display: flex;
     justify-content: center;
-    max-width: 150px;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 140px;
+  }
+  .about-quality button img {
+    max-width: 110px;
   }
 }
 .sleepy-shop {
@@ -906,7 +904,7 @@ footer {
   }
   .catalogue .catalogue__slider .catalogue__slider-sidebar {
     margin-top: -180px;
-    transform: scale(0.48);
+    transform: scale(0.55);
   }
   .catalogue .catalogue__slider-sidebar-item .sidebar-item:last-child {
     scale: 1;
@@ -1016,7 +1014,7 @@ footer {
   .offer {
     margin-top: -400px;
     display: grid;
-    grid-template-columns: 60px 270px 1fr;
+    grid-template-columns: 170px 270px 130px;
     justify-content: center;
     background: url("../assets/offer/offer.svg") no-repeat center center;
     background-size: contain;
