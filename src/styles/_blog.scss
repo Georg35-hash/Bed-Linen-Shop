@@ -152,7 +152,7 @@
         }
 
         &__navigation {
-            margin: 0px 0px 0px 200px;
+            margin: -60px 0px 0px 200px;
 
             .blog-slider__nav {
                 
@@ -173,12 +173,12 @@
 
 @media (max-width: 576px) {
     .blog-slider {
-        margin: -200px 40px 0px -116px;
+        margin: -200px 40px 0px -120px;
 
         .blog-slider__header {
             margin-left: 110px;
             h2 {
-                margin-left: 32px;
+                margin-left: 30px;
                 font-family: 'Cabinet-Grotesk';
                 font-weight: 800;
                 font-size: 20px;
@@ -203,6 +203,7 @@
             transform: scale(0.42);
 
             .blog-slider__image img {
+                margin-left: 50px;
                 width: 180px;
                 height: auto;
             }

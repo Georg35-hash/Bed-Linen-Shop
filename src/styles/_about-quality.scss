@@ -63,6 +63,7 @@
 @media (max-width: 768px) {
 
     .about-quality {
+        margin-top: 40px;
         justify-content: center;
         display: flex;
         align-items: center;
@@ -89,7 +90,7 @@
             max-width: 140px; 
 
             img {
-                max-width: 110px;
+                max-width: 140px;
             }
         }
     }
