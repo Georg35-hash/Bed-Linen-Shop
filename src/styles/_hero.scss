@@ -1,5 +1,4 @@
 .hero {
-    
     position: relative;
     padding-top: 39px;
 
@@ -111,12 +110,9 @@
             fill: linear-gradient(90deg,
                     rgba(240, 250, 255, 0.62) 0%,
                     #daf2ff 100%);
-            filter: blur(316.95306396484375px);
             position: absolute;
             bottom: -50px;
             z-index: 0;
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards 1.6s;
         }
 
         .hero__shadow {

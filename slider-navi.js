@@ -112,59 +112,69 @@ function sidebarNaviBlog() {
 }
 sidebarNaviBlog();
 
-document.addEventListener("DOMContentLoaded", function () {
-    const openButton = document.getElementById("openButton");
-    const navMenu = document.getElementById("navMenu");
-
-    openButton.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-        openButton.classList.toggle("active");
+function openBurgerMenu(){
+    document.addEventListener("DOMContentLoaded", function () {
+        const openButton = document.getElementById("openButton");
+        const navMenu = document.getElementById("navMenu");
+    
+        openButton.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            openButton.classList.toggle("active");
+        });
+    
+        document.addEventListener("click", function (event) {
+            if (!navMenu.contains(event.target) && !openButton.contains(event.target)) {
+                navMenu.classList.remove("active");
+                openButton.classList.remove("active");
+            }
+        });
     });
-
-    document.addEventListener("click", function (event) {
-        if (!navMenu.contains(event.target) && !openButton.contains(event.target)) {
-            navMenu.classList.remove("active");
-            openButton.classList.remove("active");
-        }
-    });
-});
+}
+openBurgerMenu()
 
 
 
 //paralax
-
-document.addEventListener("DOMContentLoaded", () => {
-    const hero = document.querySelector(".hero__content"); // container
-    const img = document.querySelector(".hero__img"); // my pillow
-    const bg = document.querySelector(".hero__background"); // bg
-
-    hero.addEventListener("mousemove", (e) => {
-        const { width, height, left, top } = hero.getBoundingClientRect();
-        const x = (e.clientX - left - width / 2) / 20; // transitionX
-        const y = (e.clientY - top - height / 2) / 20; // transitionY
-
-        img.style.transform = `translate(${-x}px, ${-y}px)`;
-        bg.style.transform = `translate(${x}px, ${y}px)`;
-    });
-
-    hero.addEventListener("mouseleave", () => {
-        img.style.transform = "translate(0, 0)";
-        bg.style.transform = "translate(0, 0)";
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
+function paralax (){
+    document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.querySelector(".hero__content"); // container
+        const img = document.querySelector(".hero__img"); // my pillow
+        const bg = document.querySelector(".hero__background"); // bg
+    
+        hero.addEventListener("mousemove", (e) => {
+            const { width, height, left, top } = hero.getBoundingClientRect();
+            const x = (e.clientX - left - width / 2) / 20; // transitionX
+            const y = (e.clientY - top - height / 2) / 20; // transitionY
+    
+            img.style.transform = `translate(${-x}px, ${-y}px)`;
+            bg.style.transform = `translate(${x}px, ${y}px)`;
         });
-    }, { threshold: 0.3 });
+    
+        hero.addEventListener("mouseleave", () => {
+            img.style.transform = "translate(0, 0)";
+            bg.style.transform = "translate(0, 0)";
+        });
+    });
+    
+}
+paralax()
 
-    elements.forEach(el => observer.observe(el));
-});
-
+function scrollAnimation(){
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".animate-on-scroll");
+    
+        function checkScroll() {
+            elements.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9) {
+                    element.classList.add("visible");
+                }
+            });
+        }
+    
+        window.addEventListener("scroll", checkScroll);
+        checkScroll(); // Чтобы сработало сразу при загрузке, если блок уже в зоне видимости
+    });
+    
+}
+scrollAnimation()
