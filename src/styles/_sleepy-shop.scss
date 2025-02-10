@@ -57,16 +57,16 @@
             z-index: 1;
             margin-right: 20px;
             max-width: 100%;
+            opacity: 0;
+            animation: slideIn 1s ease-out forwards 1.2s;
         }
 
         //small cloud
+
         &::before {
             content: "";
             position: absolute;
-            z-index: 0;
-        }
 
-        &::before {
             z-index: 0;
             background: url("../assets/sleepy-shop/C5.svg") no-repeat;
             margin-left: 708px;
@@ -75,10 +75,25 @@
             background-position: center;
             width: 500px;
             height: 500px;
+            opacity: 0;
+            animation: slideIn 1s ease-out forwards 1.0s;
         }
 
     }
 }
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 @keyframes focus-in-expand-fwd {
     0% {

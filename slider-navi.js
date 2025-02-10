@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
 //paralax
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -138,8 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hero.addEventListener("mousemove", (e) => {
         const { width, height, left, top } = hero.getBoundingClientRect();
-        const x = (e.clientX - left - width / 2) / 10; // transitionX
-        const y = (e.clientY - top - height / 2) / 10; // transitionY
+        const x = (e.clientX - left - width / 2) / 20; // transitionX
+        const y = (e.clientY - top - height / 2) / 20; // transitionY
 
         img.style.transform = `translate(${-x}px, ${-y}px)`;
         bg.style.transform = `translate(${x}px, ${y}px)`;
@@ -150,3 +152,19 @@ document.addEventListener("DOMContentLoaded", () => {
         bg.style.transform = "translate(0, 0)";
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.3 });
+
+    elements.forEach(el => observer.observe(el));
+});
+

@@ -1,4 +1,5 @@
 .hero {
+    
     position: relative;
     padding-top: 39px;
 
@@ -48,6 +49,7 @@
         animation: fadeInUp 1s ease-out forwards 0.8s;
 
         .hero__button {
+            position: relative;
             padding-top: 50.93px;
             justify-content: center;
             background: transparent;
@@ -55,7 +57,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            animation: fadeIn 1s ease-out forwards 1s;
+            
 
             img {
                 position: absolute;
@@ -70,16 +72,14 @@
             }
 
             .hero__button-text {
-                display: inline-block; // добавлено для корректной работы transform
-                cursor: pointer;
-                z-index: 6;
+                z-index: 2;
                 font-family: 'Cabinet-Grotesk';
                 color: white;
                 font-size: 14px;
                 line-height: 1.1;
                 margin-top: -20px;
                 margin-right: -64px;
-                transition: transform 0.3s ease;
+                transition: transform 0.3s ease-out;
             }
 
             .hero__button-text:hover {
@@ -100,11 +100,10 @@
             position: absolute;
             bottom: -40px;
             z-index: 0;
-            width: 100%;
             max-width: 100%;
             opacity: 0;
             animation: fadeIn 1s ease-out forwards 1.4s;
-            
+
         }
 
         .hero__light {
@@ -133,11 +132,48 @@
 
         }
     }
+
+    .hero__img,
+    .hero__background {
+        transition: transform 0.1s ease-out;
+    }
 }
-.hero__img,
-.hero__background {
-    transition: transform 0.1s ease-out;
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         .hero__content {
@@ -201,23 +237,8 @@
                     margin-right: -3px;
                     width: 70px;
                 }
-
-                .hero__button-text {
-                    display: inline-block; // добавлено для корректной работы transform
-                    cursor: pointer;
-                    z-index: 6;
-                    font-family: 'Cabinet-Grotesk';
-                    color: white;
-                    font-size: 10px;
-                    line-height: 1.1;
-                    margin-top: -20px;
-                    margin-right: -64px;
-                    transition: transform 0.3s ease;
-                }
-
-                .hero__button-text:hover {
-                    z-index: 2;
-                    transform: translateX(10px);
+                .hero__button-text{
+                    margin-left: 20px;
                 }
             }
 
@@ -230,44 +251,9 @@
                 z-index: 0;
                 width: 400px;
                 height: 400px;
-
-
             }
+
         }
 
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
     }
 }
