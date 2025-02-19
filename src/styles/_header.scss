@@ -13,6 +13,7 @@ header {
     }
 
     .header__menu-link {
+        
         position: relative;
         z-index: 1;
         display: grid;
@@ -21,6 +22,7 @@ header {
     }
 
     .header__menu-icon {
+        outline: none;
         margin-top: -18px;
         width: 41.01px;
         height: 41.32px;

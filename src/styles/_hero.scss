@@ -43,11 +43,12 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-
+    
         opacity: 0;
         animation: fadeInUp 1s ease-out forwards 0.8s;
-
+    
         .hero__button {
+            z-index: 10;
             position: relative;
             padding-top: 50.93px;
             justify-content: center;
@@ -56,37 +57,34 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            
-
+        
             img {
                 position: absolute;
                 width: 94px;
                 height: 58px;
-                margin-right: 20px;
-                pointer-events: none;
 
-                &:focus {
-                    outline: none;
-                }
             }
-
+        
             .hero__button-text {
+                
+                position: relative;
+                left: 39px;
                 z-index: 2;
                 font-family: 'Cabinet-Grotesk';
                 color: white;
                 font-size: 14px;
                 line-height: 1.1;
-                margin-top: -20px;
-                margin-right: -64px;
+                top: -10px;
                 transition: transform 0.3s ease-out;
             }
-
-            .hero__button-text:hover {
-                transform: translateX(10px);
-            }
+            
+            
         }
-
-
+        .hero__button:hover .hero__button-text {
+            transform: translateX(10px)
+        }
+        
+    
         .hero__img {
             z-index: 1;
             margin-top: 37px;
@@ -94,7 +92,7 @@
             opacity: 0;
             animation: slideIn 1s ease-out forwards 1.2s;
         }
-
+    
         .hero__background {
             position: absolute;
             bottom: -40px;
@@ -102,32 +100,29 @@
             max-width: 100%;
             opacity: 0;
             animation: fadeIn 1s ease-out forwards 1.4s;
-
         }
-
+    
         .hero__light {
             border-radius: 100%;
-            fill: linear-gradient(90deg,
-                    rgba(240, 250, 255, 0.62) 0%,
-                    #daf2ff 100%);
+            fill: linear-gradient(90deg, rgba(240, 250, 255, 0.62) 0%, #daf2ff 100%);
             position: absolute;
             bottom: -50px;
             z-index: 0;
         }
-
+    
         .hero__shadow {
             position: absolute;
             margin-top: -300px;
             z-index: 0;
         }
-
+    
         .hero__bed-shadow {
             position: absolute;
             margin-top: 350px;
             z-index: 0;
-
         }
     }
+    
 
     .hero__img,
     .hero__background {
@@ -233,8 +228,11 @@
                     margin-right: -3px;
                     width: 70px;
                 }
-                .hero__button-text{
-                    margin-left: 20px;
+
+                .hero__button-text {
+                    position: relative;
+                    top: -1px;
+                    left: 10px;
                 }
             }
 

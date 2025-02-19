@@ -32,7 +32,7 @@ footer {
     }
 
     .container {
-
+        z-index: 2;
         margin-top: 258px;
         display: grid;
         grid-template-columns: 146px 243px 208px 310px;
@@ -335,11 +335,18 @@ footer {
                 }
 
                 .social {
+        
                     display: flex;
                     justify-content: center;
                     width: 100%;
+                    p{
+                        position: relative;
+                        z-index: 999;
+                    }
                     a{
+                        
                         display: flex;
+
                         img{
                             display: flex;
                             justify-content: center;

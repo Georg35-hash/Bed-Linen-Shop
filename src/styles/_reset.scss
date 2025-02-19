@@ -3,10 +3,14 @@
     margin: 0;
 }
 
-a {
-    cursor: pointer;
-}
+body{
+    background: #375B68;
+    
+        outline: none;
+        overflow-x: hidden;
+        max-width: 100vw;
 
+}
 main {
     max-width: 1440px;
     margin: 0px auto;
@@ -26,15 +30,4 @@ footer {
     max-width: 1440px;
     margin: 0px auto; // Центрирование футера на странице
     background-color: #375B68; // Цвет фона на случай, если изображение не загрузится
-}
-
-
-
-@media (max-width: 768px) {
-    body {
-        outline: none;
-        overflow-x: hidden;
-        max-width: 100vw;
-    }
-
 }

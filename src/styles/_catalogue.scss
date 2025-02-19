@@ -51,9 +51,11 @@
                     height: 134px;
                     transition: background 0.3s ease;
 
-                    &:hover {
-                        background: linear-gradient(90deg, #436e7e 18.57%, #12212e 100%);
-                    }
+
+                }
+
+                .sidebar-item.active {
+                    background: linear-gradient(90deg, #436e7e 18.57%, #12212e 100%);
                 }
 
                 .sidebar-item:last-child {
@@ -63,9 +65,10 @@
 
             .catalogue__slider-content {
                 width: 1169px;
+                height: 661px;
                 padding: 67px 0px 19px 42px;
                 border-radius: 0 36px 36px 36px;
-                height: fit-content;
+
                 background: linear-gradient(180deg, #12212e 50.11%, #375b68 93.7%);
 
                 h2 {
@@ -159,10 +162,15 @@
                                 text-align: justify;
                                 color: #f5f7fa;
 
-                                .product_icon {
-                                    height: 20px;
-                                    width: 20px;
+                                button {
+                                    background: transparent;
+                                    border:  none;
+                                    .product_icon {
+                                        height: 20px;
+                                        width: 20px;
+                                    }
                                 }
+
                             }
                         }
                     }
@@ -184,6 +192,7 @@
                     #slide2:checked~.slides-wrapper .slide:nth-child(2) .product,
                     #slide3:checked~.slides-wrapper .slide:nth-child(3) .product,
                     #slide4:checked~.slides-wrapper .slide:nth-child(4) .product {
+
                         display: flex;
                     }
 
@@ -325,12 +334,12 @@
 
         .catalogue__slider {
             display: flex;
-            
+
 
             .catalogue__slider-sidebar {
                 margin: -180px 0px 0px -20px;
                 transform: scale(0.55);
-                
+
             }
         }
 

@@ -43,6 +43,7 @@
         align-items: center;
         justify-content: space-between;
         max-width: 1200px;
+        height: 509px;
     }
 
     &__item {
@@ -199,6 +200,7 @@
         }
 
         .blog-slider__content {
+            
             margin-top: -50px;
             transform: scale(0.42);
 

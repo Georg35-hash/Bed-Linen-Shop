@@ -34,14 +34,17 @@
     }
 
     .offer__button-wrapper {
+        
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: flex-end;
         max-height: 400px;
-
+        gap: 10px;
+    
         .offer__button {
-            margin-left: -200px;
+            z-index: 10;
+            margin-right:84px ;
             cursor: pointer;
             background: transparent;
             border: none;
@@ -50,33 +53,38 @@
             align-items: center;
             width: 80px;
             height: 50px;
-            gap: 10px;
             position: relative;
-
+    
             img {
                 position: absolute;
                 width: 94px;
                 height: 58px;
-                margin-top: -10px;
+                top: -11px;
+                right: 30px;
                 pointer-events: none;
             }
-
+    
             .offer__button-desc {
                 font-family: 'Cabinet-Grotesk';
                 color: white;
                 font-size: 14px;
                 line-height: 1.1;
                 margin-top: -2px;
-                margin-right: -80px;
+                text-align: center;
                 transition: transform 0.3s ease;
+                z-index: 2;
             }
-
-            &:hover .offer__button-desc {
+    
+                
+            }
+            .offer__button:hover .offer__button-desc {
                 transform: translateX(10px);
             }
         }
+        
     }
-}
+    
+
 
 /* Media*/
 @media (max-width: 768px) {
@@ -115,7 +123,7 @@
 
 @media (max-width: 576px) {
     .offer {
-        margin-top: -400px;
+        margin: -400px 0 0 0;
         display: grid;
         grid-template-columns: 170px 270px 130px;
         justify-content: center;
@@ -143,7 +151,9 @@
                 }
 
                 .offer__button-desc {
-                    margin: 5px -55px 0 0;
+                    position: relative;
+                    top: 8px;
+                    left: 10px;
                     font-size: 10px;
                 }
             }

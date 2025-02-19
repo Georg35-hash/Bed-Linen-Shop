@@ -27,21 +27,28 @@ sliderKeyNaviCatalogue();
 function sidebarNaviCatalogue() {
     const sidebarItems = document.querySelectorAll('.sidebar-item');
     const windows = document.querySelectorAll('.catalogue__slider-content');
+
+    // Если нужно скрыть отдельные окна, получаем их по ID:
+    const win2 = document.getElementById("window2");
+    const win3 = document.getElementById("window3");
+    const win4 = document.getElementById("window4");
+
+    if(win2) win2.style.display = 'none';
+    if(win3) win3.style.display = 'none';
+    if(win4) win4.style.display = 'none';
+
     sidebarItems.forEach(item => {
-        //crutch solution
-        // {
-        window2.style.display = 'none';
-        window3.style.display = 'none';
-        window4.style.display = 'none';
-        // }
         item.addEventListener('click', () => {
             const targetWindow = document.getElementById(item.getAttribute('data-window'));
             // Hide all windows
             windows.forEach(window => window.style.display = 'none');
             // Show selected window
-            targetWindow.style.display = 'block';
+            if (targetWindow) {
+                targetWindow.style.display = 'block';
+            }
         });
     });
+
     const windowsArrow = document.querySelectorAll('.catalogue__slider-content');
     const navArrow = document.querySelector('.arrow-down'); // Arrow Key
     let currentIndex = 0;
@@ -54,9 +61,12 @@ function sidebarNaviCatalogue() {
         windowsArrow[currentIndex].style.display = 'block';
     }
     // Add EventListener on arrow
-    navArrow.addEventListener('click', switchWindow);
+    if(navArrow) {
+        navArrow.addEventListener('click', switchWindow);
+    }
 }
 sidebarNaviCatalogue();
+
 
 function sidebarNaviBlog() {
 
@@ -112,57 +122,63 @@ function sidebarNaviBlog() {
 }
 sidebarNaviBlog();
 
-function openBurgerMenu(){
+function openBurgerMenu() {
     document.addEventListener("DOMContentLoaded", function () {
         const openButton = document.getElementById("openButton");
         const navMenu = document.getElementById("navMenu");
-    
+
         openButton.addEventListener("click", function () {
             navMenu.classList.toggle("active");
             openButton.classList.toggle("active");
+
+            if (!navMenu.classList.contains("active")) {
+                navMenu.scrollTop = 0; // Прокручиваем наверх при закрытии
+            }
         });
-    
+
         document.addEventListener("click", function (event) {
             if (!navMenu.contains(event.target) && !openButton.contains(event.target)) {
                 navMenu.classList.remove("active");
                 openButton.classList.remove("active");
+                navMenu.scrollTop = 0; // Прокручиваем наверх при закрытии
             }
         });
     });
 }
-openBurgerMenu()
+openBurgerMenu();
+
 
 
 
 //paralax
-function paralax (){
+function paralax() {
     document.addEventListener("DOMContentLoaded", () => {
         const hero = document.querySelector(".hero__content"); // container
         const img = document.querySelector(".hero__img"); // my pillow
         const bg = document.querySelector(".hero__background"); // bg
-    
+
         hero.addEventListener("mousemove", (e) => {
             const { width, height, left, top } = hero.getBoundingClientRect();
             const x = (e.clientX - left - width / 2) / 20; // transitionX
             const y = (e.clientY - top - height / 2) / 20; // transitionY
-    
+
             img.style.transform = `translate(${-x}px, ${-y}px)`;
             bg.style.transform = `translate(${x}px, ${y}px)`;
         });
-    
+
         hero.addEventListener("mouseleave", () => {
             img.style.transform = "translate(0, 0)";
             bg.style.transform = "translate(0, 0)";
         });
     });
-    
-}
-paralax()
 
-function scrollAnimation(){
+}
+paralax();
+
+function scrollAnimation() {
     document.addEventListener("DOMContentLoaded", function () {
         const elements = document.querySelectorAll(".animate-on-scroll");
-    
+
         function checkScroll() {
             elements.forEach((element) => {
                 const rect = element.getBoundingClientRect();
@@ -171,10 +187,52 @@ function scrollAnimation(){
                 }
             });
         }
-    
+
         window.addEventListener("scroll", checkScroll);
         checkScroll(); // Чтобы сработало сразу при загрузке, если блок уже в зоне видимости
     });
-    
+
 }
-scrollAnimation()
+scrollAnimation();
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+    sidebarItems.forEach((item) => {
+        item.addEventListener("click", function () {
+            sidebarItems.forEach((el) => el.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".arrow-down").forEach((arrow) => {
+        arrow.addEventListener("click", function (event) {
+            event.stopPropagation(); // Останавливаем всплытие клика
+
+            // Убираем класс active у всех элементов
+            document.querySelectorAll(".sidebar-item").forEach((item) => item.classList.remove("active"));
+
+            // Ищем родительский элемент с классом .sidebar-item
+            const parentItem = this.closest(".sidebar-item");
+            console.log("this:", this);
+            console.log("parentItem:", this.closest(".sidebar-item"));
+            
+            if (parentItem) {
+                parentItem.classList.add("active");
+                // Если нужно изменить стиль, например:
+                // parentItem.style.background = "linear-gradient(90deg, #436e7e 18.57%, #12212e 100%)";
+            } else {
+                console.error("Родительский элемент .sidebar-item не найден для", this);
+            }
+        });
+    });
+});
+
+
+
+
+
