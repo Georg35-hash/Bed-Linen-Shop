@@ -8,11 +8,9 @@
         align-items: center;
 
         .sleepy-shop__text {
-
             margin-left: 64px;
 
             h2 {
-
                 font-family: "Cabinet-Grotesk";
                 font-weight: 700;
                 font-size: 24px;
@@ -33,7 +31,6 @@
                 max-height: 215px;
                 animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
-
 
             .sleepy-shop__link {
                 position: relative;
@@ -61,12 +58,9 @@
             animation: slideIn 1s ease-out forwards 1.2s;
         }
 
-        //small cloud
-
         &::before {
             content: "";
             position: absolute;
-
             z-index: 0;
             background: url("../assets/sleepy-shop/C5.svg") no-repeat;
             margin-left: 708px;
@@ -78,7 +72,6 @@
             opacity: 0;
             animation: slideIn 1s ease-out forwards 1.0s;
         }
-
     }
 }
 
@@ -94,71 +87,122 @@
     }
 }
 
-
 @keyframes focus-in-expand-fwd {
     0% {
-        letter-spacing: -.5em;
+        letter-spacing: -0.5em;
         transform: translateZ(-800px);
         filter: blur(12px);
-        opacity: 0
+        opacity: 0;
     }
 
     100% {
         transform: translateZ(0);
         filter: blur(0);
-        opacity: 1
+        opacity: 1;
     }
 }
 
-@media (max-width: 768px) {
+/* New 1024px Breakpoint */
+@media (max-width: 1024px) {
+    .sleepy-shop {
+        margin-top: 100px;
+        /* Slightly reduced margin */
 
+        .sleepy-shop_content {
+            .sleepy-shop__text {
+                margin-left: 40px;
+                /* Reduce margin */
+
+                h2 {
+                    font-size: 22px;
+                    /* Slightly smaller heading */
+                    line-height: 180%;
+                    /* Adjust line height */
+                }
+
+                p {
+                    font-size: 18px;
+                    /* Slightly smaller text */
+                    max-width: 600px;
+                    /* Reduce max-width */
+                    line-height: 200%;
+                    /* Adjust line height */
+                }
+
+                .sleepy-shop__link {
+                    margin-top: 40px;
+                    font-size: 20px;
+                    /* Slightly smaller link */
+                }
+            }
+
+            img {
+                margin-left: 80px;
+                /* Reduce margin */
+                max-width: 400px;
+                /* Scale down image */
+            }
+
+            &::before {
+                margin-left: 400px;
+                /* Adjust cloud position */
+                background-size: 280px, 100px;
+                /* Scale down cloud */
+                width: 400px;
+                /* Adjust width */
+                height: 400px;
+                /* Adjust height */
+            }
+        }
+    }
+}
+
+/* Existing 768px Breakpoint */
+@media (max-width: 768px) {
     .sleepy-shop {
         .sleepy-shop_content {
             display: flex;
             align-items: center;
 
-
             &::before {
                 content: "";
                 position: absolute;
                 z-index: 0;
-            }
-
-            &::before {
-                z-index: 0;
                 background: url("../assets/sleepy-shop/C5.svg") no-repeat;
-                margin-left: 240px;
-                margin-bottom: 16px;
+                margin-left: 250px;
+
                 background-size: 180px, 100px;
                 background-position: center;
             }
 
             .sleepy-shop__text {
+                margin-left: 24px;
 
-
+                /* Reduce margin */
                 h2 {
                     font-size: 30px;
                     max-width: 300px;
                 }
 
                 p {
-                    font-size: 9px;
+                    font-size: 14px;
                     max-width: 900px;
                 }
 
                 .sleepy-shop__link {
-                    font-size: 10px;
+                    font-size: 20px;
                 }
             }
 
             img {
+                margin-right: 40px;
                 max-width: 250px;
             }
-
         }
     }
 }
 
+/* Existing 576px Breakpoint */
 @media (max-width: 576px) {
     .sleepy-shop {
         display: flex;
@@ -195,15 +239,74 @@
                 content: "";
                 position: absolute;
                 z-index: 0;
-            }
-
-            &::before {
-                z-index: 0;
                 background: url("../assets/sleepy-shop/C5.svg") no-repeat;
                 margin-left: 120px;
                 margin-bottom: 1px;
                 background-size: 122px, 122px;
                 background-position: center;
+            }
+        }
+    }
+}
+
+/* 320px Breakpoint */
+@media (max-width: 320px) {
+    .sleepy-shop {
+
+
+        .sleepy-shop_content {
+            display: flex;
+            flex-direction: column;
+            .sleepy-shop__text {
+                margin: 0 auto;
+                max-width: 100%;
+
+                h2 {
+                    font-size: 16px;
+                   
+                    line-height: 150%;
+                   
+                }
+
+                p {
+                    font-size: 12px;
+                 
+                    line-height: 160%;
+                    
+                    max-width: 280px;
+                  
+                    max-height: none;
+                    
+                }
+
+                .sleepy-shop__link {
+                    font-size: 14px;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+                  
+                }
+            }
+
+            img {
+                margin: 0 auto;
+               
+                max-width: 120px;
+               
+            }
+
+            &::before {
+                content: "";
+                position: relative;
+                top: 370px;
+                right: 120px;
+                margin-bottom: 0;
+               
+                background-size: 100px, 60px;
+              
+                width: 120px;
+               
+                height: 120px;
+               
             }
         }
     }

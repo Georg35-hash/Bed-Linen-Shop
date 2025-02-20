@@ -6,7 +6,6 @@ footer {
     font-family: "Cabinet-Grotesk", sans-serif;
     position: relative;
 
-    // BG-IMAGES
     &::before,
     &::after {
         content: "";
@@ -36,10 +35,8 @@ footer {
         margin-top: 258px;
         display: grid;
         grid-template-columns: 146px 243px 208px 310px;
-        // Column with fixed size
         margin-left: 455px;
         gap: 20px;
-
 
         .column {
             height: fit-content;
@@ -80,7 +77,6 @@ footer {
             }
 
             .social {
-
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -110,7 +106,6 @@ footer {
         }
     }
 
-    //Block-bottom
     .bottom {
         text-align: center;
         font-size: 14px;
@@ -125,43 +120,105 @@ footer {
         }
     }
 }
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* New 1024px Breakpoint */
+@media (max-width: 1024px) {
+    footer {
+        &::before {
+            width: 1000px; /* Scale down the girl image */
+            height: 400px;
+        }
+
+        .container {
+            margin-top: 200px; /* Reduce top margin */
+            margin-left: 200px; /* Reduce left margin */
+            grid-template-columns: 120px 200px 180px 250px; /* Scale down columns */
+            gap: 15px; /* Slightly smaller gap */
+
+            .column {
+                h3 {
+                    font-size: 16px; /* Smaller heading */
+                    margin-bottom: 20px; /* Reduce margin */
+                }
+
+                ul {
+                    li {
+                        margin-bottom: 20px; /* Reduce spacing */
+
+                        a {
+                            font-size: 15px; /* Slightly smaller text */
+                        }
+
+                        img {
+                            width: 18px; /* Scale down icons */
+                            height: 18px;
+                            margin-right: 8px;
+                        }
+                    }
+                }
+
+                .social {
+                    gap: 8px; /* Smaller gap */
+                    margin-top: 15px;
+
+                    p {
+                        font-size: 14px; /* Smaller text */
+                    }
+
+                    a {
+                        img {
+                            width: 20px; /* Scale down social icons */
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            font-size: 12px; /* Smaller text */
+            padding: 15px 0; /* Adjust padding */
+
+            p {
+                font-size: 14px; /* Slightly smaller */
+            }
+        }
+    }
+}
+
+/* Existing 768px Breakpoint */
 @media (max-width: 768px) {
     footer {
         position: relative;
-
-
 
         &::before,
         &::after {
             content: "";
             position: absolute;
             z-index: 0;
-            opacity: 0; // init state - transparante 
+            opacity: 0;
         }
 
         &::after {
@@ -177,11 +234,9 @@ footer {
             display: grid;
             align-items: center;
             margin: 0 auto;
-
-            grid-template-columns: 150px 200px 200px ;
+            grid-template-columns: 150px 200px 200px;
             z-index: 1;
             position: relative;
-            margin: 0 auto;
             margin-top: 250px;
             animation: fadeInUp 1s ease-in-out;
 
@@ -192,6 +247,7 @@ footer {
 
             .column {
                 margin: 0 auto;
+
                 h3 {
                     font-weight: 700;
                     font-size: 18px;
@@ -205,7 +261,6 @@ footer {
                     li {
                         display: flex;
                         align-items: center;
-
                         margin-bottom: 10px;
                         font-size: 14px;
 
@@ -231,18 +286,17 @@ footer {
                     display: flex;
                     justify-content: center;
                     width: 100%;
-                    a{
+
+                    a {
                         display: flex;
-                        img{
+
+                        img {
                             display: flex;
                             justify-content: center;
                         }
                     }
                 }
-                
             }
-
-
         }
 
         .bottom {
@@ -254,21 +308,19 @@ footer {
             position: relative;
         }
     }
-
-    
 }
+
+/* Existing 576px Breakpoint */
 @media (max-width: 576px) {
     footer {
         position: relative;
-
-
 
         &::before,
         &::after {
             content: "";
             position: absolute;
             z-index: 0;
-            opacity: 0; // init state - transparante 
+            opacity: 0;
         }
 
         &::after {
@@ -284,11 +336,9 @@ footer {
             display: grid;
             align-items: center;
             margin: 0 auto;
-
-            grid-template-columns: 75px 120px 120px ;
+            grid-template-columns: 75px 120px 120px;
             z-index: 1;
             position: relative;
-            margin: 0 auto;
             margin-top: 250px;
             animation: fadeInUp 1s ease-in-out;
 
@@ -299,6 +349,7 @@ footer {
 
             .column {
                 margin: 0 auto;
+
                 h3 {
                     font-weight: 700;
                     font-size: 12px;
@@ -312,7 +363,6 @@ footer {
                     li {
                         display: flex;
                         align-items: center;
-
                         margin-bottom: 10px;
                         font-size: 14px;
 
@@ -335,28 +385,25 @@ footer {
                 }
 
                 .social {
-        
                     display: flex;
                     justify-content: center;
                     width: 100%;
-                    p{
+
+                    p {
                         position: relative;
                         z-index: 999;
                     }
-                    a{
-                        
+
+                    a {
                         display: flex;
 
-                        img{
+                        img {
                             display: flex;
                             justify-content: center;
                         }
                     }
                 }
-                
             }
-
-
         }
 
         .bottom {
@@ -368,6 +415,74 @@ footer {
             position: relative;
         }
     }
+}
 
-    
+@media (max-width: 320px) {
+    footer {
+       
+        height: 520px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .container {
+            margin-top: 120px;
+            padding: 0 10px 0 10px;
+            grid-template-columns: 40px 150px 80px; 
+            
+         
+
+            .column {
+                height: 100px; 
+
+                h3 {
+                    font-size: 14px;
+                    margin-bottom: 8px; 
+                }
+
+                ul {
+                    li {
+                        margin-bottom: 6px; 
+
+                        a {
+                            font-size: 12px;
+                        }
+
+                        img {
+                            width: 12px;
+                            height: 12px;
+                            margin-right: 6px;
+                        }
+                    }
+                }
+
+                .social {
+                    gap: 8px;
+                    margin-top: 8px; 
+
+                    p {
+                        font-size: 12px;
+                    }
+
+                    a {
+                        img {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            margin-top: 20px;
+            font-size: 10px;
+      
+
+            p {
+                font-size: 10px;
+                line-height: 1.2; /* Added for tighter spacing */
+            }
+        }
+    }
 }
