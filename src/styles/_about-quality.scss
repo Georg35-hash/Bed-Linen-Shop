@@ -95,7 +95,22 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px; // пробуем положительное значение gap (при необходимости можно его убрать или изменить)
+             
+            max-width: 200px;
+
+            img {
+                max-width: 240px;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .about-quality {
+        button {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             max-width: 140px;
 
             img {

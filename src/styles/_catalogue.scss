@@ -453,7 +453,6 @@
 /* 576px Breakpoint (Proportional Scaling Like 768px) */
 @media (max-width: 576px) {
     .catalogue {
-        margin-bottom: 80px; /* Smaller margin */
         .catalogue__header {
             margin-left: 10px !important;
             margin-bottom: 20px !important;
@@ -480,10 +479,18 @@
                     justify-content: flex-start !important;
 
                     .sidebar-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         width: 80px !important;
                         height: 80px !important;
                         padding: 0.3rem !important;
                         border-radius: 50px 50px 0 0 !important;
+
+                        img{
+                            width: 70px;
+                            height: 70px;
+                        }
                     }
 
                     .sidebar-item.active {
@@ -491,16 +498,19 @@
                     }
 
                     .sidebar-item:last-child {
+                        
                         background: transparent !important;
                         rotate: -90deg !important;
                     }
+                    
                 }
+                
             }
 
             .catalogue__slider-content {
-                width: 320px !important; /* Proportional reduction from 650px */
-                height: 280px !important; /* Proportional reduction from 360px */
-                padding: 20px 10px !important;
+                
+                max-width: 430px !important; /* Proportional reduction from 650px */
+                height: 300px !important; /* Proportional reduction from 360px */
 
                 h2 {
                     font-size: 18px !important;

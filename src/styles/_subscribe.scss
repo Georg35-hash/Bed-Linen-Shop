@@ -100,7 +100,7 @@
             flex-direction: column;
 
             .subscribe-button {
-                z-index: 10px;
+              
                 position: relative;
                 margin: 49px 0px 43.5px 0px;
                 cursor: pointer;
@@ -141,188 +141,106 @@
 }
 
 @media (max-width: 768px) {
-    .subscribe {
-        margin-top: 100px;
+    .subscribe { margin-top: 100px; }
+    .subscribe .subscribe-container { padding: 0 20px; }
+    .subscribe .subscribe-container .subscribe-form .input-container {
+        outline: none;
+        width: 90%;
+        max-width: 320px;
+        padding: 8px 20px;
     }
-
-    .subscribe-container {
-        padding: 0 20px;
+    .subscribe .subscribe-container .subscribe-form .input-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2px;
+        border-radius: 37px;
+        background: linear-gradient(133deg, #a3a3a3 27.08%, #ccc 41.21%, #fff 55.17%, #ccc 67.71%, #a3a3a3 83.33%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
     }
-
-    .subscribe-form {
-
-
-        .input-container {
-            outline: none;
-            width: 90%;
-            max-width: 320px;
-            padding: 8px 20px;
-
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                padding: 2px;
-                border-radius: 37px;
-                background: linear-gradient(133deg,
-                        #a3a3a3 27.08%,
-                        #ccc 41.21%,
-                        #fff 55.17%,
-                        #ccc 67.71%,
-                        #a3a3a3 83.33%);
-                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                -webkit-mask-composite: destination-out;
-                mask-composite: exclude;
-            }
-
-            .input-icon {
-                width: 40px;
-            }
-        }
-
-        .subscribe-button {
-            margin: 30px 0px 30px 0px;
-        }
-
-    }
+    .subscribe .subscribe-container .subscribe-form .subscribe-button { margin: 30px 0px 32px 0px; }
 }
 
 @media (max-width: 576px) {
-    .subscribe {
-        margin-top: 100px;
-
-
-        .subscribe-container {
-            padding: 0 20px;
-            .subscribe-title {
-                h2 {
-                    font-size: 16px;
-                }
-    
-                p {
-                    font-size: 12px;
-                    
-                }
-            }
-    
-       
-
-        .subscribe-form {
-
-
-            .input-container {
-                outline: none;
-                width: 90%;
-                max-width: 240px;
-                padding: 8px 20px;
-
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    padding: 2px;
-                    border-radius: 37px;
-                    background: linear-gradient(133deg,
-                            #a3a3a3 27.08%,
-                            #ccc 41.21%,
-                            #fff 55.17%,
-                            #ccc 67.71%,
-                            #a3a3a3 83.33%);
-                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                    -webkit-mask-composite: destination-out;
-                    mask-composite: exclude;
-                }
-
-                .input-icon {
-                    width: 40px;
-                }
-            }
-
-            .subscribe-button {
-                margin: 30px 0px 35px 0px;
-            }
-
-        }
+    .subscribe { margin-top: 100px; }
+    .subscribe .subscribe-container .subscribe-title h2 { font-size: 20px; }
+    .subscribe .subscribe-container .subscribe-title p { font-size: 15px; }
+    .subscribe .subscribe-container .subscribe-form .input-container {
+        outline: none;
+        width: 90%;
+        max-width: 240px;
+        padding: 8px 20px;
     }
+    .subscribe .subscribe-container .subscribe-form .input-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2px;
+        border-radius: 37px;
+        background: linear-gradient(133deg, #a3a3a3 27.08%, #ccc 41.21%, #fff 55.17%, #ccc 67.71%, #a3a3a3 83.33%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+    }
+    .subscribe .subscribe-container .subscribe-form .subscribe-button { margin: 30px 0px 35px 0px; }
 }
-}
+
 @media (max-width: 320px) {
-    .subscribe {
-        margin-top: 60px;
-
-        .subscribe-container {
-            padding: 0 10px;
-
-            .subscribe-title {
-                h2 {
-                    font-size: 16px;
-                    line-height: 1.5;
-                    max-width: 300px;
-                    margin-bottom: 10px;
-                }
-
-                p {
-                    font-size: 12px;
-                    line-height: 1.4;
-                    max-width: 280px;
-                    margin-bottom: 20px;
-                }
-            }
-
-            .subscribe-form {
-                .input-container {
-                    width: 100%;
-                    max-width: 260px;
-                    height: 50px;
-                    padding: 5px 15px;
-                    border-radius: 25px;
-
-                    &::before {
-                        border-radius: 25px;
-                        padding: 1px;
-                    }
-
-                    .input-icon {
-                        margin-right: 10px;
-                        width: 20px;
-                        height: 20px;
-                    }
-
-                    .subscribe-input {
-                        font-size: 14px;
-
-                        &::placeholder {
-                            font-size: 14px;
-                        }
-                    }
-                }
-
-                .subscribe-button {
-                    margin: 20px 0;
-
-                    img {
-                        width: 70px;
-                        height: 40px;
-                        margin-top: -8px;
-                    }
-
-                    .subscribe-button__text {
-                        font-size: 12px;
-                        top: 5;
-                        right: -47px;
-                    }
-                }
-            }
-        }
+    .subscribe { margin-top: 60px; }
+    .subscribe .subscribe-container { padding: 0 10px; }
+    .subscribe .subscribe-container .subscribe-title h2 {
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+    .subscribe .subscribe-container .subscribe-title p {
+        font-size: 12px;
+        line-height: 1.4;
+        max-width: 280px;
+        margin-bottom: 20px;
+    }
+    .subscribe .subscribe-container .subscribe-form .input-container {
+        width: 100%;
+        max-width: 260px;
+        height: 50px;
+        padding: 5px 15px;
+        border-radius: 25px;
+    }
+    .subscribe .subscribe-container .subscribe-form .input-container::before {
+        border-radius: 25px;
+        padding: 1px;
+    }
+    .subscribe .subscribe-container .subscribe-form .input-container .input-icon {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    .subscribe .subscribe-container .subscribe-form .input-container .subscribe-input {
+        font-size: 14px;
+    }
+    .subscribe .subscribe-container .subscribe-form .input-container .subscribe-input::placeholder {
+        font-size: 14px;
+    }
+    .subscribe .subscribe-container .subscribe-form .subscribe-button { margin: 20px 0; }
+    .subscribe .subscribe-container .subscribe-form .subscribe-button img {
+        width: 70px;
+        height: 40px;
+        margin-top: -8px;
+    }
+    .subscribe .subscribe-container .subscribe-form .subscribe-button .subscribe-button__text {
+        font-size: 12px;
+        top: 5;
+        right: -47px;
     }
 }
