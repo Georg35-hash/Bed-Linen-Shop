@@ -1,4 +1,5 @@
 .offer {
+    box-sizing: border-box;
     margin-top: 144px;
     display: grid;
     grid-template-columns: 1fr 1fr 120px;
@@ -8,6 +9,7 @@
     background-size: contain;
 
     .offer__content {
+        box-sizing: border-box;
         margin: 95px 0 0 20px;
         grid-column: 2;
         text-align: left;
@@ -15,6 +17,8 @@
         max-width: 600px;
 
         h2 {
+            overflow-wrap: break-word;
+            white-space: normal;
             font-family: "Cabinet-Grotesk";
             font-weight: 700;
             font-size: 48px;
@@ -24,6 +28,8 @@
         }
 
         p {
+            overflow-wrap: break-word;
+            white-space: normal;
             max-width: 441px;
             font-family: "Cabinet-Grotesk";
             font-weight: 300;
@@ -34,6 +40,7 @@
     }
 
     .offer__button-wrapper {
+        z-index: 10;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -57,10 +64,10 @@
             img {
                 position: absolute;
                 width: 94px;
-                height: 58px;
+                height: auto;
                 top: -11px;
                 right: 30px;
-                pointer-events: none;
+
             }
 
             .offer__button-desc {
@@ -68,123 +75,122 @@
                 color: white;
                 font-size: 14px;
                 line-height: 1.1;
-                margin-top: -2px;
-                text-align: center;
+                top: -2px;
                 transition: transform 0.3s ease;
-                z-index: 2;
             }
         }
 
-        .offer__button:hover .offer__button-desc {
-            transform: translateX(10px);
-        }
+
+    }
+
+    .offer__button:hover .offer__button-desc {
+        transform: translateX(10px);
     }
 }
 
 /* New 1024px Breakpoint */
 @media (max-width: 1024px) {
-    .offer {
-
+    .offer.offer {
         margin-top: 100px;
         grid-template-columns: 1fr 1fr 100px;
         height: 550px;
+    }
 
-        .offer__content {
-            margin: 80px 0 0 15px;
-            max-width: 500px;
+    .offer.offer .offer__content {
+        margin: 80px 0 0 15px;
+        max-width: 500px;
+    }
 
-            h2 {
-                font-size: 40px;
-                line-height: 1.8;
-            }
+    .offer.offer .offer__content h2 {
+        font-size: 40px;
+        line-height: 1.8;
+    }
 
-            p {
-                max-width: 380px;
-                font-size: 20px;
-            }
-        }
+    .offer.offer .offer__content p {
+        max-width: 380px;
+        font-size: 20px;
+    }
 
-        .offer__button-wrapper {
-            max-height: 350px;
-            gap: 8px;
+    .offer.offer .offer__button-wrapper {
+        max-height: 350px;
+        gap: 8px;
+    }
 
-            .offer__button {
-                margin-right: 60px;
-                width: 70px;
-                height: 45px;
+    .offer.offer .offer__button-wrapper .offer__button {
+        margin-right: 60px;
+        width: 70px;
+        height: 45px;
+    }
 
-                img {
-                    width: 80px;
-                    height: 50px;
-                    top: -10px;
-                    right: 25px;
-                }
+    .offer.offer .offer__button-wrapper .offer__button img {
+        width: 80px;
+        height: 50px;
+        top: -10px;
+        right: 25px;
+    }
 
-                .offer__button-desc {
-                    font-size: 12px;
-                }
-            }
-        }
+    .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
+        font-size: 12px;
     }
 }
 
 /* Existing 768px Breakpoint */
 @media (max-width: 768px) {
-    .offer {
+    .offer.offer {
         margin-top: -144px;
         display: grid;
         grid-template-columns: 1fr 1fr 60px;
         justify-content: flex-end;
+    }
 
-        .offer__content {
-            h2 {
-                margin: 95px 0 0 30px;
-                font-size: 30px;
-            }
+    .offer.offer .offer__content h2 {
+        margin: 95px 0 0 30px;
+        font-size: 30px;
+    }
 
-            p {
-                max-width: 300px;
-                margin: 0 20px 0 30px;
-                font-size: 16px;
-            }
-        }
+    .offer.offer .offer__content p {
+        max-width: 300px;
+        margin: 0 20px 0 30px;
+        font-size: 16px;
+    }
 
-        .offer__button-wrapper {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: flex-end;
-            max-height: 400px;
-        }
+    .offer.offer .offer__button-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-end;
+        max-height: 400px;
     }
 }
 
 /* Existing 576px Breakpoint */
 @media (max-width: 576px) {
-    .offer .offer__content {
+    .offer.offer .offer__content {
         margin-top: 160px;
     }
 
-    .offer .offer__content h2 {
+    .offer.offer .offer__content h2 {
         margin: 0;
         font-size: 18px;
     }
 
-    .offer .offer__content p {
+    .offer.offer .offer__content p {
         max-width: 800px;
         margin: 10px 0;
         font-size: 16px;
     }
 
-    .offer .offer__button {
-        margin-left: -150px;
+    .offer.offer .offer__button-wrapper .offer__button{
+        margin-left: -90px;
     }
 
-    .offer .offer__button-wrapper .offer__button img {
-        width: 50px;
+    .offer.offer .offer__button-wrapper .offer__button img {
+        top: -18px;
+        width: 70px;
+        height: 70px;
     }
 
-    .offer .offer__button-wrapper .offer__button .offer__button-desc {
+    .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
         position: relative;
         top: 5px;
         left: 10px;
@@ -192,67 +198,109 @@
     }
 }
 
+/* New 425px Breakpoint */
+@media (max-width: 425px) {
+    .offer.offer {
+        display: grid;
+        grid-template-columns: 1fr 200px 40px;
+        margin: 40px 0 240px 0;
+        height: 400px;
+        width: 100%;
+    }
 
+    .offer.offer .offer__content {
+        margin: 70px 0 0 15px;
+        
+    }
+
+    .offer.offer .offer__content h2 {
+        margin: 50px 0 0 0;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .offer.offer .offer__content p {
+        max-width: 350px;
+        font-size: 10px;
+    }
+
+    .offer.offer .offer__button-wrapper {
+        max-height: 300px;
+        margin-left: 10px;
+    }
+
+    .offer.offer .offer__button-wrapper .offer__button {
+        margin-right: 40px;
+        width: 60px;
+        height: 40px;
+    }
+
+    .offer.offer .offer__button-wrapper .offer__button img {
+        width: 65px;
+        height: 45px;
+        right: 20px;
+    }
+
+    .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
+        top: -10px;
+        left: 5px;
+        font-size: 10px;
+    }
+}
+
+/* Existing 320px Breakpoint */
 @media (max-width: 320px) {
-    .offer {
+    .offer.offer {
         display: grid;
         grid-template-columns: 1fr 140px 40px;
         margin: 0;
         height: 201px;
         width: 350px;
-
-        .offer__content {
-            margin: 45px 0px;
-
-            h2 {
-                max-width: 600px;
-                font-size: 12px;
-                line-height: 1.4;
-                
-            }
-
-            p {
-
-                font-size: 7px;
-                line-height: 1.5;
-                max-width: 140px;
-            }
-        }
-
-        .offer__button-wrapper {
-
-            padding-bottom: 12px;
-            margin-left: 20px;
-
-            .offer__button {
-                z-index: 3;
-                position: absolute;
-                right: -60px;
-                width: 50px;
-                transition: transform 0.2s ease;
-
-                img {
-                    width: 60px;
-                    height: 35px;
-                    /* Matched to button height */
-                }
-
-                .offer__button-desc {
-                    position: relative;
-                    left: -13px;
-                    top: -4px;
-                    font-size: 9px;
-                    line-height: 1.2;
-                    color: #f5f7fa;
-
-                }
-            }
-
-
-            .offer__button-desc {
-                transform: translateX(4px);
-            }
-
-        }
     }
+
+    .offer.offer .offer__content {
+        margin: 0;
+    }
+
+    .offer.offer .offer__content h2 {
+        max-width: 600px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .offer.offer .offer__content p {
+        font-size: 7px;
+        line-height: 1.5;
+        max-width: 140px;
+    }
+
+    .offer.offer .offer__button-wrapper {
+        padding-bottom: 12px;
+        margin-left: 20px;
+    }
+
+    .offer.offer .offer__button-wrapper .offer__button {
+        z-index: 3;
+        position: absolute;
+        right: -60px;
+        width: 50px;
+        transition: transform 0.2s ease;
+    }
+
+    .offer.offer .offer__button-wrapper .offer__button img {
+        left: -55px;
+        top:-10px;
+        width: 60px;
+        height: 35px;
+    }
+
+    .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
+        position: relative;
+        left: -28px;
+        top: -4px;
+        font-size: 9px;
+        line-height: 1.2;
+        color: #f5f7fa;
+    }
+
 }

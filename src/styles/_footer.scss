@@ -363,7 +363,7 @@ footer {
 
     footer .container .column .social p {
         position: relative;
-        z-index: 999;
+        z-index: 10;
     }
 
     footer .container .column .social a {
@@ -382,6 +382,58 @@ footer {
         margin-top: 20px;
         z-index: 1;
         position: relative;
+    }
+}
+
+@media (max-width: 425px) {
+    footer .container {
+        
+        grid-template-columns: 120px 130px 140px;
+        gap: 10px;
+    }
+    
+    footer .container .column:last-child {
+        margin-left: 20px;
+        width: 300px;
+    }
+    footer .container .column h3 {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    footer .container .column ul li {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    footer .container .column ul li img {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+
+    footer .container .column .social {
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    footer .container .column .social p {
+        font-size: 12px;
+    }
+
+    footer .container .column .social a img {
+        width: 18px;
+        height: 18px;
+    }
+
+    footer .bottom {
+        font-size: 12px;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+
+    footer .bottom p {
+        font-size: 12px;
     }
 }
 

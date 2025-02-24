@@ -192,8 +192,10 @@
             }
 
             .hero__background {
-                bottom: -30px;
-                max-width: 90%;
+                position: absolute;
+                z-index: 0;
+                max-width: 100%;
+                top:-26px
             }
         }
     }
@@ -239,6 +241,12 @@
 
             .hero__img {
                 max-width: 100%;
+            }
+            .hero__background {
+                position: absolute;
+                z-index: 0;
+                max-width: 100%;
+                top:-26px
             }
         }
     }
