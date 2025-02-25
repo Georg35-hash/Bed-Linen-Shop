@@ -28,7 +28,6 @@ function sidebarNaviCatalogue() {
     const sidebarItems = document.querySelectorAll('.sidebar-item');
     const windows = document.querySelectorAll('.catalogue__slider-content');
 
-    // Если нужно скрыть отдельные окна, получаем их по ID:
     const win2 = document.getElementById("window2");
     const win3 = document.getElementById("window3");
     const win4 = document.getElementById("window4");
@@ -96,24 +95,22 @@ function sidebarNaviBlog() {
         showSlide(currentSlide);
 
         nextButton.addEventListener('click', () => {
-            console.log("Next Button Clicked");
             currentSlide = (currentSlide + 1) % slides.length;  // Increment slide index
             showSlide(currentSlide);  // Show updated slide
         });
 
         prevButton.addEventListener('click', () => {
-            console.log("Prev Button Clicked");
+          
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;  // Decrement slide index
             showSlide(currentSlide);  // Show updated slide
         });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') {
-                console.log("ArrowRight Pressed");
+        
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
             } else if (e.key === 'ArrowLeft') {
-                console.log("ArrowLeft Pressed");
                 currentSlide = (currentSlide - 1 + slides.length) % slides.length;
                 showSlide(currentSlide);
             }
@@ -207,31 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".arrow-down").forEach((arrow) => {
-        arrow.addEventListener("click", function (event) {
-            event.stopPropagation(); // Останавливаем всплытие клика
-
-            // Убираем класс active у всех элементов
-            document.querySelectorAll(".sidebar-item").forEach((item) => item.classList.remove("active"));
-
-            // Ищем родительский элемент с классом .sidebar-item
-            const parentItem = this.closest(".sidebar-item");
-            console.log("this:", this);
-            console.log("parentItem:", this.closest(".sidebar-item"));
-            
-            if (parentItem) {
-                parentItem.classList.add("active");
-                // Если нужно изменить стиль, например:
-                // parentItem.style.background = "linear-gradient(90deg, #436e7e 18.57%, #12212e 100%)";
-            } else {
-                console.error("Родительский элемент .sidebar-item не найден для", this);
-            }
-        });
-    });
-});
-
 
 
 

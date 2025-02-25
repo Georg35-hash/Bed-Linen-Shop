@@ -28,7 +28,6 @@
                 text-align: justify;
                 color: #f5f7fa;
                 max-width: 774px;
-                max-height: 215px;
                 animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
 
@@ -263,6 +262,16 @@
     }
 }
 
+@media (max-width: 425px) {
+
+    .sleepy-shop .sleepy-shop_content::before {
+        position: absolute;
+        content: "";
+        z-index: 0;
+        left: calc(50% - 525px);
+        top: 380px;
+    }
+}
 /* 320px Breakpoint */
 @media (max-width: 320px) {
     .sleepy-shop_content {
@@ -305,6 +314,6 @@
         content: "";
         z-index: 0;
         left: calc(50% - 365px);
-        top: 46vh;
+        top: 400px;
     }
 }

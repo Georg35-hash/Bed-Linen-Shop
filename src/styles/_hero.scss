@@ -1,14 +1,12 @@
 .hero {
     position: relative;
-    padding-top: 39px;
-
+    padding-top: 39px;  
+    
+ 
     .hero__title {
         position: relative;
         mix-blend-mode: color-dodge;
-        z-index: 1;
-        background: linear-gradient(180deg,
-                rgba(121, 121, 121, 0.4) 40%,
-                rgba(171, 171, 171, 1) 100%);
+        background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgba(171, 171, 171, 1) 100%);
         display: flex;
         justify-content: center;
         text-transform: uppercase;
@@ -18,21 +16,18 @@
         font-family: "Sahitya-Bold";
         font-weight: 700;
         font-size: 64px;
-        opacity: 0;
         animation: fadeIn 1s ease-out forwards;
     }
-
+    
     .hero__desc {
         font-family: "Sahitya";
         color: white;
         display: flex;
-        z-index: 1;
         position: relative;
         justify-content: center;
         text-align: center;
         line-height: 31.06px;
         font-size: 20px;
-        opacity: 0;
         animation: fadeInUp 1s ease-out forwards 0.5s;
     }
 
@@ -91,35 +86,11 @@
             bottom: -40px;
             z-index: 0;
             max-width: 100%;
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards 1.4s;
-        }
-
-        .hero__light {
-            border-radius: 100%;
-            fill: linear-gradient(90deg, rgba(240, 250, 255, 0.62) 0%, #daf2ff 100%);
-            position: absolute;
-            bottom: -50px;
-            z-index: 0;
-        }
-
-        .hero__shadow {
-            position: absolute;
-            margin-top: -300px;
-            z-index: 0;
-        }
-
-        .hero__bed-shadow {
-            position: absolute;
-            margin-top: 350px;
-            z-index: 0;
+            
         }
     }
-
-    .hero__img,
-    .hero__background {
-        transition: transform 0.1s ease-out;
-    }
+    
+    
 }
 
 @keyframes fadeIn {

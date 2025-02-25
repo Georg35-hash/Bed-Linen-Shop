@@ -1,5 +1,4 @@
 .offer {
-    box-sizing: border-box;
     margin-top: 144px;
     display: grid;
     grid-template-columns: 1fr 1fr 120px;
@@ -9,16 +8,13 @@
     background-size: contain;
 
     .offer__content {
-        box-sizing: border-box;
         margin: 95px 0 0 20px;
         grid-column: 2;
-        text-align: left;
+       
         color: #f5f7fa;
         max-width: 600px;
 
         h2 {
-            overflow-wrap: break-word;
-            white-space: normal;
             font-family: "Cabinet-Grotesk";
             font-weight: 700;
             font-size: 48px;
@@ -28,8 +24,6 @@
         }
 
         p {
-            overflow-wrap: break-word;
-            white-space: normal;
             max-width: 441px;
             font-family: "Cabinet-Grotesk";
             font-weight: 300;
@@ -137,7 +131,6 @@
 /* Existing 768px Breakpoint */
 @media (max-width: 768px) {
     .offer.offer {
-        margin-top: -144px;
         display: grid;
         grid-template-columns: 1fr 1fr 60px;
         justify-content: flex-end;
@@ -177,7 +170,7 @@
     .offer.offer .offer__content p {
         max-width: 800px;
         margin: 10px 0;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .offer.offer .offer__button-wrapper .offer__button{
