@@ -3,7 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-
+    z-index: 1;
 
     .header__menu {
         margin: 35px 0 18px 90px;
@@ -49,6 +49,9 @@ header {
 
     .header__mobile {
         display: none;
+        position: fixed;
+        width: calc(100% - 40px);
+        justify-content: space-between;
     }
 
     .burger-menu {
@@ -70,6 +73,9 @@ header {
 
         &.active {
             position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 12;
 
             span:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 6px);
@@ -86,7 +92,7 @@ header {
     }
 
     .nav-menu {
-        z-index: 4;
+        z-index: 5;
         display: none;
         position: fixed;
         top: 0;
@@ -98,6 +104,11 @@ header {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding-top: 10px;
 
+    }
+
+    &.active {
+        display: flex;
+       
     }
 
     .nav-menu__list {
@@ -131,23 +142,28 @@ header {
 /* Media */
 @media (max-width: 768px) {
     header {
+        &::before {
+            content: "";
+            position: absolute;
+            background: #375B68;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: auto;
+            z-index: 2;
+        }
+
         padding: 20px 20px;
 
         >.header__mobile {
-            position: fixed;
-            z-index: 2;
+
             display: flex;
-            width: calc(100% - 40px);
-            justify-content: space-between;
+
         }
 
         .burger-menu {
             display: flex;
-            align-items: center;
-        }
 
-        .header__icons-mobile {
-            position: relative;
         }
 
         .header__icons-list-mobile {
@@ -166,7 +182,7 @@ header {
             display: flex;
             width: 45px;
             height: 45px;
-            position: relative;
+
         }
 
         .header__menu,
@@ -177,8 +193,6 @@ header {
 
         .header__icons {
             display: none;
-            /* margin заменён padding, если требуется */
-            /* margin:20px; */
         }
     }
 }

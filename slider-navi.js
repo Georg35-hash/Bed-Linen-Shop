@@ -32,9 +32,9 @@ function sidebarNaviCatalogue() {
     const win3 = document.getElementById("window3");
     const win4 = document.getElementById("window4");
 
-    if(win2) win2.style.display = 'none';
-    if(win3) win3.style.display = 'none';
-    if(win4) win4.style.display = 'none';
+    if (win2) win2.style.display = 'none';
+    if (win3) win3.style.display = 'none';
+    if (win4) win4.style.display = 'none';
 
     sidebarItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -60,7 +60,7 @@ function sidebarNaviCatalogue() {
         windowsArrow[currentIndex].style.display = 'block';
     }
     // Add EventListener on arrow
-    if(navArrow) {
+    if (navArrow) {
         navArrow.addEventListener('click', switchWindow);
     }
 }
@@ -100,14 +100,14 @@ function sidebarNaviBlog() {
         });
 
         prevButton.addEventListener('click', () => {
-          
+
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;  // Decrement slide index
             showSlide(currentSlide);  // Show updated slide
         });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') {
-        
+
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
             } else if (e.key === 'ArrowLeft') {
@@ -172,38 +172,48 @@ function paralax() {
 }
 paralax();
 
-function scrollAnimation() {
-    document.addEventListener("DOMContentLoaded", function () {
-        const elements = document.querySelectorAll(".animate-on-scroll");
-
-        function checkScroll() {
-            elements.forEach((element) => {
-                const rect = element.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.9) {
-                    element.classList.add("visible");
-                }
-            });
-        }
-
-        window.addEventListener("scroll", checkScroll);
-        checkScroll(); // Чтобы сработало сразу при загрузке, если блок уже в зоне видимости
-    });
-
-}
-scrollAnimation();
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const sidebarItems = document.querySelectorAll(".sidebar-item");
+    // Get all element include arrow
+    const sidebarItems = document.querySelectorAll(
+        ".catalogue__slider-sidebar-item .sidebar-item:not(.arrow-down)"
+    );
+    const arrow = document.getElementById("arrow");
 
-    sidebarItems.forEach((item) => {
+    // DEFAULT .active
+    if (sidebarItems.length > 0) {
+        sidebarItems[0].classList.add("active");
+    }
+
+    // For click on side-bars
+    sidebarItems.forEach(function (item) {
         item.addEventListener("click", function () {
-            sidebarItems.forEach((el) => el.classList.remove("active"));
+            sidebarItems.forEach(el => el.classList.remove("active"));
             this.classList.add("active");
         });
     });
-});
+
+    // For arrow
+    if (arrow) {
+        arrow.addEventListener("click", function () {
+            let currentActiveIndex = -1;
+            // Init index current slide
+            sidebarItems.forEach((item, index) => {
+                if (item.classList.contains("active")) {
+                    currentActiveIndex = index;
+                }
+            });
+            sidebarItems[currentActiveIndex].classList.remove("active");
+            // Index next elem (loop)
+            let nextIndex = currentActiveIndex + 1;
+            if (nextIndex >= sidebarItems.length) {
+                nextIndex = 0;
+            }
+            sidebarItems[nextIndex].classList.add("active");
+        });
+    }
+})
 
 
 
