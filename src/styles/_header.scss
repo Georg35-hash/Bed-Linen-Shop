@@ -13,7 +13,7 @@ header {
     }
 
     .header__menu-link {
-        
+
         position: relative;
         z-index: 1;
         display: grid;
@@ -70,6 +70,7 @@ header {
 
         &.active {
             position: fixed;
+
             span:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 6px);
             }
@@ -96,15 +97,15 @@ header {
         transition: left 0.3s ease-in-out;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding-top: 10px;
-        
+
     }
 
     .nav-menu__list {
-        
+
         margin: 0 auto;
         display: flex;
         gap: 15px;
-        padding-bottom: 20px;
+        padding-top: 10px;
         list-style: none;
 
     }
@@ -130,21 +131,23 @@ header {
 /* Media */
 @media (max-width: 768px) {
     header {
-        > .header__mobile {
+        padding: 20px 20px;
+
+        >.header__mobile {
+            position: fixed;
             z-index: 2;
-            margin: 20px;
             display: flex;
-            width: 100%;
+            width: calc(100% - 40px);
             justify-content: space-between;
         }
 
         .burger-menu {
             display: flex;
+            align-items: center;
         }
 
         .header__icons-mobile {
             position: relative;
-
         }
 
         .header__icons-list-mobile {
@@ -174,14 +177,16 @@ header {
 
         .header__icons {
             display: none;
-            margin:20px;
+            /* margin заменён padding, если требуется */
+            /* margin:20px; */
         }
     }
 }
 
+
 @media (max-width: 320px) {
     header {
-        > .header__mobile {
+        >.header__mobile {
             z-index: 2;
             margin: 20px;
             display: flex;

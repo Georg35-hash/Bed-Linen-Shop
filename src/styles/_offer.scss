@@ -10,7 +10,7 @@
     .offer__content {
         margin: 95px 0 0 20px;
         grid-column: 2;
-       
+
         color: #f5f7fa;
         max-width: 600px;
 
@@ -34,16 +34,13 @@
     }
 
     .offer__button-wrapper {
-        z-index: 10;
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: flex-end;
         max-height: 400px;
-        gap: 10px;
 
         .offer__button {
-            z-index: 10;
             margin-right: 84px;
             cursor: pointer;
             background: transparent;
@@ -85,17 +82,16 @@
 /* New 1024px Breakpoint */
 @media (max-width: 1024px) {
     .offer.offer {
-        margin-top: 100px;
-        grid-template-columns: 1fr 1fr 100px;
-        height: 550px;
+        grid-template-columns: 1fr 400px 100px;
     }
 
     .offer.offer .offer__content {
-        margin: 80px 0 0 15px;
+        margin: 120px 0 0 15px;
         max-width: 500px;
     }
 
     .offer.offer .offer__content h2 {
+        max-width: 400px;
         font-size: 40px;
         line-height: 1.8;
     }
@@ -103,11 +99,6 @@
     .offer.offer .offer__content p {
         max-width: 380px;
         font-size: 20px;
-    }
-
-    .offer.offer .offer__button-wrapper {
-        max-height: 350px;
-        gap: 8px;
     }
 
     .offer.offer .offer__button-wrapper .offer__button {
@@ -132,61 +123,53 @@
 @media (max-width: 768px) {
     .offer.offer {
         display: grid;
-        grid-template-columns: 1fr 1fr 60px;
-        justify-content: flex-end;
+        grid-template-columns: 1fr 300px 60px;
+
     }
 
     .offer.offer .offer__content h2 {
-        margin: 95px 0 0 30px;
+        margin: 80px 0 0 0px;
         font-size: 30px;
     }
 
     .offer.offer .offer__content p {
         max-width: 300px;
-        margin: 0 20px 0 30px;
         font-size: 16px;
     }
 
     .offer.offer .offer__button-wrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: flex-end;
-        max-height: 400px;
+        margin-top: 60px;
     }
 }
 
 /* Existing 576px Breakpoint */
 @media (max-width: 576px) {
-    .offer.offer .offer__content {
-        margin-top: 160px;
+    .offer.offer {
+        display: grid;
+        grid-template-columns: 1fr 230px 80px;
+    }
+
+    .offer.offer .offer__button-wrapper {
+        margin-top: 20px;
     }
 
     .offer.offer .offer__content h2 {
-        margin: 0;
+        margin: 90px 0 0 0px;
         font-size: 18px;
     }
 
     .offer.offer .offer__content p {
-        max-width: 800px;
-        margin: 10px 0;
+
         font-size: 14px;
     }
 
-    .offer.offer .offer__button-wrapper .offer__button{
-        margin-left: -90px;
-    }
-
     .offer.offer .offer__button-wrapper .offer__button img {
-        top: -18px;
         width: 70px;
         height: 70px;
     }
 
     .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
-        position: relative;
-        top: 5px;
-        left: 10px;
+        margin-top: 10px;
         font-size: 10px;
     }
 }
@@ -196,18 +179,14 @@
     .offer.offer {
         display: grid;
         grid-template-columns: 1fr 200px 40px;
-        margin: 40px 0 240px 0;
-        height: 400px;
-        width: 100%;
     }
 
-    .offer.offer .offer__content {
-        margin: 70px 0 0 15px;
-        
+    .offer.offer .offer__button-wrapper {
+        margin-top: 10px;
     }
 
     .offer.offer .offer__content h2 {
-        margin: 50px 0 0 0;
+        margin: 120px 0 0 0px;
         font-size: 16px;
         line-height: 1.6;
     }
@@ -215,11 +194,6 @@
     .offer.offer .offer__content p {
         max-width: 350px;
         font-size: 10px;
-    }
-
-    .offer.offer .offer__button-wrapper {
-        max-height: 300px;
-        margin-left: 10px;
     }
 
     .offer.offer .offer__button-wrapper .offer__button {
@@ -231,12 +205,10 @@
     .offer.offer .offer__button-wrapper .offer__button img {
         width: 65px;
         height: 45px;
-        right: 20px;
     }
 
     .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
-        top: -10px;
-        left: 5px;
+        margin-top: 0px;
         font-size: 10px;
     }
 }
@@ -244,21 +216,21 @@
 /* Existing 320px Breakpoint */
 @media (max-width: 320px) {
     .offer.offer {
+        height: 300px;
         display: grid;
-        grid-template-columns: 1fr 140px 40px;
-        margin: 0;
-        height: 201px;
-        width: 350px;
+        grid-template-columns: 1fr 120px 40px;
+        
     }
 
-    .offer.offer .offer__content {
-        margin: 0;
-    }
 
     .offer.offer .offer__content h2 {
         max-width: 600px;
         font-size: 12px;
         line-height: 1.4;
+    }
+
+    .offer.offer .offer__content {
+        margin: -20px 0px 0px 0px;
     }
 
     .offer.offer .offer__content p {
@@ -268,12 +240,11 @@
     }
 
     .offer.offer .offer__button-wrapper {
-        padding-bottom: 12px;
-        margin-left: 20px;
+        padding-bottom: 65px;
     }
 
     .offer.offer .offer__button-wrapper .offer__button {
-        z-index: 3;
+
         position: absolute;
         right: -60px;
         width: 50px;
@@ -282,14 +253,13 @@
 
     .offer.offer .offer__button-wrapper .offer__button img {
         left: -55px;
-        top:-10px;
-        width: 60px;
-        height: 35px;
+        width: 50px;
+        height: auto;
     }
 
     .offer.offer .offer__button-wrapper .offer__button .offer__button-desc {
         position: relative;
-        left: -28px;
+        left: -32px;
         top: -4px;
         font-size: 9px;
         line-height: 1.2;
