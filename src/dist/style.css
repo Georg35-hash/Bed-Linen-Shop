@@ -2661,7 +2661,6 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -2715,23 +2714,25 @@ footer {
 @media (max-width: 576px) {
   .modal .modal-content {
     max-width: 300px;
+    max-height: 230px;
   }
   .modal .modal-content h2 {
     font-size: 16px;
   }
   .modal .modal-content p {
-    font-size: 12px;
+    font-size: 9px;
   }
 }
 @media (max-width: 425px) {
   .modal .modal-content {
     max-width: 200px;
+    max-height: 130px;
   }
   .modal .modal-content h2 {
-    font-size: 13px;
+    font-size: 10px;
   }
   .modal .modal-content p {
-    font-size: 10px;
+    font-size: 7px;
   }
 }
 @media (max-width: 320px) {
