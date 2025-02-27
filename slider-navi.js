@@ -156,8 +156,8 @@ function paralax() {
 
         hero.addEventListener("mousemove", (e) => {
             const { width, height, left, top } = hero.getBoundingClientRect();
-            const x = (e.clientX - left - width / 2) / 20; // transitionX
-            const y = (e.clientY - top - height / 2) / 20; // transitionY
+            const x = (e.clientX - left - width / 2) / 40; // transitionX
+            const y = (e.clientY - top - height / 2) / 40; // transitionY
 
             img.style.transform = `translate(${-x}px, ${-y}px)`;
             bg.style.transform = `translate(${x}px, ${y}px)`;
@@ -214,6 +214,56 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 })
+
+function initModal() {
+    const modal = document.querySelector(".modal");
+    const modalText = document.querySelector(".modal-text");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".sleepy-shop__link, .blog-slider__link").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const content = btn.getAttribute("data-content");
+            if (modal && modalText) {
+                modalText.innerHTML = content;
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            closeModal();
+        });
+    }
+
+    window.addEventListener("click", (e) => {
+        if (modal && e.target === modal) {
+            closeModal();
+        }
+    });
+
+    window.addEventListener("keydown", (e) => {
+        if (modal.classList.contains("active")) {
+            if (e.key === "Escape") {
+                closeModal();
+            } else {
+                e.preventDefault();
+            }
+        }
+    });
+
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+}
+
+initModal();
+
+
+
 
 
 

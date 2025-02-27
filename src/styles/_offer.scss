@@ -177,12 +177,13 @@
 /* New 425px Breakpoint */
 @media (max-width: 425px) {
     .offer.offer {
+        margin-top: -60px;
         display: grid;
         grid-template-columns: 1fr 200px 40px;
     }
 
     .offer.offer .offer__button-wrapper {
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .offer.offer .offer__content h2 {
@@ -192,7 +193,6 @@
     }
 
     .offer.offer .offer__content p {
-        max-width: 350px;
         font-size: 10px;
     }
 
@@ -211,6 +211,11 @@
         margin-top: 0px;
         font-size: 10px;
     }
+
+    .offer.offer .offer__content {
+        margin: 120px 0 0 20px;
+        max-width: 500px;
+    }
 }
 
 /* Existing 320px Breakpoint */
@@ -219,7 +224,7 @@
         height: 300px;
         display: grid;
         grid-template-columns: 1fr 120px 40px;
-        
+
     }
 
 
