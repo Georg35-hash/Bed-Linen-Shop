@@ -195,6 +195,7 @@
     .subscribe .subscribe-container .subscribe-form .input-container {
         outline: none;
         max-width: 240px;
+        height: 60px;
         padding: 8px 20px;
     }
 
@@ -222,10 +223,6 @@
         width: fit-content;
         font-size: 20px;
     }
-
-    .subscribe .subscribe-container .subscribe-form .input-container .subscribe-input {
-        width: 200px;
-    }
 }
 @media (max-width: 425px) {
     .subscribe.subscribe {
@@ -245,9 +242,9 @@
     }
 
     .subscribe.subscribe .subscribe-container .subscribe-form .input-container {
-        width: 90%;
-        max-width: 280px;
-        padding: 8px 20px;
+        height: 60px;
+        max-width: 250px;
+        padding: 4px 8px;
     }
 
     .subscribe.subscribe .subscribe-container .subscribe-form .input-container .subscribe-input {

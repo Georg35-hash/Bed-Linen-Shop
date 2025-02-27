@@ -8,9 +8,9 @@
 
 
     button {
-        outline: scale(0.5);
-        width: 230px;
-        height: fit-content;
+        outline: none;
+        width: 134px;
+        height: 134px;
         border-radius: 50%;
         background: transparent;
         cursor: pointer;
@@ -84,7 +84,7 @@
             display: flex;
             justify-content: center;
             width: 280px;
-
+            height: auto;
         }
     }
 }

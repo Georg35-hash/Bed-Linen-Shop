@@ -92,6 +92,7 @@ header .nav-menu {
 }
 header.active {
   display: flex;
+  z-index: 999;
 }
 header .nav-menu__list {
   margin: 0 auto;
@@ -115,16 +116,6 @@ header .nav-menu.active {
 @media (max-width: 768px) {
   header {
     padding: 20px 20px;
-  }
-  header::before {
-    content: "";
-    position: absolute;
-    background: #375B68;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    z-index: 2;
   }
   header > .header__mobile {
     display: flex;
@@ -459,9 +450,9 @@ header .nav-menu.active {
   background: #375B68;
 }
 .about-quality button {
-  outline: scale(0.5);
-  width: 230px;
-  height: fit-content;
+  outline: none;
+  width: 134px;
+  height: 134px;
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
@@ -520,6 +511,7 @@ header .nav-menu.active {
     display: flex;
     justify-content: center;
     width: 280px;
+    height: auto;
   }
 }
 @media (max-width: 576px) {
@@ -665,6 +657,7 @@ header .nav-menu.active {
   .sleepy-shop.sleepy-shop .sleepy-shop_content img {
     margin: 0px 20px 0px 0px;
     max-width: 280px;
+    z-index: auto;
   }
 }
 @media (max-width: 576px) {
@@ -700,6 +693,9 @@ header .nav-menu.active {
     font-size: 16px;
     line-height: 180%;
   }
+  .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text p br {
+    display: none;
+  }
   .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text .sleepy-shop__link.sleepy-shop__link {
     font-size: 18px;
     display: flex;
@@ -712,7 +708,7 @@ header .nav-menu.active {
     max-width: 220px;
     height: auto;
     margin: 0;
-    z-index: auto;
+    z-index: 0;
   }
 }
 @media (max-width: 425px) {
@@ -723,11 +719,17 @@ header .nav-menu.active {
     left: calc(50% - 525px);
     top: 380px;
   }
+  br {
+    display: none;
+  }
 }
 @media (max-width: 320px) {
   .sleepy-shop.sleepy-shop .sleepy-shop_content {
     display: flex;
     flex-direction: column;
+  }
+  br {
+    display: none;
   }
   .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text {
     margin: 0 auto;
@@ -2096,6 +2098,7 @@ header .nav-menu.active {
   .subscribe .subscribe-container .subscribe-form .input-container {
     outline: none;
     max-width: 240px;
+    height: 60px;
     padding: 8px 20px;
   }
   .subscribe .subscribe-container .subscribe-form .input-container::before {
@@ -2120,9 +2123,6 @@ header .nav-menu.active {
     width: fit-content;
     font-size: 20px;
   }
-  .subscribe .subscribe-container .subscribe-form .input-container .subscribe-input {
-    width: 200px;
-  }
 }
 @media (max-width: 425px) {
   .subscribe.subscribe {
@@ -2137,9 +2137,9 @@ header .nav-menu.active {
     margin-bottom: 20px;
   }
   .subscribe.subscribe .subscribe-container .subscribe-form .input-container {
-    width: 90%;
-    max-width: 280px;
-    padding: 8px 20px;
+    height: 60px;
+    max-width: 250px;
+    padding: 4px 8px;
   }
   .subscribe.subscribe .subscribe-container .subscribe-form .input-container .subscribe-input {
     font-size: 18px;
@@ -2634,13 +2634,11 @@ body {
 main {
   max-width: 1440px;
   margin: 0px auto;
-  background: #375B68;
 }
 
 header {
   max-width: 1440px;
   margin: 0px auto;
-  background: #375B68;
 }
 
 footer {
@@ -2743,7 +2741,7 @@ footer {
     font-size: 8px;
   }
   .modal .modal-content p {
-    font-size: 5px;
+    font-size: 3px;
   }
 }
 

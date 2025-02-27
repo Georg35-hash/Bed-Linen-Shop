@@ -108,7 +108,7 @@ header {
 
     &.active {
         display: flex;
-       
+        z-index: 999;
     }
 
     .nav-menu__list {
@@ -142,16 +142,6 @@ header {
 /* Media */
 @media (max-width: 768px) {
     header {
-        &::before {
-            content: "";
-            position: absolute;
-            background: #375B68;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: auto;
-            z-index: 2;
-        }
 
         padding: 20px 20px;
 
