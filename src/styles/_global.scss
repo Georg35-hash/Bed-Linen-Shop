@@ -2,6 +2,10 @@ body {
     background: #375B68;
     outline: none;
     overflow-x: hidden;
+    
+}
+body::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari */
 }
 
 main {
