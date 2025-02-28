@@ -1,9 +1,10 @@
+@charset "UTF-8";
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 header .header__menu {
   margin: 35px 0 18px 90px;
@@ -70,7 +71,7 @@ header .burger-menu.active {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 12;
+  z-index: 999;
 }
 header .burger-menu.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 6px);
@@ -96,7 +97,6 @@ header .nav-menu {
 }
 header.active {
   display: flex;
-  z-index: 999;
 }
 header .nav-menu__list {
   margin: 0 auto;
@@ -208,6 +208,7 @@ header .nav-menu.active {
   padding-top: 39px;
 }
 .hero .hero__title {
+  z-index: 2;
   position: relative;
   mix-blend-mode: color-dodge;
   background: linear-gradient(180deg, rgba(121, 121, 121, 0.4) 40%, rgb(171, 171, 171) 100%);
@@ -222,6 +223,7 @@ header .nav-menu.active {
   font-size: 64px;
 }
 .hero .hero__desc {
+  z-index: 2;
   font-family: "Sahitya";
   color: white;
   display: flex;
@@ -239,7 +241,7 @@ header .nav-menu.active {
   opacity: 0;
 }
 .hero .hero__content .hero__button {
-  z-index: 10;
+  z-index: 2;
   position: relative;
   padding-top: 50.93px;
   justify-content: center;
@@ -278,6 +280,25 @@ header .nav-menu.active {
   bottom: -40px;
   z-index: 0;
   max-width: 100%;
+}
+.hero .hero__content .hero__light {
+  width: 836px;
+  height: 836px;
+  filter: blur(50.9530639648px);
+  top: -80px;
+  position: absolute;
+}
+.hero .hero__content .hero__shadow {
+  width: 1440px;
+  height: 1440px;
+  filter: blur(45px);
+  position: absolute;
+  bottom: -20px;
+}
+.hero .hero__content .bed__light {
+  filter: blur(10px);
+  top: 440px;
+  position: absolute;
 }
 
 /* New 1024px Breakpoint */
@@ -650,10 +671,6 @@ header .nav-menu.active {
   br {
     display: none;
   }
-  .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text {
-    margin: 0 auto;
-    max-width: 100%;
-  }
   .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text h2 {
     font-size: 18px;
     line-height: 150%;
@@ -671,16 +688,7 @@ header .nav-menu.active {
   }
   .sleepy-shop.sleepy-shop .sleepy-shop_content img {
     margin: 0 auto;
-    max-width: 120px;
-  }
-  .sleepy-shop.sleepy-shop .sleepy-shop_content::before {
-    background: url(../assets/sleepy-shop/C5.svg) no-repeat;
-    background-size: 100px, 100px;
-    position: absolute;
-    content: "";
-    z-index: 0;
-    left: calc(50% - 365px);
-    top: 400px;
+    max-width: 180px;
   }
 }
 @font-face {
@@ -2440,6 +2448,7 @@ footer .bottom p {
     justify-content: space-between;
   }
   footer .container {
+    padding-right: 0px;
     margin-top: 120px;
     grid-template-columns: 40px 140px 100px;
   }
@@ -2490,6 +2499,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Для Chrome, Safari */
 }
 
 main {
@@ -2584,14 +2597,14 @@ footer {
 }
 @media (max-width: 425px) {
   .modal .modal-content {
-    max-width: 200px;
-    max-height: 130px;
+    max-width: 300px;
+    max-height: 350px;
   }
   .modal .modal-content h2 {
     font-size: 10px;
   }
   .modal .modal-content p {
-    font-size: 7px;
+    font-size: 14px;
   }
 }
 @media (max-width: 320px) {

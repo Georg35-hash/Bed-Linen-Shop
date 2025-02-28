@@ -207,11 +207,6 @@
         display: none;
     }
 
-    .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text {
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
     .sleepy-shop.sleepy-shop .sleepy-shop_content .sleepy-shop__text.sleepy-shop__text h2 {
         font-size: 18px;
         line-height: 150%;
@@ -232,16 +227,6 @@
 
     .sleepy-shop.sleepy-shop .sleepy-shop_content img {
         margin: 0 auto;
-        max-width: 120px;
-    }
-
-    .sleepy-shop.sleepy-shop .sleepy-shop_content::before {
-        background: url(../assets/sleepy-shop/C5.svg) no-repeat;
-        background-size: 100px, 100px;
-        position: absolute;
-        content: "";
-        z-index: 0;
-        left: calc(50% - 365px);
-        top: 400px;
+        max-width: 180px;
     }
 }
