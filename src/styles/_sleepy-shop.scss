@@ -18,7 +18,7 @@
                 line-height: 200%;
                 text-transform: capitalize;
                 color: #f5f7fa;
-                animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              
             }
 
             p {
@@ -29,7 +29,7 @@
                 text-align: justify;
                 color: #f5f7fa;
                 max-width: 774px;
-                animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                
             }
 
             .sleepy-shop__link {
@@ -41,7 +41,6 @@
                 font-weight: 700;
                 font-size: 22px;
                 color: #f5f7fa;
-                animation: focus-in-expand-fwd 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
                 &:hover {
                     text-decoration: underline;
@@ -54,38 +53,9 @@
             margin: 20px 20px 80px 0px;
             max-width: 623px;
             height: 380px;
-            opacity: 0;
-            animation: slideIn 1s ease-out forwards 1.2s;
+        
         }
 
-    }
-}
-
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes focus-in-expand-fwd {
-    0% {
-        letter-spacing: -0.5em;
-        transform: translateZ(-800px);
-        filter: blur(12px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateZ(0);
-        filter: blur(0);
-        opacity: 1;
     }
 }
 

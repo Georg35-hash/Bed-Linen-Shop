@@ -1,8 +1,8 @@
 .hero {
     position: relative;
-    padding-top: 39px;  
-    
- 
+    padding-top: 39px;
+
+
     .hero__title {
         position: relative;
         mix-blend-mode: color-dodge;
@@ -16,9 +16,8 @@
         font-family: "Sahitya-Bold";
         font-weight: 700;
         font-size: 64px;
-        animation: fadeIn 1s ease-out forwards;
     }
-    
+
     .hero__desc {
         font-family: "Sahitya";
         color: white;
@@ -28,7 +27,7 @@
         text-align: center;
         line-height: 31.06px;
         font-size: 20px;
-        animation: fadeInUp 1s ease-out forwards 0.5s;
+
     }
 
     .hero__content {
@@ -37,7 +36,6 @@
         align-items: center;
         position: relative;
         opacity: 0;
-        animation: fadeInUp 1s ease-out forwards 0.8s;
 
         .hero__button {
             z-index: 10;
@@ -77,8 +75,7 @@
             z-index: 1;
             margin-top: 37px;
             position: relative;
-            opacity: 0;
-            animation: slideIn 1s ease-out forwards 1.2s;
+
         }
 
         .hero__background {
@@ -86,46 +83,15 @@
             bottom: -40px;
             z-index: 0;
             max-width: 100%;
-            
+
         }
     }
-    
-    
+
+
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
-}
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
 /* New 1024px Breakpoint */
 @media (max-width: 1024px) {
@@ -166,7 +132,7 @@
                 position: absolute;
                 z-index: 0;
                 max-width: 100%;
-                top:-26px
+                top: -26px
             }
         }
     }
@@ -213,11 +179,12 @@
             .hero__img {
                 max-width: 100%;
             }
+
             .hero__background {
                 position: absolute;
                 z-index: 0;
                 max-width: 100%;
-                top:-26px
+                top: -26px
             }
         }
     }
@@ -256,7 +223,7 @@
                 position: absolute;
                 z-index: 0;
                 max-width: 100%;
-                top:-26px
+                top: -26px
             }
         }
     }
@@ -304,7 +271,7 @@
                 position: absolute;
                 z-index: 0;
                 max-width: 100%;
-                top:-23px
+                top: -23px
             }
         }
     }

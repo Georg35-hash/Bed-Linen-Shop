@@ -4,9 +4,12 @@ body {
     overflow-x: hidden;
     
 }
-body::-webkit-scrollbar {
-    display: none; /* Для Chrome, Safari */
+html {
+    scroll-behavior: smooth;
 }
+// body::-webkit-scrollbar {
+//     display: none; /* Для Chrome, Safari */
+// }
 
 main {
     max-width: 1440px;

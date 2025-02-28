@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   display: flex;
   align-items: center;
@@ -221,7 +220,6 @@ header .nav-menu.active {
   font-family: "Sahitya-Bold";
   font-weight: 700;
   font-size: 64px;
-  animation: fadeIn 1s ease-out forwards;
 }
 .hero .hero__desc {
   font-family: "Sahitya";
@@ -232,7 +230,6 @@ header .nav-menu.active {
   text-align: center;
   line-height: 31.06px;
   font-size: 20px;
-  animation: fadeInUp 1s ease-out forwards 0.5s;
 }
 .hero .hero__content {
   display: flex;
@@ -240,7 +237,6 @@ header .nav-menu.active {
   align-items: center;
   position: relative;
   opacity: 0;
-  animation: fadeInUp 1s ease-out forwards 0.8s;
 }
 .hero .hero__content .hero__button {
   z-index: 10;
@@ -276,8 +272,6 @@ header .nav-menu.active {
   z-index: 1;
   margin-top: 37px;
   position: relative;
-  opacity: 0;
-  animation: slideIn 1s ease-out forwards 1.2s;
 }
 .hero .hero__content .hero__background {
   position: absolute;
@@ -286,34 +280,6 @@ header .nav-menu.active {
   max-width: 100%;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 /* New 1024px Breakpoint */
 @media (max-width: 1024px) {
   .hero {
@@ -479,38 +445,6 @@ header .nav-menu.active {
   transform: scale(1.1);
 }
 
-@-webkit-keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-@keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
 @media (max-width: 768px) {
   .about-quality {
     margin-top: 40px;
@@ -568,7 +502,6 @@ header .nav-menu.active {
   line-height: 200%;
   text-transform: capitalize;
   color: #f5f7fa;
-  animation: focus-in-expand-fwd 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text p {
   font-family: "Cabinet-Grotesk";
@@ -578,7 +511,6 @@ header .nav-menu.active {
   text-align: justify;
   color: #f5f7fa;
   max-width: 774px;
-  animation: focus-in-expand-fwd 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link {
   position: relative;
@@ -589,7 +521,6 @@ header .nav-menu.active {
   font-weight: 700;
   font-size: 22px;
   color: #f5f7fa;
-  animation: focus-in-expand-fwd 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .sleepy-shop .sleepy-shop_content .sleepy-shop__text .sleepy-shop__link:hover {
   text-decoration: underline;
@@ -599,33 +530,8 @@ header .nav-menu.active {
   margin: 20px 20px 80px 0px;
   max-width: 623px;
   height: 380px;
-  opacity: 0;
-  animation: slideIn 1s ease-out forwards 1.2s;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes focus-in-expand-fwd {
-  0% {
-    letter-spacing: -0.5em;
-    transform: translateZ(-800px);
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateZ(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
 /* New 1024px Breakpoint */
 @media (max-width: 1024px) {
   .sleepy-shop.sleepy-shop {
@@ -1744,6 +1650,7 @@ header .nav-menu.active {
   }
   .blog-slider .blog-slider__content .blog-slider__item p {
     width: 100%;
+    padding-right: 10px;
     text-align: left;
     height: 100px;
     max-width: 715px;
@@ -2283,26 +2190,6 @@ footer .bottom p {
   margin: 5px 0;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* New 1024px Breakpoint */
 @media (max-width: 1024px) {
   footer::before {
@@ -2601,8 +2488,8 @@ body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  display: none; /* Для Chrome, Safari */
+html {
+  scroll-behavior: smooth;
 }
 
 main {
@@ -2717,6 +2604,93 @@ footer {
   .modal .modal-content p {
     font-size: 3px;
   }
+}
+.hero .hero__title,
+.hero .hero__desc,
+.hero .hero__content,
+.hero .hero__img,
+.hero .hero__background {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.hero .start-animation {
+  opacity: 1;
+}
+
+.about-quality button {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.about-quality .start-animation {
+  opacity: 1;
+}
+
+.sleepy-shop .sleepy-shop_content {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.sleepy-shop .start-animation {
+  opacity: 1;
+}
+
+.catalogue .catalogue__header {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.catalogue .catalogue__slider {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.catalogue .start-animation {
+  opacity: 1;
+}
+
+.offer .offer__content {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.offer .offer__button-wrapper {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.offer .start-animation {
+  opacity: 1;
+}
+
+.blog-slider .blog-slider__header {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.blog-slider .blog-slider__content {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.blog-slider .blog-slider__navigation {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.blog-slider .start-animation {
+  opacity: 1;
+}
+
+.subscribe .subscribe-container {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.subscribe .start-animation {
+  opacity: 1;
+}
+
+footer .container {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+footer .bottom {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+footer .start-animation {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

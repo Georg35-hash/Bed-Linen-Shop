@@ -263,6 +263,26 @@ function initModal() {
 initModal();
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+
+    // Создаем IntersectionObserver для отслеживания видимости
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Если элемент стал видимым на 50% или больше, добавляем анимацию
+            if (entry.isIntersecting) {
+                entry.target.classList.add("start-animation");
+            } else {
+                entry.target.classList.remove("start-animation");
+            }
+        });
+    }, {
+        threshold: 0.5 
+    });
+
+    // Наблюдаем за всеми элементами с классом .animate-on-scroll
+    elements.forEach(el => observer.observe(el));
+});
 
 
 
