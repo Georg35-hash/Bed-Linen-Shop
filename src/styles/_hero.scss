@@ -88,8 +88,8 @@
         }
 
         .hero__light {
-            width: 836px;
-            height: 836px;
+            max-width: 836px;
+            max-height: 836px;
 
             filter: blur(50.95306396484375px);
             top: -80px;
@@ -100,11 +100,11 @@
 
         .hero__shadow {
             
-            width: 1440px;
-            height: 1440px;
+            max-width: 1440px;
+            max-height: 1440px;
             filter: blur(45px);
             position: absolute;
-            bottom: -20px;
+            bottom: 170px;
         }
 
         .bed__light {
@@ -213,6 +213,7 @@
                 max-width: 100%;
                 top: -26px
             }
+            
         }
     }
 }
