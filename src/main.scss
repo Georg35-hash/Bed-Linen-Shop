@@ -1,15 +1,15 @@
-@use "./styles/header" as *;
-@use "./styles/hero" as *;
-@use "./styles/about-quality" as *;
-@use "./styles/sleepy-shop" as *;
-@use "./styles/fonts" as *;
-@use "./styles/catalogue" as *;
-@use "./styles/offer" as *;
-@use "./styles/blog" as *;
-@use "./styles/subscribe" as *;
-@use "./styles/footer" as *;
-@use "./styles/global" as *;
-@use "./styles/animation" as *;
+@use "./styles/header";
+@use "./styles/hero";
+@use "./styles/about-quality";
+@use "./styles/sleepy-shop";
+@use "./styles/fonts";
+@use "./styles/catalogue";
+@use "./styles/offer";
+@use "./styles/blog";
+@use "./styles/subscribe";
+@use "./styles/footer";
+@use "./styles/global";
+@use "./styles/animation";
 
 * {
   margin: 0;

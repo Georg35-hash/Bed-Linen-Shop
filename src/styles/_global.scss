@@ -1,137 +1,137 @@
 body {
-    background: #375B68;
-    outline: none;
-    overflow-x: hidden;
-    
+  background: #375b68;
+  outline: none;
+  overflow-x: hidden;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+  display: none; /* Chrome, Safari */
 }
 
 main {
-    max-width: 1440px;
-    margin: 0px auto;
+  max-width: 1440px;
+  margin: 0px auto;
 }
 
 header {
-    max-width: 1440px;
-    margin: 0px auto;
+  max-width: 1440px;
+  margin: 0px auto;
 }
 
 footer {
-    background:
-        linear-gradient(180deg, rgba(55, 91, 104, 0) 0%, rgba(18, 33, 46, 0.26) 19.69%, #12212e 65.27%);
-    height: 653px;
-    width: 1440px;
-    max-width: 100%;
-    margin: 0px auto;
-    background-color: #375B68;
+  background: linear-gradient(
+    180deg,
+    rgba(55, 91, 104, 0) 0%,
+    rgba(18, 33, 46, 0.26) 19.69%,
+    #12212e 65.27%
+  );
+  height: 653px;
+  width: 1440px;
+  max-width: 100%;
+  margin: 0px auto;
+  background-color: #375b68;
 }
 
 .modal {
-    color: white;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  color: white;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 
-    &.active {
-        display: flex;
-        opacity: 1;
+  &.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .modal-content {
+    background: #375b68;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    h2 {
+      font-family: "Cabinet-Grotesk";
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 200%;
+      text-transform: capitalize;
     }
-
-    .modal-content {
-        background: #375B68;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        width: 50%;
-        max-width: 600px;
-        position: relative;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        h2{
-            font-family: "Cabinet-Grotesk";
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 200%;
-            text-transform: capitalize;
-        }
-        p{
-            font-family: "Cabinet-Grotesk";
-            font-size: 20px;
-            line-height: 220%;
-            text-transform: capitalize;
-            text-align: justify;
-        }
+    p {
+      font-family: "Cabinet-Grotesk";
+      font-size: 20px;
+      line-height: 220%;
+      text-transform: capitalize;
+      text-align: justify;
     }
+  }
 
-    .close-btn {
-
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 24px;
-        cursor: pointer;
-    }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 768px) {
-    
-    .modal .modal-content {
-        h2{
-            font-size: 20px;
-        }
-        p{
-            font-size: 15px;
-        }
+  .modal .modal-content {
+    h2 {
+      font-size: 20px;
     }
+    p {
+      font-size: 15px;
+    }
+  }
 }
 
 @media (max-width: 576px) {
-    .modal .modal-content {
-        max-width: 300px;
-        max-height: 230px;
-        h2{
-            font-size: 16px;
-        }
-        p{
-            font-size: 9px;
-        }
+  .modal .modal-content {
+    max-width: 300px;
+    max-height: 230px;
+    h2 {
+      font-size: 16px;
     }
+    p {
+      font-size: 9px;
+    }
+  }
 }
 
 @media (max-width: 425px) {
-    .modal .modal-content {
-        max-width: 300px;
-        max-height: 350px;
-        h2{
-            font-size: 10px;
-        }
-        p{
-            font-size: 14px;
-        }
+  .modal .modal-content {
+    max-width: 300px;
+    max-height: 350px;
+    h2 {
+      font-size: 15px;
     }
+    p {
+      font-size: 12px;
+    }
+  }
 }
 
 @media (max-width: 320px) {
-    .modal .modal-content {
-        max-width: 150px;
-        h2{
-            font-size: 8px;
-        }
-        p{
-            font-size: 3px;
-        }
+  .modal .modal-content {
+    h2 {
+      font-size: 14px;
     }
+    p {
+      font-size: 8px;
+    }
+  }
 }

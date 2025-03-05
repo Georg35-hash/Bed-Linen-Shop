@@ -1,7 +1,7 @@
 export default function parallax() {
-  const hero = document.querySelector(".hero__content"); // container
-  const img = document.querySelector(".hero__img"); // my pillow
-  const bg = document.querySelector(".hero__background"); // bg
+  const hero = document.querySelector(".hero__content");
+  const img = document.querySelector(".hero__img");
+  const bg = document.querySelector(".hero__background");
 
   if (!hero || !img || !bg) return;
 
@@ -9,51 +9,49 @@ export default function parallax() {
     mouseY = 0;
   let targetX = 0,
     targetY = 0;
-  let isMoving = false;
   let lastTime = 0;
 
-  function updateParallax(timestamp) {
-    if (timestamp - lastTime < 16) {
-      requestAnimationFrame(updateParallax);
-      return;
-    }
-    lastTime = timestamp;
+  // Установим начальные стили для оптимизации
+  img.style.willChange = "transform";
+  bg.style.willChange = "transform";
 
-    targetX += (mouseX - targetX) * 0.2;
-    targetY += (mouseY - targetY) * 0.2;
+  function updateParallax() {
+    targetX += (mouseX - targetX) * 0.1;
+    targetY += (mouseY - targetY) * 0.1;
 
     img.style.transform = `translate3d(${-targetX}px, ${-targetY}px, 0)`;
     bg.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
 
+    // Если нужно продолжить анимацию, снова вызываем updateParallax
     if (Math.abs(mouseX - targetX) > 0.1 || Math.abs(mouseY - targetY) > 0.1) {
       requestAnimationFrame(updateParallax);
-    } else {
-      isMoving = false;
     }
   }
 
   function onMouseMove(e) {
     const { width, height, left, top } = hero.getBoundingClientRect();
-    mouseX = (e.clientX - left - width / 2) / 10; // Снизил интенсивность
+    mouseX = (e.clientX - left - width / 2) / 10;
     mouseY = (e.clientY - top - height / 2) / 10;
 
-    if (!isMoving) {
-      isMoving = true;
-      requestAnimationFrame(updateParallax);
-    }
+    // Запускаем анимацию каждый раз при движении мыши
+    requestAnimationFrame(updateParallax);
   }
 
   function onMouseLeave() {
     mouseX = 0;
     mouseY = 0;
-    if (!isMoving) {
-      isMoving = true;
-      requestAnimationFrame(updateParallax);
-    }
+    targetX = 0; // сбрасываем targetX и targetY
+    targetY = 0;
+    requestAnimationFrame(updateParallax); // Запускаем анимацию, чтобы элементы вернулись в начальное положение
   }
 
-  hero.addEventListener("mousemove", throttle(onMouseMove, 16));
-  hero.addEventListener("mouseleave", onMouseLeave);
+  if (window.matchMedia("(pointer: fine)").matches) {
+    hero.addEventListener("mousemove", throttle(onMouseMove, 10));
+    hero.addEventListener("mouseleave", onMouseLeave);
+  } else {
+    hero.removeEventListener("mousemove", throttle(onMouseMove, 10));
+    hero.removeEventListener("mouseleave", onMouseLeave);
+  }
 }
 
 function throttle(callback, delay) {
