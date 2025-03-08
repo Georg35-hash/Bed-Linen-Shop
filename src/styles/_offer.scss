@@ -1,15 +1,16 @@
 .offer {
   margin-top: 144px;
   display: grid;
-  grid-template-columns: 1fr 1fr 120px;
+  grid-template-columns: 1fr 1fr 40px;
   justify-content: flex-end;
   height: 624px;
-  background: url("../../assets/offer/offer.svg") no-repeat center;
+  background: url("/assets/offer/offer.svg") no-repeat center;
   background-size: contain;
 
   .offer__content {
     margin: 95px 0 0 20px;
     grid-column: 2;
+
     color: #f5f7fa;
     max-width: 600px;
 
@@ -68,30 +69,28 @@
         transition: transform 0.3s ease;
       }
     }
+  }
 
-    .offer__button:hover .offer__button-desc {
-      transform: translateX(10px);
-    }
+  .offer__button:hover .offer__button-desc {
+    transform: translateX(10px);
   }
 
   /* New 1024px Breakpoint */
   @media (max-width: 1024px) {
-    grid-template-columns: 1fr 400px 100px;
-
     .offer__content {
       margin: 120px 0 0 15px;
       max-width: 500px;
+    }
 
-      h2 {
-        max-width: 400px;
-        font-size: 40px;
-        line-height: 1.8;
-      }
+    .offer__content h2 {
+      max-width: 400px;
+      font-size: 40px;
+      line-height: 1.8;
+    }
 
-      p {
-        max-width: 380px;
-        font-size: 20px;
-      }
+    .offer__content p {
+      max-width: 380px;
+      font-size: 20px;
     }
 
     .offer__button-wrapper .offer__button {
@@ -114,8 +113,6 @@
 
   /* Existing 768px Breakpoint */
   @media (max-width: 768px) {
-    grid-template-columns: 1fr 300px 60px;
-
     .offer__content h2 {
       margin: 80px 0 0 0px;
       font-size: 30px;
@@ -133,8 +130,18 @@
 
   /* Existing 576px Breakpoint */
   @media (max-width: 576px) {
-    margin-top: -190px;
-    grid-template-columns: 1fr 230px 80px;
+    margin-top: 0;
+    height: 204px;
+    width: fit-content;
+    background: url("/assets/offer/offer.svg") no-repeat center;
+    background-size: cover;
+
+    .offer__content {
+      margin: -80px 0 0 15px;
+    }
+    .offer__button-wrapper {
+      margin-top: 20px;
+    }
 
     .offer__content h2 {
       margin: 90px 0 0 0px;
@@ -158,9 +165,6 @@
 
   /* New 425px Breakpoint */
   @media (max-width: 425px) {
-    margin-top: -180px;
-    grid-template-columns: 1fr 200px 40px;
-
     .offer__button-wrapper {
       margin-top: 5px;
     }
@@ -198,34 +202,29 @@
 
   /* Existing 320px Breakpoint */
   @media (max-width: 320px) {
-    height: 300px;
-    grid-template-columns: 1fr 120px 40px;
+    .offer {
+      height: 300px;
+      display: grid;
+      grid-template-columns: 1fr 120px 20px;
+    }
 
     .offer__content h2 {
+      margin: 130px 0 0 0px;
       max-width: 600px;
       font-size: 12px;
       line-height: 1.4;
     }
-
-    .offer__content {
-      margin: -20px 0px 0px 0px;
-    }
-
     .offer__content p {
       font-size: 7px;
       line-height: 1.5;
       max-width: 140px;
     }
 
-    .offer__button-wrapper {
-      padding-bottom: 65px;
-    }
-
     .offer__button-wrapper .offer__button {
+      height: 55px;
       position: absolute;
       right: -60px;
       width: 50px;
-      transition: transform 0.2s ease;
     }
 
     .offer__button-wrapper .offer__button img {

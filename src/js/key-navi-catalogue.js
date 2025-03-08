@@ -24,47 +24,42 @@ export default function KeyNaviCatalogue() {
   });
 }
 
-// Обычные экспорты для других функций
+// others
 export function sidebarNaviCatalogue() {
+  // Get all sidebar
   const sidebarItems = document.querySelectorAll(".sidebar-item");
   const windows = document.querySelectorAll(".catalogue__slider-content");
 
-  const win2 = document.getElementById("window2");
-  const win3 = document.getElementById("window3");
-  const win4 = document.getElementById("window4");
-
-  if (win2) win2.style.display = "none";
-  if (win3) win3.style.display = "none";
-  if (win4) win4.style.display = "none";
+  // Init of windows
+  let currentIndex = 0;
+  windows.forEach((win, index) => {
+    win.style.display = index === currentIndex ? "block" : "none";
+  });
 
   sidebarItems.forEach((item) => {
     item.addEventListener("click", () => {
-      const targetWindow = document.getElementById(
-        item.getAttribute("data-window")
-      );
-      // Скрыть все окна
-      windows.forEach((window) => (window.style.display = "none"));
-      // Показать выбранное окно
+      const targetWindowId = item.getAttribute("data-window");
+      const targetWindow = document.getElementById(targetWindowId);
+
       if (targetWindow) {
+        windows.forEach((win) => (win.style.display = "none"));
+
+        currentIndex = Array.from(windows).indexOf(targetWindow);
         targetWindow.style.display = "block";
       }
     });
   });
 
-  const windowsArrow = document.querySelectorAll(".catalogue__slider-content");
-  const navArrow = document.querySelector(".arrow-down"); // Кнопка стрелки
-  let currentIndex = 0;
-  function switchWindow() {
-    // Скрыть текущее окно
-    windowsArrow[currentIndex].style.display = "none";
-    // Рассчитать индекс текущего окна
-    currentIndex = (currentIndex + 1) % windowsArrow.length;
-    // Показать следующее окно
-    windowsArrow[currentIndex].style.display = "block";
-  }
-
+  // Listner click on the arrow
+  const navArrow = document.querySelector(".arrow-down");
   if (navArrow) {
-    navArrow.addEventListener("click", switchWindow);
+    navArrow.addEventListener("click", () => {
+      windows[currentIndex].style.display = "none";
+
+      currentIndex = currentIndex % windows.length;
+
+      windows[currentIndex].style.display = "block";
+    });
   }
 }
 

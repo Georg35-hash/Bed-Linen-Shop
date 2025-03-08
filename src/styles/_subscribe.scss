@@ -37,7 +37,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
 
       .input-container {
         display: flex;
@@ -57,7 +56,7 @@
           right: 0;
           bottom: 0;
           padding: 2px;
-
+          border-radius: 37px;
           background: linear-gradient(
             133deg,
             #a3a3a3 27.08%,
@@ -98,9 +97,12 @@
         }
       }
 
+      display: flex;
+      flex-direction: column;
+
       .subscribe-button {
         position: relative;
-        margin: 49px 0 43.5px 0;
+        margin: 49px 0px 43.5px 0px;
         cursor: pointer;
         background: transparent;
         border: none;
@@ -126,16 +128,17 @@
           right: -58px;
           transition: transform 0.3s ease-out;
         }
+      }
 
-        &:hover .subscribe-button__text {
-          transform: translateX(10px);
-        }
+      .subscribe-button:hover .subscribe-button__text {
+        transform: translateX(10px);
       }
     }
   }
+}
 
-  // Media Queries
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .subscribe {
     margin-top: 100px;
 
     .subscribe-container {
@@ -143,18 +146,46 @@
 
       .subscribe-form {
         .input-container {
+          outline: none;
           max-width: 320px;
           padding: 8px 20px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 2px;
+            border-radius: 37px;
+            background: linear-gradient(
+              133deg,
+              #a3a3a3 27.08%,
+              #ccc 41.21%,
+              #fff 55.17%,
+              #ccc 67.71%,
+              #a3a3a3 83.33%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+          }
         }
 
         .subscribe-button {
-          margin: 30px 0 32px 0;
+          margin: 30px 0px 32px 0px;
         }
       }
     }
   }
+}
 
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .subscribe {
     margin-top: 100px;
 
     .subscribe-container {
@@ -162,7 +193,6 @@
         h2 {
           font-size: 20px;
         }
-
         p {
           font-size: 15px;
         }
@@ -170,33 +200,32 @@
 
       .subscribe-form {
         .input-container {
+          outline: none;
           max-width: 240px;
+          height: 60px;
           padding: 8px 20px;
         }
 
-        .subscribe-button {
-          margin: 30px 0 35px 0;
-        }
-
         .input-container .subscribe-input::placeholder {
+          width: fit-content;
           font-size: 20px;
         }
       }
     }
   }
+}
 
-  @media (max-width: 425px) {
+@media (max-width: 425px) {
+  .subscribe {
     margin-top: 120px;
 
     .subscribe-container {
       padding: 0 15px;
 
-      .subscribe-title {
-        p {
-          max-width: 100%;
-          font-size: 16px;
-          margin-bottom: 20px;
-        }
+      .subscribe-title p {
+        max-width: 100%;
+        font-size: 16px;
+        margin-bottom: 20px;
       }
 
       .subscribe-form {
@@ -211,8 +240,6 @@
         }
 
         .subscribe-button {
-          margin: 30px 0;
-
           img {
             width: 80px;
             height: 50px;
@@ -226,8 +253,10 @@
       }
     }
   }
+}
 
-  @media (max-width: 320px) {
+@media (max-width: 320px) {
+  .subscribe {
     margin-top: 60px;
 
     .subscribe-container {
@@ -256,6 +285,11 @@
           padding: 5px 15px;
           border-radius: 25px;
 
+          &::before {
+            border-radius: 25px;
+            padding: 1px;
+          }
+
           .input-icon {
             margin-right: 10px;
             width: 20px;
@@ -264,10 +298,10 @@
 
           .subscribe-input {
             font-size: 14px;
+          }
 
-            &::placeholder {
-              font-size: 14px;
-            }
+          .subscribe-input::placeholder {
+            font-size: 14px;
           }
         }
 
@@ -282,7 +316,7 @@
 
           .subscribe-button__text {
             font-size: 12px;
-            top: -1px;
+            top: 5;
             right: -47px;
           }
         }

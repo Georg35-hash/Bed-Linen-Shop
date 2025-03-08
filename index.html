@@ -6,7 +6,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <link rel="stylesheet" href="./dist/style.css" />
     <link rel="icon" href="./assets/favicon.png" />
     <title>Bed Linen Online</title>
   </head>
@@ -149,27 +148,27 @@
           </button>
           <img
             class="hero__img animate-on-scroll"
-            src="./assets/hero/Hero-pic.svg"
+            src="./public/assets/hero/hero-pic.svg"
             alt="sofa"
           />
           <img
             class="hero__background animate-on-scroll"
-            src="./assets/hero/feather-bg.svg"
+            src="./public/assets/hero/feather-bg.svg"
             alt="feather"
           />
           <img
             class="hero__shadow"
-            src="./assets/hero/hero-shadow.png"
+            src="./public/assets/hero/hero-shadow.png"
             alt="hero__shadow"
           />
           <img
             class="hero__light"
-            src="./assets/hero/hero-light.png"
+            src="./public/assets/hero/hero-light.png"
             alt="hero__light"
           />
           <img
             class="bed__light"
-            src="./assets/hero/bed-shadow.png"
+            src="./public/assets/hero/bed-shadow.png"
             alt="bed__light"
           />
         </div>
@@ -531,11 +530,13 @@
           </div>
           <form class="subscribe-form">
             <div class="input-container">
-              <img
-                src="./assets/subscribe/email.svg"
-                class="input-icon"
-                alt="input-icon"
-              />
+              <label for="email-input">
+                <img
+                  src="./assets/subscribe/email.svg"
+                  class="input-icon"
+                  alt="input-icon"
+                />
+              </label>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -632,6 +633,6 @@
       </div>
     </div>
 
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
