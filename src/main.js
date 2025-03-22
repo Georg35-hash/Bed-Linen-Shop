@@ -1,21 +1,21 @@
-import modalHandler from "./js/modal-handler.js";
-import parallax from "./js/parallax.js";
-import scroll from "./js/scroll.js";
-import sideBar from "./js/sidebar.js";
-import KeyNaviCatalogue from "./js/key-navi-catalogue.js";
+import { modalHandler } from "./scripts/modal-handler.js";
+import parallax from "./scripts/parallax.js";
+import { scroll } from "./scripts/scroll.js";
+import { sideBar } from "./scripts/sidebar.js";
+import { keyNaviCatalogue } from "./scripts/key-navi-catalogue.js";
+import { sidebarNaviCatalogue } from "./scripts/sidebar-navi-catalogue.js";
+import { sidebarNaviBlog } from "./scripts/sidebar-navi-blog.js";
+
+import { openBurgerMenu } from "./scripts/open-burger-menu.js";
 import "../src/main.scss";
 
-import {
-  sidebarNaviCatalogue,
-  sidebarNaviBlog,
-  openBurgerMenu,
-} from "./js/key-navi-catalogue.js";
-
 modalHandler();
+document.querySelector(".hero").addEventListener("mousemove", parallax);
+
 parallax();
 scroll();
 sideBar();
-KeyNaviCatalogue();
+keyNaviCatalogue();
 sidebarNaviCatalogue();
 sidebarNaviBlog();
 openBurgerMenu();

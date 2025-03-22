@@ -1,4 +1,4 @@
-export default function initSidebar() {
+export function sideBar() {
   const sidebarItems = document.querySelectorAll(
     ".catalogue__slider-sidebar-item .sidebar-item:not(.arrow-down)"
   );

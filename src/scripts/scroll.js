@@ -1,4 +1,4 @@
-export default function initScrollAnimations() {
+export function scroll() {
   const elements = document.querySelectorAll(".animate-on-scroll");
   if (!elements.length) return;
 
