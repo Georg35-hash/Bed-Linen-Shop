@@ -1,6 +1,6 @@
-export function sidebarNaviCatalogue() {
-  const sidebarItems = document.querySelectorAll(".sidebar-item");
-  const windows = document.querySelectorAll(".catalogue__slider-content");
+export function sidebarNaviCatalogue(sideBarItem, catalogueSliderContent) {
+  const sidebarItems = document.querySelectorAll(sideBarItem);
+  const windows = document.querySelectorAll(catalogueSliderContent);
   let currentIndex = 0;
   windows.forEach((win, index) => {
     win.style.display = index === currentIndex ? "block" : "none";

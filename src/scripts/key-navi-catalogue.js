@@ -1,22 +1,20 @@
-export function keyNaviCatalogue() {
-  const inputs = document.querySelectorAll(
-    'input[type="radio"][name="slider"]'
-  );
+export function keyNaviCatalogue(inputsSelector) {
+  const inputs = document.querySelectorAll(inputsSelector);
   let currentSlideIdx = Array.from(inputs).findIndex((slide) => slide.checked);
 
   function updateSlide(index) {
     if (index >= 0 && index < inputs.length) {
-      slides[index].checked = true;
+      inputs[index].checked = true;
       currentSlideIdx = index;
     }
   }
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") {
-      const nextSlide = (currentSlideIdx + 1) % slides.length;
+      const nextSlide = (currentSlideIdx + 1) % inputs.length;
       updateSlide(nextSlide);
     } else if (event.key === "ArrowLeft") {
-      const prevSlide = (currentSlideIdx - 1 + slides.length) % slides.length;
+      const prevSlide = (currentSlideIdx - 1 + inputs.length) % inputs.length;
       updateSlide(prevSlide);
     }
   });

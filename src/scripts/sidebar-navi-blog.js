@@ -1,46 +1,52 @@
-export function sidebarNaviBlog() {
-  const prevButton = document.getElementById("prev-slide");
-  const nextButton = document.getElementById("next-slide");
-  const slides = document.querySelectorAll(".blog-slider__content");
-  const points = document.querySelectorAll(
-    ".blog-slider__points .blog-slider__item"
-  );
-  let currentSlide = 0;
+export function sidebarNaviBlog(
+  prevSlide,
+  nextSlide,
+  blogSliderCont,
+  blogSliderPoints
+) {
+  const prevButton = document.getElementById(prevSlide);
+  const nextButton = document.getElementById(nextSlide);
+  const slides = document.querySelectorAll(blogSliderCont);
+  const points = document.querySelectorAll(blogSliderPoints);
+  let currentIndex = 0;
 
   function showSlide(index) {
-    slides.forEach((slide) => {
-      slide.style.display = "none";
-    });
+    slides.forEach((slide) => (slide.style.display = "none"));
     slides[index].style.display = "flex";
+    updatePoints(index);
+  }
 
+  function updatePoints(index) {
     points.forEach((point, i) => {
-      if (i === index) {
-        point.setAttribute("src", "./assets/blog/point-with-fill.svg");
-      } else {
-        point.setAttribute("src", "./assets/blog/without-fill.svg");
-      }
+      point.src =
+        i === index
+          ? "./assets/blog/point-with-fill.svg"
+          : "./assets/blog/without-fill.svg";
     });
   }
 
-  showSlide(currentSlide);
+  function getUpdatedIndex(direction) {
+    return (currentIndex + direction + slides.length) % slides.length;
+  }
 
-  nextButton.addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  });
+  function next() {
+    currentIndex = getUpdatedIndex(1);
+    showSlide(currentIndex);
+  }
 
-  prevButton.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  });
+  function prev() {
+    currentIndex = getUpdatedIndex(-1);
+    showSlide(currentIndex);
+  }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    } else if (e.key === "ArrowLeft") {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-  });
+  function handleKeydown(e) {
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  }
+
+  if (nextButton) nextButton.addEventListener("click", next);
+  if (prevButton) prevButton.addEventListener("click", prev);
+  document.addEventListener("keydown", handleKeydown);
+
+  showSlide(currentIndex);
 }

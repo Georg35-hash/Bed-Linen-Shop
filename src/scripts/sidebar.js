@@ -1,44 +1,53 @@
-export function sideBar() {
-  const sidebarItems = document.querySelectorAll(
-    ".catalogue__slider-sidebar-item .sidebar-item:not(.arrow-down)"
-  );
-  const arrow = document.getElementById("arrow");
+export function sideBar(sideBarSelectors, arrowSelector) {
+  const sidebarItems = document.querySelectorAll(sideBarSelectors);
+  const arrow = document.querySelector(arrowSelector);
 
-  // DEFAULT
-  if (sidebarItems.length > 0) {
-    sidebarItems[0].classList.add("active");
+  setDefaultActiveItem(sidebarItems);
+  addSidebarClickListeners(sidebarItems);
+  if (arrow) {
+    addArrowClickListener(arrow, sidebarItems);
   }
 
-  // Listener for clicks on elem
-  sidebarItems.forEach((item) => {
-    item.addEventListener("click", function () {
-      sidebarItems.forEach((el) => el.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
+  function setDefaultActiveItem(sidebarItems) {
+    if (sidebarItems.length > 0) {
+      sidebarItems[0].classList.add("active");
+    }
+  }
 
-  if (arrow) {
-    arrow.addEventListener("click", function () {
-      let currentActiveIndex = -1;
-
-      sidebarItems.forEach((item, index) => {
-        if (item.classList.contains("active")) {
-          currentActiveIndex = index;
-        }
+  function addSidebarClickListeners(sidebarItems) {
+    sidebarItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        updateActiveItem(sidebarItems, this);
       });
-
-      // If does not exist begin from start
-      if (currentActiveIndex === -1) {
-        currentActiveIndex = 0;
-      }
-
-      sidebarItems[currentActiveIndex].classList.remove("active");
-
-      // Next index of sidebar
-      let nextIndex = (currentActiveIndex + 1) % sidebarItems.length;
-
-      // Triger for next elem for Event Listener
-      sidebarItems[nextIndex].click();
     });
+  }
+
+  function updateActiveItem(sidebarItems, activeItem) {
+    sidebarItems.forEach((el) => el.classList.remove("active"));
+    activeItem.classList.add("active");
+  }
+
+  function addArrowClickListener(arrow, sidebarItems) {
+    arrow.addEventListener("click", function () {
+      navigateToNextItem(sidebarItems);
+    });
+  }
+
+  function navigateToNextItem(sidebarItems) {
+    let currentActiveIndex = getActiveItemIndex(sidebarItems);
+
+    if (currentActiveIndex === -1) {
+      currentActiveIndex = 0;
+    }
+
+    sidebarItems[currentActiveIndex].classList.remove("active");
+    let nextIndex = (currentActiveIndex + 1) % sidebarItems.length;
+    sidebarItems[nextIndex].click();
+  }
+
+  function getActiveItemIndex(sidebarItems) {
+    return [...sidebarItems].findIndex((item) =>
+      item.classList.contains("active")
+    );
   }
 }

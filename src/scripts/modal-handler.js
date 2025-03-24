@@ -1,28 +1,27 @@
 import data from "../data/db.json";
-export function modalHandler() {
-  // Get templ
-  const modalTemplate = document.querySelector(".modal");
-  if (!modalTemplate) {
-    throw new Error("Modal template not found");
-  }
 
-  function addModalToDOM() {
-    const clone = document.importNode(modalTemplate.content, true);
-    document.body.appendChild(clone);
-  }
+export function modalHandler(
+  openModalCallback,
+  closeModalCallback,
+  modalSelector,
+  modalTextSelector,
+  closeBtnSelector
+) {
+  const modal = document.querySelector(modalSelector);
+  if (!modal) return;
 
-  if (!document.querySelector("#modal")) {
-    addModalToDOM();
-  }
-
-  const modal = document.querySelector(".modal");
-  const modalText = modal.querySelector(".modal-text");
-  const closeBtn = modal.querySelector(".close-btn");
+  const modalText = modal.querySelector(modalTextSelector);
+  const closeBtn = modal.querySelector(closeBtnSelector);
 
   function openModal(content) {
     modalText.innerHTML = content;
     modal.classList.add("active");
-    document.body.style.overflow = "hidden"; // block scroll
+    if (openModalCallback) openModalCallback();
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    if (closeModalCallback) closeModalCallback();
   }
 
   document
@@ -31,20 +30,17 @@ export function modalHandler() {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         const contentKey = btn.dataset.id;
-
         const contentData = data[contentKey];
 
         const content = contentData
-          ? `
-          <h2>${contentData.title}</h2>
-          <p>${contentData.content}</p>
-        `
+          ? `<h2>${contentData.title}</h2><p>${contentData.content}</p>`
           : "<p>Sorry, content not found.</p>";
+
         openModal(content);
       });
     });
 
-  closeBtn.addEventListener("click", closeModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
   window.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
@@ -55,9 +51,4 @@ export function modalHandler() {
       closeModal();
     }
   });
-
-  function closeModal() {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
 }
