@@ -18,7 +18,11 @@ sideBar(
   "#arrow"
 );
 keyNaviCatalogue('input[type="radio"][name="slider"]');
-sidebarNaviCatalogue(".sidebar-item", ".catalogue__slider-content");
+sidebarNaviCatalogue(
+  ".sidebar-item",
+  ".catalogue__slider-content",
+  ".arrow-down"
+);
 sidebarNaviBlog(
   "prev-slide",
   "next-slide",

@@ -1,4 +1,8 @@
-export function sidebarNaviCatalogue(sideBarItem, catalogueSliderContent) {
+export function sidebarNaviCatalogue(
+  sideBarItem,
+  catalogueSliderContent,
+  arrowDown
+) {
   const sidebarItems = document.querySelectorAll(sideBarItem);
   const windows = document.querySelectorAll(catalogueSliderContent);
   let currentIndex = 0;
@@ -20,7 +24,7 @@ export function sidebarNaviCatalogue(sideBarItem, catalogueSliderContent) {
     });
   });
 
-  const navArrow = document.querySelector(".arrow-down");
+  const navArrow = document.querySelector(arrowDown);
   if (navArrow) {
     navArrow.addEventListener("click", () => {
       windows[currentIndex].style.display = "none";
