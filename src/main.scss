@@ -1,0 +1,17 @@
+@use "./styles/header";
+@use "./styles/hero";
+@use "./styles/about-quality";
+@use "./styles/sleepy-shop";
+@use "./styles/fonts";
+@use "./styles/catalogue";
+@use "./styles/offer";
+@use "./styles/blog";
+@use "./styles/subscribe";
+@use "./styles/footer";
+@use "./styles/global";
+@use "./styles/animation";
+
+* {
+  margin: 0;
+  padding: 0;
+}
